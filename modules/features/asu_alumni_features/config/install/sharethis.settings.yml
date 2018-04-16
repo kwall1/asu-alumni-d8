@@ -1,0 +1,248 @@
+button_option: stbc_
+comments: 0
+late_load: 1
+location: content
+node_types:
+  article: article
+  blog_post: blog_post
+  alert: null
+  chapter: null
+  course: null
+  department: null
+  event: null
+  facebook: null
+  instagram: null
+  location: null
+  page: null
+  person: null
+  program: null
+  travel: null
+  tweet: null
+  webform: null
+option_extras:
+  'Facebook Like:fblike': 'Facebook Like:fblike'
+  'Google Plus One:plusone': '0'
+option_neworzero: 0
+option_onhover: 1
+option_shorten: 1
+service_option: '''Facebook:facebook'',''Twitter:twitter'',''LinkedIn:linkedin'',''Email:email'',''ShareThis:sharethis'''
+twitter_handle: ''
+twitter_recommends: ''
+twitter_suffix: ''
+webform_options: ''
+weight: -25
+widget_option: st_multi
+cns:
+  donotcopy: null
+  hashaddress: null
+sharethisnodes:
+  article:
+    full: full
+    details: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  page:
+    full: full
+    details: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  alert:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  blog_post:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  chapter:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  course:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  department:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  event:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  facebook:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  instagram:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  location:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  person:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  program:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  travel:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  tweet:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+  webform:
+    details: '0'
+    full: '0'
+    hello_view_mode: '0'
+    leader_contact: '0'
+    leadership: '0'
+    list: '0'
+    revision: '0'
+    rss: '0'
+    search_index: '0'
+    search_result: '0'
+    teaser: '0'
+    token: '0'
+publisherID: dr-1f1bac9d-117e-5f0a-5d98-eb8de340a44a
+callesi: '0'

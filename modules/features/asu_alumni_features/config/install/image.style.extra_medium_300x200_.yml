@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.focal_point
+  module:
+    - crop
+name: extra_medium_300x200_
+label: 'Extra medium (300x200)'
+effects:
+  90cac65a-d7d2-4e36-a97f-323617cc2888:
+    uuid: 90cac65a-d7d2-4e36-a97f-323617cc2888
+    id: crop_crop
+    weight: 2
+    data:
+      crop_type: focal_point

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: partners_carousel
+label: 'Partners Carousel'
+effects:
+  6a470ff8-7c5b-426a-aa32-7a1f7a6db8e6:
+    uuid: 6a470ff8-7c5b-426a-aa32-7a1f7a6db8e6
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 283
+      height: 160

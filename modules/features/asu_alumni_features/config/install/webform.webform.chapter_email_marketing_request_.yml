@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 40
+template: false
+id: chapter_email_marketing_request_
+title: 'Chapter Email Marketing Request Form'
+description: ''
+category: ''
+elements: "header:\n  '#type': processed_text\n  '#text': \"<p>This form is for submitting a request for a Chapter e-newsletter to be delivered.</p>\\r\\n\\r\\n<p><strong>E-newsletters are delivered the 1</strong><strong><sup>st</sup></strong><strong>&nbsp;and 3</strong><strong><sup>rd</sup></strong><strong>&nbsp;Thursdays of each month. Deadline to request an e-newsletter is 12 p.m. MST on Friday. Late requests will be prepared for the next distribution cycle.&nbsp;<a href=\\\"https://docs.google.com/document/d/1DjxLLVEYprYlp5gyy2BvSZrmGf2Gu_Y1IXMEM-__cDQ/edit?usp=sharing\\\">Chapter newsletters distribution dates for FY18.</a></strong></p>\\r\\n\"\n  '#format': full_html\nchapter_type_:\n  '#type': radios\n  '#title': 'Chapter Type '\n  '#options':\n    Academic: Academic\n    Geographic: Geographic\n    International: International\n    'Special Interest': 'Special Interest'\n  '#required': true\nchapter_name:\n  '#type': textfield\n  '#title': 'Chapter Name'\n  '#required': true\nrequestor_s_contact:\n  '#type': webform_contact\n  '#title': 'Requestor''s Contact'\n  '#name__title': 'Requestor''s Name'\n  '#name__required': true\n  '#company__access': false\n  '#email__title': 'Requestor''s Email Address'\n  '#email__required': true\n  '#phone__title': 'Requestor''s Phone Number'\n  '#phone__required': true\n  '#address__access': false\n  '#address_2__access': false\n  '#city__access': false\n  '#state_province__access': false\n  '#postal_code__access': false\n  '#country__access': false\nrequested_date_of_delivery1:\n  '#type': date\n  '#title': 'Requested Date of Delivery'\n  '#required': true\n  '#datepicker': true\n  '#date_date_format': m/d/Y\nrequested_date_of_delivery1_text:\n  '#type': processed_text\n  '#text': \"<p>Please note: Chapter emails are delivered on the 1st &amp; 3rd Wednesday of each month. Requests are due by the previous Friday at 12 p.m.</p>\\r\\n\"\n  '#format': full_html\nsubject_line_:\n  '#type': textfield\n  '#title': 'Subject Line '\n  '#required': true\nreply_email_address:\n  '#type': email\n  '#title': 'Reply Email Address'\n  '#placeholder': 'Default will be phxadmin@asu.edu'\n  '#required': true\ngame_watching_email_:\n  '#type': radios\n  '#title': 'Game watching email?'\n  '#options':\n    'Check here if this will be a game watching email announcement only.': 'Check here if this will be a game watching email announcement only.'\n  '#required': true\nemail_content:\n  '#type': textarea\n  '#title': 'Email Content'\n  '#placeholder': 'Please review grammar before submitting.'\n  '#required': true\ninclude_news_feed:\n  '#type': checkboxes\n  '#title': 'Include News Feed'\n  '#options':\n    ASU: ASU\n    Alumni: Alumni\n    College: College\ninclude_social_media:\n  '#type': checkboxes\n  '#title': 'Include Social Media'\n  '#options':\n    Facebook: Facebook\n    LinkedIn: LinkedIn\n    Twitter: Twitter\ninclude_graphics_in_email:\n  '#type': webform_image_file\n  '#title': 'Include Graphics in Email'\n  '#max_filesize': '15'\n  '#file_extensions': 'jpg gif png pdf zip'\ninclude_graphics_in_email_text:\n  '#type': processed_text\n  '#text': \"<p>If you would like to submit several images upload them in a zip file. There is a 15 MB limit.</p>\\r\\n\"\n  '#format': full_html\nwould_you_like_to_preview_the_email_before_it_s_sent_:\n  '#type': radios\n  '#title': 'Would you like to preview the email before it''s sent?'\n  '#options': yes_no\n  '#required': true\ncaptcha:\n  '#type': captcha\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

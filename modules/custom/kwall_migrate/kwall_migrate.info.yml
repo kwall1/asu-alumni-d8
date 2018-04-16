@@ -1,0 +1,11 @@
+name: KWALL Migrate
+type: module
+description: KWALL Migrate
+core: 8.x
+package: Migration
+dependencies:
+  - redirect
+  - migrate_plus
+  - migrate_tools
+migration_dependencies: {}
+migration_group: kwall

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_credits
+    - node.type.course
+id: node.course.field_number_of_credits
+field_name: field_number_of_credits
+entity_type: node
+bundle: course
+label: 'Number of Credits'
+description: 'Total credits for the course.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

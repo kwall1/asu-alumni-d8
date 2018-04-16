@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.attachment.field_attachment
+    - field.field.media.attachment.field_label
+    - media_entity.bundle.attachment
+  module:
+    - fences
+    - file
+id: media.attachment.default
+targetEntityType: media
+bundle: attachment
+mode: default
+content:
+  field_attachment:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: file_url_plain
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

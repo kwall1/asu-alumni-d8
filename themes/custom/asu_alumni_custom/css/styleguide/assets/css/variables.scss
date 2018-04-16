@@ -1,0 +1,92 @@
+/**
+ * $file
+ * Variables
+ *
+ ****
+ *
+ * Page Widths
+ * Fonts
+ * Colors
+ *
+ ****
+*/
+
+/****
+ *
+ * Page Widths
+ *
+ ****/
+$width-page: 1200px;
+//#{$mobile}
+//#{$tablet}
+//#{$tablet-min}
+//#{$desktop}
+//#{$desktop-min}
+$mobile: "(max-width: 767px)";
+$tablet-min: "(min-width: 768px)";
+$tablet: "(max-width: 959px)";
+$desktop-min: "(min-width: 960px)";
+$desktop: "(max-width: 1300px)";
+
+/****
+ *
+ * Fonts
+ *
+ ****/
+$font-awesome: 'FontAwesome';
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot');
+  src: url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+       url('../fonts/fontawesome-webfont.woff') format('woff'),
+       url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+       url('../fonts/fontawesome-webfont.svg') format('svg');
+  font-weight: normal; font-style: normal;
+}
+
+$font-family: 'robotolight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-regular: 'roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-light: 'robotolight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-bold: 'robotobold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-black: 'robotoblack', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-h1: 4.8rem;
+$font-h1-line-height: 1.2;
+$font-h2: 3.6rem;
+$font-h3: 2.4rem;
+$font-h4: 2.1rem;
+$font-h5: 1.6rem;
+$font-h6: 1.6rem;
+
+/****
+ *
+ * Colors
+ *
+ ****/
+
+$color-header: #000;
+$color-body: #000;
+
+$color-maroon: #8C1D40;
+$color-yellow: #FFC627;
+$color-gold: #ffb310;
+$color-black: #000;
+$color-black-2: #353535;
+$color-grey-dark: #1e1e1e;
+$color-grey-dark-2: #313131;
+$color-grey-dark-3: #2B2B2B;
+$color-grey: #5C6670;
+$color-grey-2: #505558;
+$color-grey-light: #E5E5E5;
+$color-green: #78BE20;
+$color-blue: #00A3E0;
+$color-orange: #FF7F32;
+
+$color-hover: #d23153;
+
+//Styleguide Colors
+$color-style-blue: #00a3bf;
+$color-style-dark-grey: #a7a7a7;
+$color-style-grey: #CCC;
+$color-style-light-grey: #F4F5F5;
+$color-border: #D7D7D7;

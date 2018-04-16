@@ -1,0 +1,127 @@
+/**
+ * $file
+ * Elements
+ *
+ ****
+ *
+ * Typography
+ * Lists
+ * Blockquote
+ *
+ ****
+*/
+
+
+
+
+/****
+ *
+ * Typography
+ *
+ ****/
+html {
+	font-size: 62.5%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-family: $font-family;
+	font-size: 1.6rem;
+	line-height: 1.5;
+	color: $color-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $color-header;
+	font-family: $font-family-regular;
+	font-weight: normal;
+	letter-spacing: 0;
+	line-height: 1.44;
+	margin-bottom: 24px;
+}
+
+h1 {
+	font-size: $font-h1;
+	line-height: $font-h1-line-height;
+	margin-bottom: 48px;
+}
+
+h2 {
+	font-size: $font-h2;
+}
+
+h3 {
+	font-size: $font-h3;
+}
+
+h4 {
+	font-size: $font-h4;
+}
+
+h5 {
+	font-family: $font-family-bold;
+	font-size: $font-h5;
+}
+
+h6 {
+	font-size: $font-h6;
+	font-style: italic;
+}
+
+a {
+  color: $color-maroon;
+  text-decoration: none;
+  font-weight: normal;
+  border-bottom: 1px dotted $color-maroon;
+	&:visited {
+  	text-decoration: none;
+  	background-color: auto;
+  }
+  &:active, &:focus, &:hover {
+	  color: $color-hover;
+    text-decoration: none;
+    border-bottom: 1px dotted $color-hover;
+  }
+}
+
+hr {
+	border-color: $color-maroon;
+}
+
+
+
+
+/****
+ *
+ * Lists
+ *
+ ****/
+ul li,
+ol li {
+	line-height: 1.75;
+}
+
+ol li {
+	padding-left: 15px;
+}
+
+
+
+
+/****
+ *
+ * Blockquote
+ *
+ ****/
+blockquote {
+	border-left: 8px solid #d7d7d7;
+	font-family: $font-family-light;
+	font-size: 2.4rem;
+	padding: 3.6rem;
+}

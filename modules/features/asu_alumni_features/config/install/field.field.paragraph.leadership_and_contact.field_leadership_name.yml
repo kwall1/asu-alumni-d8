@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_leadership_name
+    - paragraphs.paragraphs_type.leadership_and_contact
+id: paragraph.leadership_and_contact.field_leadership_name
+field_name: field_leadership_name
+entity_type: paragraph
+bundle: leadership_and_contact
+label: 'Main Contact Full Name'
+description: 'A person to contact about the content.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

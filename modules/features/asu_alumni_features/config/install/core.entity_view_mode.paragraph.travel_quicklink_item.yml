@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.travel_quicklink_item
+label: 'Simple Quicklink item'
+targetEntityType: paragraph
+cache: true

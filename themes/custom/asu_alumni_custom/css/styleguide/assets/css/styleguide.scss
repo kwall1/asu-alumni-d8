@@ -1,0 +1,337 @@
+/**
+ * $file
+ * Styleguide
+ *
+ ****
+ *
+ * Styleguide Page Styles
+ * Styleguide Typography
+ * Color Page Styles
+ * Welcome page
+ * Styleguide Header & Footer
+ * Code Blocks
+ * Icons
+ *
+ ****
+
+
+
+
+/****
+ *
+ * Styleguide Page Styles
+ *
+ ****/
+.wrap {
+	min-width: 300px;
+	max-width: $width-page;
+	margin: auto;
+	margin-bottom: 100px;
+}
+
+//Class for full width sections
+.full-width {
+	clear: both;
+}
+
+//format buttons on forms.html
+#buttons {
+  button, .btn {
+	  margin-bottom: 10px;
+  }
+  a.button {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+/****
+ *
+ * Styleguide Typography
+ *
+ ****/
+.style-header {
+	clear: both;
+	color: #999;
+	display: inline-block;
+	font-family: $font-family;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	line-height: 1.2em;
+	margin-bottom: 3rem;
+	margin-left: 1rem;
+	margin-top: 9rem;
+	padding: 0px;
+	padding-left: 0px;
+	text-transform: uppercase;
+	text-indent: none;
+	width: 100%;
+}
+
+.two-letter {
+	font-size: 8rem;
+	line-height: 58px;
+}
+
+.body-font {
+	font-family: $font-family;
+}
+.body-font-light {
+	font-family: $font-family-light;
+}
+.header-font {
+	font-family: $font-family-bold;
+}
+.header-font-black {
+	font-family: $font-family-black;
+}
+
+.regular {
+	font-weight: normal;
+	font-style: normal;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.italic {
+	font-style: italic;
+}
+
+span.inline-label {
+	float: left;
+	margin-right: 10px;
+}
+
+
+
+
+/****
+ *
+ * Color Page Styles
+ *
+ ****/
+#colors {
+	 padding: 0 2rem;
+}
+.color-item {
+	float: left;
+	min-width: 20% !important;
+}
+
+.color-name {
+	color: #666;
+	font-size: 1.1rem;
+	letter-spacing: 0.5;
+	line-height: 2;
+	margin: 0px;
+	padding: 0px;
+}
+
+.color-value,
+.button-type {
+	margin-top: 0px;
+	padding-top: 0px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 1.1rem;
+	color: #666;
+	line-height: 12px;
+}
+
+.color-light {
+	padding: 20px;
+ 	text-align: center;
+ 	font-size: 1rem;
+ 	text-transform: uppercase;
+ 	line-height: 75px;
+ 	margin-bottom: 2rem;
+ 	color: #666;
+ 	height: 7.5rem;
+}
+
+.color-dark {
+	color: #fff;
+	padding: 2rem;
+ 	text-align: center;
+ 	font-size: 1rem;
+ 	text-transform: uppercase;
+ 	line-height: 75px;
+ 	margin-bottom: 2rem;
+ 	min-height: 50px;
+ 	height: 7.5rem;
+  p {
+  	color: #fff;
+  }
+}
+
+.button-type {
+	margin-bottom: 5px;
+}
+
+
+
+
+/****
+ *
+ * Welcome page
+ *
+ ****/
+#welcome {
+	padding: 20% 0 10% 0;
+	text-align: center;
+
+	h1 {
+  	color: #00a3bf;
+  }
+
+  hr {
+  	width: 15rem;
+  }
+
+  p {
+  	color: #8c8c8c;
+  }
+}
+
+/* Invision/ Gdrive links */
+#links {
+	text-align: center;
+	overflow: hidden;
+	h3 {
+		color: $color-style-dark-grey;
+	}
+	ul {
+		padding: 0;
+	}
+	li {
+		list-style: none;
+		a {
+		color: $color-style-blue;
+	}
+	}
+	.columns {
+		background: $color-style-light-grey;
+		width: 49%;
+		margin: 0.5%;
+		float: left;
+	    padding-bottom: 1000px;
+	    margin-bottom: -1000px;
+	}
+}
+
+
+
+
+/****
+ *
+ * Styleguide Header & Footer
+ *
+ ****/
+.navbar-default {
+	.navbar-nav > li > a.active {
+		border-bottom: 2px solid $color-style-blue;
+	}
+	.navbar-brand {
+		a {
+			color: #333;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		img {
+			display: inline-block;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+	}
+	a {
+		border-bottom: none;
+		font-size: 1.1rem;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		&:active, &:focus, &:hover  {
+			border-bottom: none;
+		}
+	}
+	.navbar-toggle.btn-action {
+		background-color: #fff;
+		border: none;
+		display: none;
+		&:active, &:focus, &:hover  {
+			background-color: #fff;
+		}
+		@media $mobile {
+			background: none;
+			display: inline-block;
+		}
+	}
+}
+
+footer {
+	border-top: 1px solid $color-style-light-grey;
+	clear: both;
+	font-size: 1.2rem;
+	margin-top: 5rem;
+	padding: 2rem 2% 1rem;
+	text-transform: uppercase;
+}
+
+
+
+
+/****
+ *
+ * Code Blocks
+ *
+ ****/
+pre {
+	background: #f9fafc;
+	border-color: #e0e6ed;
+	border-radius: 2px;
+	font-size: 1.2rem;
+	margin: 1rem 0 3rem 0;
+}
+
+.hljs {
+	background: none;
+	padding: 0;
+}
+
+.description {
+	color: #777;
+	font-size: 1.2rem;
+	line-height: 18px;
+}
+
+
+
+
+/****
+ *
+ * icons
+ *
+ ****/
+#icons p {
+	font-size: 1rem;
+  vertical-align: middle;
+
+  .fa {
+  	font-size: 2rem;
+  	vertical-align: middle;
+  }
+}
+
+
+$import url('../fonts/stylesheet.css');
+$import "variables.scss";
+$import "elements.scss";
+$import "forms.scss";
+$import "content-list.scss";
+$import "color.scss";
+$import "component.scss";
+$import "wysiwyg.scss";

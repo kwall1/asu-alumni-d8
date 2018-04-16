@@ -1,0 +1,59 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image.field_image
+    - image.style.focal_point_image_style
+    - media_entity.bundle.image
+  module:
+    - fences
+    - image
+    - user
+id: media.image.default
+targetEntityType: media
+bundle: image
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 2
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: focal_point_image_style
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  thumbnail: true

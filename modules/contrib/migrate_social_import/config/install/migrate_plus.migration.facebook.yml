@@ -1,0 +1,18 @@
+id: facebook
+label: 'Facebook migration'
+migration_group: social
+source:
+  plugin: social_network
+  social_network_plugin: 'facebook'
+process:
+  title: message
+  'body/0/value': message
+  'body/0/format':
+     plugin: default_value
+     default_value: basic_html
+destination:
+  plugin: entity:node
+  default_bundle: facebook
+migration_dependencies:
+  required:
+    - migrate_social

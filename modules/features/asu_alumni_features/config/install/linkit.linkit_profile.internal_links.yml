@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - imce
+    - node
+third_party_settings:
+  imce:
+    use: false
+    scheme: public
+id: internal_links
+label: 'Internal Links'
+description: 'Autocomplete Internal Links.'
+attributes: {  }
+matchers:
+  573b0fef-bbe1-4f8f-8ac2-c13735bb7f5e:
+    uuid: 573b0fef-bbe1-4f8f-8ac2-c13735bb7f5e
+    id: 'entity:node'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles: {  }
+      group_by_bundle: true
+      include_unpublished: false
+  0666b5ea-f611-4602-ba94-93df18f8e467:
+    uuid: 0666b5ea-f611-4602-ba94-93df18f8e467
+    id: 'entity:media'
+    weight: 0
+    settings:
+      result_description: ''
+      bundles: {  }
+      group_by_bundle: true

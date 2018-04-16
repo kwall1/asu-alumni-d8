@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_blog_post
+    - field.field.media.image_blog_post.field_featured_image
+    - image.style.thumbnail
+    - media_entity.bundle.image_blog_post
+  module:
+    - field_layout
+    - image
+    - imce
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.image_blog_post.media_blog_post
+targetEntityType: media
+bundle: image_blog_post
+mode: media_blog_post
+content:
+  field_featured_image:
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  uid: true

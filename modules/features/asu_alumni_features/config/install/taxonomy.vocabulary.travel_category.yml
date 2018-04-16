@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Travel Category'
+vid: travel_category
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,29 @@
+id: instagram
+label: 'Instagram migration'
+migration_group: social
+source:
+  plugin: social_network
+  social_network_plugin: 'instagram'
+process:
+  title:
+    plugin: extract
+    source: 'caption'
+    index:
+      - 'text'
+  'field_image_link/0/title':
+    plugin: extract
+    source: 'caption'
+    index:
+      - 'text'
+  'field_image_link/0/uri':
+    plugin: extract
+    source: 'images'
+    index:
+      - 'standard_resolution'
+      - 'url'
+destination:
+  plugin: entity:node
+  default_bundle: instagram
+migration_dependencies:
+  required:
+    - migrate_social

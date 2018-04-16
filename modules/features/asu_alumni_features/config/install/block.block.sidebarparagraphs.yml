@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - ctools_block
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: sidebarparagraphs
+theme: asu_alumni_custom
+region: sidebar_second
+weight: -8
+provider: null
+plugin: 'entity_field:node:field_sidebar_paragraphs'
+settings:
+  id: 'entity_field:node:field_sidebar_paragraphs'
+  label: 'Sidebar Paragraphs'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility: {  }

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ad
+    - field.storage.block_content.field_ad_embed
+id: block_content.ad.field_ad_embed
+field_name: field_ad_embed
+entity_type: block_content
+bundle: ad
+label: 'Ad Embed'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quicklinks
+    - field.field.block_content.quicklinks.body
+    - field.field.block_content.quicklinks.field_paragraph
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: block_content.quicklinks.default
+targetEntityType: block_content
+bundle: quicklinks
+mode: default
+content:
+  field_paragraph:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Item
+      title_plural: Items
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  moderation_state: true

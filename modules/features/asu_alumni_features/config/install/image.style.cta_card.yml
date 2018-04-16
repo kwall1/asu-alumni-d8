@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: cta_card
+label: 'CTA Card (422 x 249)'
+effects:
+  91fee1fa-6da9-4073-ae7e-78fba32f7e59:
+    uuid: 91fee1fa-6da9-4073-ae7e-78fba32f7e59
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 422
+      height: 249
+      crop_type: focal_point

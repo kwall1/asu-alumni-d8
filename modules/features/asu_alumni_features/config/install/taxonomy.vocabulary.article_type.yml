@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Article Type'
+vid: article_type
+description: 'Type of news article listed in the creation of an article.'
+hierarchy: 0
+weight: 0

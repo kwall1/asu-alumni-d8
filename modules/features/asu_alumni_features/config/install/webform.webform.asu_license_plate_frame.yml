@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 40
+template: false
+id: asu_license_plate_frame
+title: 'ASU license plate frame'
+description: ''
+category: ''
+elements: "header:\n  '#type': processed_text\n  '#text': \"<p>Simply complete the form below to receive the official ASU Alumni Association license plate frame, so that you can wrap your ASU license plate in Sun Devil pride!<br />\\r\\nIf you have any questions, please call the ASU Alumni Association at 800-ALUMNUS.</p>\\r\\n\"\n  '#format': full_html\ncontact_information:\n  '#type': webform_contact\n  '#title': 'Contact Information'\n  '#name__required': true\n  '#company__access': false\n  '#email__required': true\n  '#phone__required': true\n  '#address__required': true\n  '#address_2__access': false\n  '#city__required': true\n  '#state_province__required': true\n  '#postal_code__required': true\n  '#country__required': true\nreferred_by:\n  '#type': radios\n  '#title': 'Referred by'\n  '#options':\n    Brochure: Brochure\n    'ASU Magazine': 'ASU Magazine'\n    'Season ticket holder mailer': 'Season ticket holder mailer'\n    'Alumni Advantages newsletter': 'Alumni Advantages newsletter'\n    Friend: Friend\n    Other: Other\n  '#required': true\nplease_specify_other:\n  '#type': textfield\n  '#title': 'Please specify other'\nsparky_license_plate_number:\n  '#type': textfield\n  '#title': 'Sparky license plate number'\n  '#required': true\nupload_your_sparky_license_plate_selfie:\n  '#type': webform_image_file\n  '#title': 'Upload your Sparky license plate selfie'\n  '#max_filesize': '10'\n  '#file_extensions': 'gif jpg png'\n  '#required': true\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image_chapter.field_chapter_image
+    - image.style.landing_page_list
+    - media_entity.bundle.image_chapter
+  module:
+    - fences
+    - image
+id: media.image_chapter.default
+targetEntityType: media
+bundle: image_chapter
+mode: default
+content:
+  field_chapter_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: landing_page_list
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

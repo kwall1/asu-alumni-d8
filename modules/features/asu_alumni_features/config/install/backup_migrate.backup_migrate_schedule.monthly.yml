@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: monthly
+label: Monthly
+enabled: true
+keep: 4
+period: 2419200
+cron: null
+source_id: entire_site
+destination_id: backups
+settings_profile_id: default

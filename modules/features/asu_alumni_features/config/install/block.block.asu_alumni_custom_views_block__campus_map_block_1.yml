@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.campus_map
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: asu_alumni_custom_views_block__campus_map_block_1
+theme: asu_alumni_custom
+region: content
+weight: -17
+provider: null
+plugin: 'views_block:campus_map-block_1'
+settings:
+  id: 'views_block:campus_map-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/6
+    negate: false
+    context_mapping: {  }

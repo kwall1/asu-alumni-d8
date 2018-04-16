@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_partners_carousel
+    - field.field.media.slideshow_slide.field_description
+    - field.field.media.slideshow_slide.field_image
+    - field.field.media.slideshow_slide.field_label
+    - field.field.media.slideshow_slide.field_link
+    - image.style.thumbnail
+    - media_entity.bundle.slideshow_slide
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.slideshow_slide.media_partners_carousel
+targetEntityType: media
+bundle: slideshow_slide
+mode: media_partners_carousel
+content:
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  field_description: true
+  field_label: true
+  moderation_state: true
+  name: true
+  path: true
+  uid: true

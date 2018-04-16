@@ -1,0 +1,73 @@
+/**
+ * @file
+ * View Styles
+ * region-description-view
+ * EX: .sidebar-news-view
+ */
+
+ .view {
+   .views-row {
+     margin-bottom: 20px;
+
+     .field-name-title-field {
+       font-size: 20px;
+       font-weight: bold;
+       a {
+         color: @color-font;
+       }
+     }
+   }
+
+   .view-filters {
+     form label {
+       text-align: left;
+     }
+   }
+ }
+
+ .list-view {
+   .field-name-field-image {
+     float: left;
+     margin-right: 15px;
+   }
+ }
+
+ .grid-view {
+   .views-row {
+     display: inline-block;
+     vertical-align: top;
+     width: 31%;
+     .field-name-field-date,
+     .field-name-field-image {
+       margin-bottom: 10px;
+     }
+     .field-name-field-date {
+       span {
+         color: #999999;
+         .font-size(14px);
+         font-style: italic;
+       }
+     }
+     .field-name-field-image {
+       img {
+         display: block;
+         width: 100%;
+         max-width: 100%;
+         height: auto;
+       }
+     }
+
+     &:nth-child(3n+2){
+       margin-left: 2%;
+       margin-right: 2%;
+     }
+   }
+ }
+
+// Tablet
+@media (min-width: 768px) and (max-width: 959px) {
+}
+
+// Mobile
+@media (max-width: 767px) {
+}

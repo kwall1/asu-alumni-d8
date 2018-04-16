@@ -1,0 +1,5 @@
+services:
+  kwall_migrate.migrate_subscriber:
+    class: Drupal\kwall_migrate\Event\MigrateEvent
+    tags:
+      - { name: event_subscriber }

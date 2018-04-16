@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: quicklink_item
+label: 'Quicklink Item'
+icon_uuid: null
+description: 'Image and Link paragraph Item.'
+behavior_plugins: {  }

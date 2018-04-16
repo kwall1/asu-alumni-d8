@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_image
+third_party_settings:
+  crop:
+    image_field: field_image
+id: content_card
+label: 'Content Card'
+description: 'Contain: Title, Image, Description, Link. Uses in "Chapter Section" paragraph. Appers on "Chapter" content type.'
+type: image
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: field_image
+  gather_exif: true
+field_map: {  }

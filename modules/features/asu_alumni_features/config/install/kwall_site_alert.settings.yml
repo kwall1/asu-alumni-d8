@@ -1,0 +1,40 @@
+kwall_site_alert_active1: true
+kwall_site_alert_severity1: alert-info
+kwall_site_alert_dismiss1: true
+kwall_site_alert_message1:
+  value: "<p><strong>GAME TODAY:&nbsp;</strong>Thursday, August 31 - 7:30 MST <a href=\"http://google.com\" target=\"_blank\">Link</a></p>\r\n"
+  format: full_html
+kwall_site_alert_key1: (s4nKI2@))!a2J;\
+kwall_site_alert_active2: true
+kwall_site_alert_severity2: alert-info
+kwall_site_alert_dismiss2: true
+kwall_site_alert_message2:
+  value: "<p>Test <strong>Info #2&nbsp;</strong>text text text <a href=\"http://google.com\">link</a></p>\r\n"
+  format: full_html
+kwall_site_alert_key2: 'JRz {&[`1#("qt^F'
+kwall_site_alert_active3: true
+kwall_site_alert_severity3: alert-warning
+kwall_site_alert_dismiss3: true
+kwall_site_alert_message3:
+  value: "<p>Test Warning</p>\r\n"
+  format: full_html
+kwall_site_alert_key3: ' m)I+/U\LcwWI''9U'
+kwall_site_alert_active4: true
+kwall_site_alert_severity4: alert-danger
+kwall_site_alert_dismiss4: true
+kwall_site_alert_message4:
+  value: "<p>Test Danger</p>\r\n"
+  format: full_html
+kwall_site_alert_key4: 'A+4;`%xy)SEa&Q-u'
+kwall_site_alert_active5: false
+kwall_site_alert_severity5: ''
+kwall_site_alert_dismiss5: false
+kwall_site_alert_message5:
+  value: ''
+  format: full_html
+kwall_site_alert_key5: '$3O$Iv/L*fDcIS^b'
+kwall_site_alert_expiration1: null
+kwall_site_alert_expiration2: null
+kwall_site_alert_expiration3: null
+kwall_site_alert_expiration4: null
+kwall_site_alert_expiration5: null

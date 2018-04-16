@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_sidebar_cta_p_image
+    - media_entity.bundle.sidebar_cta_image
+    - paragraphs.paragraphs_type.sidebar_cta
+id: paragraph.sidebar_cta.field_sidebar_cta_p_image
+field_name: field_sidebar_cta_p_image
+entity_type: paragraph
+bundle: sidebar_cta
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      sidebar_cta_image: sidebar_cta_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

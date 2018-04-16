@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.field_collection_item.field_email
+    - field_collection.field_collection.field_leadership_contact
+id: field_collection_item.field_leadership_contact.field_email
+field_name: field_email
+entity_type: field_collection_item
+bundle: field_leadership_contact
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

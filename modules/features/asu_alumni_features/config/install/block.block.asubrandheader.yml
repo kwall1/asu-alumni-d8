@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - asu_brand
+    - block_class
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: asubrandheader
+theme: asu_alumni_custom
+region: navigation
+weight: -21
+provider: null
+plugin: asu_brand_header
+settings:
+  id: asu_brand_header
+  label: 'ASU Brand: Header'
+  provider: asu_brand
+  label_display: '0'
+  menu_injection_flag: 1
+  menu_name: main
+  asu_gtm: 1
+  custom_gtm: 0
+  custom_gtm_id: ''
+visibility: {  }

@@ -1,0 +1,193 @@
+/**
+ * $file
+ * wysiwyg
+ *
+ ****
+ *
+ * Floats
+ * Quicklinks
+ * Figures and Tables
+ * Tabs & Accordions
+ *
+ ****
+*/
+
+
+
+
+/****
+ *
+ * Floats
+ *
+ ****/
+.float-left {
+	float: left;
+	margin-right: 2rem;
+}
+
+.float-right {
+	float: right;
+	margin-left: 2rem;
+}
+
+
+
+
+/****
+ *
+ * Figures and Tables
+ *
+ ****/
+figure {
+	display: table;
+	width: -webkit-min-content;
+	width: -moz-min-content;
+	width: min-content;
+	vertical-align: top;
+}
+
+figcaption {
+	background-color: $color-grey-light;
+	font-size: 1.4rem;
+	padding: 1rem;
+	display: table;
+	position: relative;
+	width: 100%;
+}
+
+/* Table */
+table {
+	width: 100%;
+	thead {
+		background: #F5F5F5;
+		color: $color-maroon;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+    }
+	tbody {
+		tr {
+			&:nth-child(even) {
+				background-color: #F5F5F5;
+			}
+
+			&:nth-child(odd) {
+				background-color: #fff;
+			}
+		}
+	}
+	td, th {
+		border-right: 2px solid $color-grey-light;
+		padding: 1.9rem;
+		&:last-child {
+			border-right: none;
+		}
+	}
+}
+
+
+
+
+/****
+ *
+ * Tabs & Accordions
+ *
+ ****/
+
+/* Tabs */
+.ui-tabs.ui-widget {
+	p {
+		margin-top: 0;
+	}
+	ul {
+		margin-bottom: 3.4rem;
+		padding: 0;
+		li {
+			background-color: $color-grey-light;
+			display: inline-block;
+			font-family: $font-family-bold;
+			font-size: 1.8rem;
+			list-style: none;
+			margin: 0 1px;
+			position: relative;
+			text-align: center;
+			a {
+				border-bottom: none;
+				color: $color-body;
+				display: block;
+				padding: 3rem 5.6rem;
+				&:hover {
+					text-decoration: none
+				}
+			}
+			&.ui-tabs-active {
+				background: $color-maroon;
+				a {
+					color: #fff;
+					text-decoration: none;
+				}
+				&:after {
+					border-left: 17.5px solid transparent;
+					border-right: 17.5px solid transparent;
+					border-top: 16px solid $color-maroon;
+					bottom: -16px;
+					content: "";
+					height: 0;
+					position: absolute;
+					left: 50%;
+					transform: translate(-50%);
+					width: 0;
+				}
+			}
+		}
+	}
+}
+
+/* Accordions */
+.ui-accordion.ui-widget {
+	.ui-accordion-header {
+		background: $color-grey-light;
+		font-family: $font-family-bold;
+		font-size: 1.8rem;
+		margin: 0;
+		margin-bottom: 3px;
+		padding: 1.9rem 2.1rem;
+		position: relative;
+		text-align: center;
+		&:hover {
+			cursor: pointer;
+		}
+		&:before {
+			background-color: #fff;
+	    border-radius: 50%;
+	    color: #8C1D40;
+	    content: "+";
+	    font-size: 1.8rem;
+	    height: 28px;
+	    left: 0;
+	    margin: 0 2.1rem;
+	    padding: 1.5px 9.0937px;
+	    position: absolute;
+	    width: 28px;
+		}
+		//active state
+		&.ui-accordion-header-active, &.ui-state-active {
+			background-color: $color-maroon;
+			color: #fff;
+			margin-bottom: 0;
+			&:before {
+				content: "-";
+			}
+		}
+	}
+	.ui-accordion-content {
+		height: auto;
+		padding: 2.5rem 3.8rem;
+	}
+	.ui-accordion-content-active {
+		margin-bottom: 1.6rem;
+		box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+	}
+	p {
+		padding: 1rem;
+	}
+}

@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image_gallery.field_gallery_description
+    - field.field.media.image_gallery.field_gallery_signature
+    - field.field.media.image_gallery.field_image
+    - image.style.thumbnail
+    - media_entity.bundle.image_gallery
+  module:
+    - allowed_formats
+    - field_layout
+    - image
+    - imce
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.image_gallery.default
+targetEntityType: media
+bundle: image_gallery
+mode: default
+content:
+  field_gallery_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
+    type: text_textarea
+    region: content
+  field_gallery_signature:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: false
+    type: image_image
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  uid: true

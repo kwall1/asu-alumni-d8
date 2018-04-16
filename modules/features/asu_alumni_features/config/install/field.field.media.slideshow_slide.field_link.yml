@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_link
+    - media_entity.bundle.slideshow_slide
+  module:
+    - link
+id: media.slideshow_slide.field_link
+field_name: field_link
+entity_type: media
+bundle: slideshow_slide
+label: Link
+description: 'Uses as URL for a slide.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

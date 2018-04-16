@@ -64,9 +64,6 @@ class NodeRevisionsTest extends NodeTestBase {
     $field = FieldConfig::create($field_definition);
     $field->save();
 
-    // Enable translation for page nodes.
-    \Drupal::service('content_translation.manager')->setEnabled('node', 'page', TRUE);
-
     // Create and log in user.
     $web_user = $this->drupalCreateUser(
       [

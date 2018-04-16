@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_css_class
+    - paragraphs.paragraphs_type.bp_simple
+id: paragraph.bp_simple.field_css_class
+field_name: field_css_class
+entity_type: paragraph
+bundle: bp_simple
+label: 'CSS Class'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

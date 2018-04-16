@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph
+    - paragraphs.paragraphs_type.cta_card
+    - paragraphs.paragraphs_type.cta_cards
+  module:
+    - entity_reference_revisions
+id: paragraph.cta_cards.field_paragraph
+field_name: field_paragraph
+entity_type: paragraph
+bundle: cta_cards
+label: 'CTA Cards'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      cta_card: cta_card
+    target_bundles_drag_drop:
+      chapters_cta:
+        weight: 12
+        enabled: false
+      cta_card:
+        enabled: true
+        weight: 13
+      cta_cards:
+        weight: 14
+        enabled: false
+      featured_travel:
+        weight: 15
+        enabled: false
+      grid_cta:
+        weight: 16
+        enabled: false
+      grid_cta_item:
+        weight: 17
+        enabled: false
+      hero_slides:
+        weight: 18
+        enabled: false
+      interior_slideshow:
+        weight: 19
+        enabled: false
+      quicklink_item:
+        weight: 20
+        enabled: false
+      section:
+        weight: 21
+        enabled: false
+      simple:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

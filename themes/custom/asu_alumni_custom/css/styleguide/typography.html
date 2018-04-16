@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<title>ASU Alumni | Styleguide</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="https://fontastic.s3.amazonaws.com/4tEacyM6HcjKSoAvFtbG4c/icons.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://use.fontawesome.com/38eaee5b57.js"></script>
+
+<link href="assets/css/solarized-light.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+	$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(),
+  $( "#tabs" ).tabs(),
+  $( "#accordion" ).accordion();
+});
+</script>
+
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<!--NAVIGATION-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="index.html"><img alt="Brand" src="assets/images/logo.png" width="25"><span>Styleguide</span></a>
+          </div>
+            <a type="button" class="navbar-toggle collapsed btn btn-action" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="colors.html">Colors</a></li>
+                <li><a class="active" href="typography.html">Typography</a></li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="contentlists.html">Content List</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="wysiwyg.html">wysiwyg</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--STYLEGUIDE CONTENT-->
+<div class="wrap">
+<!--TYPOGRAPHY-->
+<div id="typography">
+  <h1 class="style-header">Fonts</h1>
+  <div>
+  	<!-- FONTS -->
+    <div class="bottom-large fonts">
+	  	<div class="columns col-sm-2 ">
+	  		<p class="two-letter body-font-light">Aa</p>
+		  </div>
+		  <div class="columns col-sm-10 body-font-light">
+	    	<p>a b c d e f g h i j k l m n o p q r s t u v w x y z
+	    	<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+	    	<br>1 2 3 4 5 6 7 8 9 0</p>
+	
+	<pre><code class="hljs css">font-family: 'robotolight', Helvetica, Arial, sans-serif;</code></pre>
+	    	</div>
+    	<div class="columns col-sm-2 ">
+    		<p class="two-letter body-font">Aa</p>
+		  </div>
+		  <div class="columns col-sm-10 body-font">
+      	<p>a b c d e f g h i j k l m n o p q r s t u v w x y z
+      	<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+      	<br>1 2 3 4 5 6 7 8 9 0</p>
+
+<pre><code class="hljs css">font-family: 'roboto', Helvetica, Arial, sans-serif;</code></pre>
+      	</div>
+    	<div class="columns col-sm-2 ">
+    		<p class="two-letter header-font">Aa</p>
+		  </div>
+			<div class="columns col-sm-10 header-font">
+	      	<p>a b c d e f g h i j k l m n o p q r s t u v w x y z
+	      	<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+	      	<br>1 2 3 4 5 6 7 8 9 0</p>
+
+<pre><code class="hljs css">font-family: 'robotobold', Helvetica, Arial, sans-serif;</code></pre>
+      	</div>
+    	<div class="columns col-sm-2 ">
+    		<p class="two-letter header-font-black">Aa</p>
+		  </div>
+		<div class="columns col-sm-10 header-font-black">
+      	<p>a b c d e f g h i j k l m n o p q r s t u v w x y z
+      	<br>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+      	<br>1 2 3 4 5 6 7 8 9 0</p>
+
+<pre><code class="hljs css">font-family: 'robotoblack', Helvetica, Arial, sans-serif;</code></pre>
+      	</div>
+   </div><!-- .fonts -->
+	<!-- HEADINGS -->
+    <h1 class="style-header">typography</h1>
+
+    <div class="bottom-large">
+      <div class="columns col-sm-2 ">
+      	<h1>h1</h1>
+      </div>
+      <div class="columns col-sm-10">
+      	<h1>The five boxing wizards jump quickly.</h1>
+<pre><code class="hljs css">font-family: 'roboto', "Helvetica Neue", Helvetica, Arial, sans-serif; <br>font-size: 4.8rem;<br>line-height: 1.2;</code></pre>
+      </div>
+
+      <div class="columns col-sm-2 ">
+      	<h2>h2</h2>
+      </div>
+      <div class="columns col-sm-10">
+      	<h2>The five boxing wizards jump quickly.</h2>
+<pre><code class="hljs css">font-family: 'roboto', "Helvetica Neue", Helvetica, Arial, sans-serif; <br>font-size: 3.6rem;<br>line-height: 1.44;</code></pre>
+      </div>
+
+      <div class="columns col-sm-2 ">
+      	<h3>h3</h3>
+      </div>
+      <div class="columns col-sm-10">
+      	<h3>The five boxing wizards jump quickly.</h3>
+<pre><code class="hljs css">font-family: 'roboto', "Helvetica Neue", Helvetica, Arial, sans-serif; <br>font-size: 2.4rem;<br>line-height: 1.44;</code></pre>
+      </div>
+
+      <div class="columns col-sm-2 ">
+      	<h4>h4</h4>
+      </div>
+      <div class="columns col-sm-10">
+      	<h4>The five boxing wizards jump quickly.</h4>
+<pre><code class="hljs css">font-family: 'roboto', "Helvetica Neue", Helvetica, Arial, sans-serif; <br>font-size: 2.1rem;<br>line-height: 1.44;</code></pre>
+      </div>
+
+      <div class="columns col-sm-2 ">
+      	<h5>h5</h5>
+      </div>
+      <div class="columns col-sm-10">
+      	<h5>The five boxing wizards jump quickly.</h5>
+<pre><code class="hljs css">font-family: 'robotobold', "Helvetica Neue", Helvetica, Arial, sans-serif; <br>font-size: 1.8rem;<br>line-height: 1.44;</code></pre>
+      </div>
+
+      <div class="columns col-sm-2 ">
+      	<h6>h6</h6>
+      </div>
+      <div class="columns col-sm-10">
+      	<h6>The five boxing wizards jump quickly.</h6>
+<pre><code class="hljs css">font-family: 'roboto', "Helvetica Neue", Helvetica, Arial, sans-serif; <br>font-size: 1.4rem;<br>font-style: italic;<br>line-height: 1.44;</code></pre>
+      </div>
+    </div>
+
+	<!-- TEXT STYLES -->
+    <h1 class="style-header">Text styles</h1>
+      <div class="columns col-sm-4 regular">
+      	<h2>Regular</h2>
+      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Inline link text</a> Sed molestie eget mauris at finibus. Praesent quis pretium massa, bibendum consectetur mi. Vivamus a turpis at mauris auctor rutrum sed nec turpis. Nulla facilisi. Praesent commodo ex tortor, et fermentum urna congue ac. Proin vitae lobortis nibh. Curabitur pretium dolor eget placerat blandit. Maecenas et velit in ex laoreet tincidunt.</p><span class="inline-label">HR</span><hr><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie eget mauris at finibus. Praesent quis pretium massa, bibendum consectetur mi.</p>
+        <p class="description">roboto Regular</p>
+      </div>
+
+      <div class="columns col-sm-4 header-font">
+      	<h2 class="header-font">Bold</h2>
+      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Inline link text</a> Sed molestie eget mauris at finibus. Praesent quis pretium massa, bibendum consectetur mi. Vivamus a turpis at mauris auctor rutrum sed nec turpis. Nulla facilisi. Praesent commodo ex tortor, et fermentum urna congue ac. Proin vitae lobortis nibh. Curabitur pretium dolor eget placerat blandit. Maecenas et velit in ex laoreet tincidunt.</p><span class="inline-label">HR</span><hr><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie eget mauris at finibus. Praesent quis pretium massa, bibendum consectetur mi.</p>
+        <p class="description">roboto Bold</p>
+      </div>
+
+      <div class="columns col-sm-4 italic">
+      	<h2>Italic</h2>
+      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Inline link text</a> Sed molestie eget mauris at finibus. Praesent quis pretium massa, bibendum consectetur mi. Vivamus a turpis at mauris auctor rutrum sed nec turpis. Nulla facilisi. Praesent commodo ex tortor, et fermentum urna congue ac. Proin vitae lobortis nibh. Curabitur pretium dolor eget placerat blandit. Maecenas et velit in ex laoreet tincidunt.</p><span class="inline-label">HR</span><hr><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie eget mauris at finibus. Praesent quis pretium massa, bibendum consectetur mi.</p>
+        <p class="description">roboto Italic</p>
+      </div>
+	  <!-- QUOTE -->
+      <h1 class="style-header">Blockquote</h1>
+      <blockquote>
+      	“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie eget mauris at finibus. Praesent quis pretium massa, bibendum consectetur mi. Vivamus a turpis at mauris auctor rutrum sed nec turpis. Nulla facilisi. Praesent commodo ex tortor, et fermentum urna congue ac. Proin vitae lobortis nibh. Curabitur pretium dolor eget placerat blandit. Maecenas et velit in ex laoreet tincidunt.”</p>
+      </blockquote>
+<pre><code class="hljs html"><span>blockquote</span>...<span>/blockquote</span></code></pre>
+
+<!-- LIST STYLES -->
+<h1 class="style-header">List Styles</h1>
+<div class="col-md-6">
+<!-- UNORDERED LIST -->
+<div class="node-page view-mode-full">
+  <ul>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  	<li>Lorem ipsum dolor sit amet, consectetur
+    	<ul>
+				<li>Lorem ipsum dolor sit amet, consectetur
+					<ul>
+						<li>Lorem ipsum dolor sit amet, consectetur
+							<ul>
+								<li>Lorem ipsum dolor sit amet, consectetur </li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+  	</li>
+  </ul>
+</div>
+<br>
+<br>
+<!-- CODE -->
+<pre><code class="hljs html"><<span>ul></span>
+  <<span>li></span>...<<span>/li></span>
+  <<span>li</span>...<<span>/li></span>
+  <<span>li></span>...
+    <<span>ul></span>
+      <<span>li></span>...
+        <<span>ul></span>
+          <<span>li></span>...
+            <<span>ul></span>
+              <<span>li></span>...<<span>/li></span>
+            <<span>/ul></span>
+          <<span>/li></span>
+        <<span>/ul></span>
+      <<span>/li></span>
+    <<span>/ul></span>
+  <<span>/li></span>
+  <<span>li></span>...<<span>/li></span>
+  <<span>li</span>...<<span>/li></span>
+<<span>/ul></span></code></pre>
+</div>
+
+<div class="col-md-6">
+	<!-- ORDERED LIST -->
+<div class="node-page view-mode-full">
+  <ol>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  	<li>Lorem ipsum dolor sit amet, consectetur </li>
+  </ol>
+</div>
+  <br>
+  <br>
+<!-- CODE -->
+<pre><code class="hljs html"><<span>ol></span>
+  <<span>li></span>...<<span>/li></span>
+  <<span>li></span>...<<span>/li></span>
+  <<span>li></span>...<<span>/li></span>
+  <<span>li></span>...<<span>/li></span>
+  <<span>li></span>...<<span>/li></span>
+  <<span>li></span>...<<span>/li></span>
+<<span>/ol></span></code></pre>
+</div>
+</div>
+</div>
+
+</div>
+<footer>
+	<p>Designed by <a href="http://kwallcompany.com">KWALL</a></p>
+</footer>
+</body>
+</html>

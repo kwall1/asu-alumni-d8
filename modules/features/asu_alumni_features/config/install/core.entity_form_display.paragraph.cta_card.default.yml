@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cta_card.field_caption
+    - field.field.paragraph.cta_card.field_image
+    - field.field.paragraph.cta_card.field_link
+    - field.field.paragraph.cta_card.field_title
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.cta_card
+  module:
+    - content_moderation
+    - field_layout
+    - image
+    - layout_discovery
+    - link
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.cta_card.default
+targetEntityType: paragraph
+bundle: cta_card
+mode: default
+content:
+  field_caption:
+    weight: 103
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    weight: 101
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_link:
+    weight: 104
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 102
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

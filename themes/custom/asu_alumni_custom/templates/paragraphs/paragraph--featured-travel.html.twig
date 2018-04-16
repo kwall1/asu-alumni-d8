@@ -1,0 +1,30 @@
+{% extends 'paragraph.html.twig' %}
+{% set bg_img_url = "" %}
+{% set bg_img_url = file_url(content.field_background_image|field_target_entity.uri.value) %}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}><!-- 1 -->
+    {% block content %}
+    <div class="bg-wrapper" style="background: url('{{ file_url(content.field_background_image|field_target_entity.uri.value) }}') center center no-repeat;"><!-- 2 -->
+      <div class="outer-wrapper"><!-- 3 -->
+        <div class="featured-travel-wrapper"><!-- 4 -->
+          {{ content.field_image }}
+           <div class="wrapper"><!-- 5 -->
+             <div class="text-wrapper"><!-- 6 -->
+              	<h3 class="paragraph-title">{{ content.field_title.0 }}</h3>
+                <p class="paragraph-description">{{ content.field_paragraph_caption.0 }}</p>
+
+                {{ content.field_link }}
+
+                {% if content.field_featured_travel|render|trim %}
+                  <label>Featured</label>
+                  {{ content.field_featured_travel }}
+                {% endif %}
+             </div><!-- 6 -->
+           </div><!-- 5 -->
+        </div><!-- 4 -->
+      </div><!-- 3 -->
+    </div><!-- 2 -->
+    {% endblock %}
+  </div><!-- 1 -->
+{% endblock paragraph %}

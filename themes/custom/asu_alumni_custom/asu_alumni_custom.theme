@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Bootstrap sub-theme.
+ *
+ * Place your custom PHP code in this file.
+ */
+
+/**
+ * Implements template_preprocess_paragraph.
+ */
+function asu_alumni_custom_preprocess_paragraph(&$variables) {
+
+  switch ($variables['elements']['#paragraph']->getParagraphType()->id()) {
+    case 'slideshow':
+      $variables['content']['field_slide']['#attached']['library'][] = 'asu_alumni_custom/flexslider';
+
+      break;
+    case 'partners_carousel':
+    case 'gallery':
+      $variables['content']['field_slide']['#attached']['library'][] = 'asu_alumni_custom/slick';
+
+      break;
+
+    case 'simple':
+
+      break;
+
+    case 'chapters_cta':
+      $variables['content']['chapter_near_you'] = views_embed_view('chapter_near_you', 'home_page');
+
+      break;
+  }
+}
+
+function asu_alumni_custom_preprocess_html(&$vars) {
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    $vars['attributes']['class'][] = 'page-node-' . $node->id();
+  }
+}

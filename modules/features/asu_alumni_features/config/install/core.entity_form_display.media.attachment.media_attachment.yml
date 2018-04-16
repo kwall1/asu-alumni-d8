@@ -1,0 +1,40 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_attachment
+    - field.field.media.attachment.field_attachment
+    - media_entity.bundle.attachment
+  module:
+    - field_layout
+    - file
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.attachment.media_attachment
+targetEntityType: media
+bundle: attachment
+mode: media_attachment
+content:
+  field_attachment:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  uid: true

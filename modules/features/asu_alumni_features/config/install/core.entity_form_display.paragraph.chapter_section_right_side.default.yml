@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_chapter_right_section
+    - field.field.paragraph.chapter_section_right_side.field_content_card_right
+    - field.field.paragraph.chapter_section_right_side.field_title
+    - paragraphs.paragraphs_type.chapter_section_right_side
+  module:
+    - entity_browser_entity_form
+    - field_layout
+    - inline_entity_form
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.chapter_section_right_side.default
+targetEntityType: paragraph
+bundle: chapter_section_right_side
+mode: default
+content:
+  field_content_card_right:
+    weight: 2
+    settings:
+      form_mode: media_chapter_right_section
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

@@ -1,0 +1,298 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_event
+    - field.field.node.event.body
+    - field.field.node.event.field_add_to_calendar
+    - field.field.node.event.field_chapter_type
+    - field.field.node.event.field_end_event_date
+    - field.field.node.event.field_event_category
+    - field.field.node.event.field_event_contact_email
+    - field.field.node.event.field_event_contact_name
+    - field.field.node.event.field_event_contact_phone_number
+    - field.field.node.event.field_event_image
+    - field.field.node.event.field_event_link
+    - field.field.node.event.field_event_location
+    - field.field.node.event.field_event_type
+    - field.field.node.event.field_event_url
+    - field.field.node.event.field_featured
+    - field.field.node.event.field_geolocation
+    - field.field.node.event.field_information_contact
+    - field.field.node.event.field_is_alumni
+    - field.field.node.event.field_mapping_nid
+    - field.field.node.event.field_signature_events
+    - field.field.node.event.field_start_event_date
+    - node.type.event
+  module:
+    - address
+    - addtocalendar
+    - chosen_field
+    - content_moderation
+    - datetime
+    - entity_browser_entity_form
+    - field_layout
+    - geolocation
+    - inline_entity_form
+    - kwall_custom
+    - paragraphs
+    - path
+    - scheduler
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_asu
+    settings: {  }
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 8
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: main
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  field_add_to_calendar:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: add_to_calendar_widget_type
+    region: second_sidebar
+  field_chapter_type:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: main
+  field_end_event_date:
+    type: datetime_default
+    weight: 5
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  field_event_category:
+    weight: 6
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: main
+  field_event_image:
+    weight: 3
+    settings:
+      form_mode: media_event
+      override_labels: true
+      label_singular: 'Event Image'
+      label_plural: 'Event Image'
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: main
+  field_event_link:
+    type: entity_reference_paragraphs
+    weight: 23
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: event_url
+    third_party_settings: {  }
+    region: second_sidebar
+  field_event_location:
+    weight: 20
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: main
+  field_event_type:
+    weight: 19
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: main
+  field_featured:
+    weight: 27
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: other
+  field_geolocation:
+    weight: 21
+    settings:
+      default_longitude: ''
+      default_latitude: ''
+      populate_address_field: '1'
+      target_address_field: field_event_location
+      explicite_actions_address_field: '1'
+      google_map_settings:
+        height: 400px
+        width: 100%
+        type: ROADMAP
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: ''
+        disableAutoPan: 1
+        rotateControl: 0
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      auto_client_location: '0'
+      auto_client_location_marker: '0'
+      allow_override_map_settings: 0
+    third_party_settings: {  }
+    type: geolocation_googlegeocoder
+    region: main
+  field_information_contact:
+    type: entity_reference_paragraphs
+    weight: 25
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: button
+      form_display_mode: short
+      default_paragraph_type: leadership_and_contact
+    third_party_settings: {  }
+    region: second_sidebar
+  field_is_alumni:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: main
+  field_mapping_nid:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: main
+  field_signature_events:
+    type: entity_reference_paragraphs
+    weight: 26
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: button
+      form_display_mode: no_icon
+      default_paragraph_type: quicklinks
+    third_party_settings: {  }
+    region: second_sidebar
+  field_start_event_date:
+    type: datetime_default
+    weight: 4
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 17
+    settings: {  }
+    region: main
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 14
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 11
+    region: main
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 15
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 13
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 18
+    region: main
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: main
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 2
+    region: main
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: main
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 16
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 22
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_event_contact_email: true
+  field_event_contact_name: true
+  field_event_contact_phone_number: true
+  field_event_url: true

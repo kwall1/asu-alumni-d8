@@ -11,14 +11,10 @@
 
 namespace Symfony\Component\ClassLoader;
 
-@trigger_error('The '.__NAMESPACE__.'\ClassMapGenerator class is deprecated since Symfony 3.3 and will be removed in 4.0. Use Composer instead.', E_USER_DEPRECATED);
-
 /**
  * ClassMapGenerator.
  *
  * @author Gyula Sallai <salla016@gmail.com>
- *
- * @deprecated since version 3.3, to be removed in 4.0.
  */
 class ClassMapGenerator
 {
@@ -62,7 +58,7 @@ class ClassMapGenerator
 
             $path = $file->getRealPath() ?: $file->getPathname();
 
-            if ('php' !== pathinfo($path, PATHINFO_EXTENSION)) {
+            if (pathinfo($path, PATHINFO_EXTENSION) !== 'php') {
                 continue;
             }
 

@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.slideshow_slide.field_description
+    - field.field.media.slideshow_slide.field_image
+    - field.field.media.slideshow_slide.field_label
+    - field.field.media.slideshow_slide.field_link
+    - image.style.flexslider_full
+    - media_entity.bundle.slideshow_slide
+  module:
+    - fences
+    - image
+    - link
+id: media.slideshow_slide.default
+targetEntityType: media
+bundle: slideshow_slide
+mode: default
+content:
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: flexslider_full
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+  field_label:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

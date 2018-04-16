@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 40
+template: false
+id: update_your_information
+title: 'Update your information'
+description: ''
+category: ''
+elements: "header:\n  '#type': processed_text\n  '#text': \"<p>Please fill out and submit the form below, and you’ll stay up to date on what’s happening at Arizona State University. We’ll send you the latest issue of ASU Thrive Magazine, and you’ll receive exclusive invites to special events and have access to the countless perks of being a Sun Devil.</p>\\n\"\n  '#format': full_html\ncontact_information:\n  '#type': webform_contact\n  '#title': 'Contact Information'\n  '#name__required': true\n  '#company__access': false\n  '#email__required': true\n  '#address__required': true\n  '#address_2__access': false\n  '#city__required': true\n  '#state_province__required': true\n  '#postal_code__required': true\n  '#country__required': true\ndate_of_birth:\n  '#type': date\n  '#title': 'Date of birth'\nare_you_currently_employed_:\n  '#type': radios\n  '#title': 'Are you currently employed?'\n  '#options': yes_no\nhave_you_served_in_the_united_states_military_:\n  '#type': radios\n  '#title': 'Have you served in the United States military?'\n  '#options': yes_no\nfamily_information:\n  '#type': processed_text\n  '#text': \"<h1>Family information</h1>\\r\\n\"\n  '#format': full_html\nspouse_name:\n  '#type': textfield\n  '#title': 'Spouse name'\nwhat_family_members_attended_or_attend_asu_:\n  '#type': checkboxes\n  '#title': 'What family members attended or attend ASU?'\n  '#options':\n    Spouse: Spouse\n    Parent(s): Parent(s)\n    Sibling(s): Sibling(s)\n    Child(ren): Child(ren)\n    Other: Other\ndetails:\n  '#type': textarea\n  '#title': Details\n  '#placeholder': 'Provide name and graduation year'\nsocial_media:\n  '#type': processed_text\n  '#text': \"<h1>Social media</h1>\\r\\n\\r\\n<p>We ask for your social media information so we can better serve and update you through social media channels.</p>\\r\\n\"\n  '#format': full_html\ntwitter_handle:\n  '#type': textfield\n  '#title': 'Twitter handle'\n  '#placeholder': 'E.g., @SparkyArizonaSt'\nfacebook_url:\n  '#type': textfield\n  '#title': 'Facebook URL'\n  '#placeholder': 'E.g., https://www.facebook.com/SparkyArizonaSt'\ninstagram_handle:\n  '#type': textfield\n  '#title': 'Instagram handle'\n  '#placeholder': ' E.g., @asu_alumni'\nlinkedin_url:\n  '#type': textfield\n  '#title': 'LinkedIn URL'\n  '#placeholder': 'E.g., https://www.linkedin.com/in/jane-doe-123/'\ninterests:\n  '#type': processed_text\n  '#text': \"<h1>Interests</h1>\\n\\n<p>We ask for your social media information so we can better serve and update you through social media channels.</p>\\n\"\n  '#format': full_html\ninterests_update:\n  '#type': checkboxes\n  '#title': Interests\n  '#options':\n    'Local alumni chapters': 'Local alumni chapters'\n    'Alumni mentorship programs': 'Alumni mentorship programs'\n    'Career services': 'Career services'\n    'ASU Athletics': 'ASU Athletics'\n    'Continuing education': 'Continuing education'\n    'ASU Travel and Tours': 'ASU Travel and Tours'\n    'Special offers': 'Special offers'\n    'Donate to ASU': 'Donate to ASU'\nclass_notes:\n  '#type': processed_text\n  '#text': \"<h1>Class Notes</h1>\\n\\n<p>Do you have any recent accomplishments or life events (marriage, baby announcement, job change) you’d like to share with your ASU community? Submit a brief update along with a photo for a chance to be featured in the Alumni Class Notes section of ASU Thrive Magazine.</p>\\n\"\n  '#format': full_html\nyour_update:\n  '#type': textarea\n  '#title': 'Your update'\nphoto:\n  '#type': webform_image_file\n  '#title': Photo\n  '#max_filesize': '1'\n  '#file_extensions': 'jpg jpeg tif'\nfooter:\n  '#type': processed_text\n  '#text': \"<p>I grant permission to the Arizona Board of Regents, a body corporate, for and on behalf of Arizona State University, and its agents and employees (ASU), the absolute right to use, not use, reuse, publish, republish and make derivative works of, all or any part of photographs and/or motion pictures and/or voice recordings and/or written/spoken statements taken of me on the date(s) and at the location(s) listed below (the Photos/Recordings), in any media now or hereafter known, including the internet, for the purpose set forth below, and for any related ASU purposes, including illustration, promotion, art, editorial, and advertising, without restriction. I waive any right to inspect or approve the Photos/Recordings, or any uses thereof, now or in the future, and I waive any right to royalties or other compensation arising from or related to the use of the Photos/Recordings. I release and discharge ASU of and from any claims, demands, and damages that may arise from or related to the use of the Photos/Recordings, including any claims for libel or violation of any right of publicity or privacy, and including any re-use, distortion, blurring, alteration, or use in composite form. It is in the discretion of ASU to decide whether and how to use the Photos/Recordings. This Release will be binding upon me and my heirs, legal representatives, and assigns. Unless my parent or guardian signs where indicated on the signature lines below, I certify that I am 18 years of age or older, and I am competent to contract in my own name. I have read this Release and I fully understand the contents, meaning, and impact of this Release. For subjects of the Photos/Recordings who are under 18, this Release must be signed by both the minor subject and his/her parent or guardian. By signing, the parent or guardian attests that he/she is competent to contract in her/his own name, has read this Release, and fully understand the contents, meaning, and impact of this Release.</p>\\n\"\n  '#format': full_html\ni_agree_with_the_above_disclaimer_:\n  '#type': radios\n  '#title': 'I agree with the above disclaimer.'\n  '#options': yes_no\n  '#required': true\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

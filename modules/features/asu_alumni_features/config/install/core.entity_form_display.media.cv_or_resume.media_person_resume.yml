@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_person_resume
+    - field.field.media.cv_or_resume.field_cv_or_resume
+    - media_entity.bundle.cv_or_resume
+  module:
+    - field_layout
+    - file
+    - imce
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.cv_or_resume.media_person_resume
+targetEntityType: media
+bundle: cv_or_resume
+mode: media_person_resume
+content:
+  field_cv_or_resume:
+    type: file_generic
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  uid: true

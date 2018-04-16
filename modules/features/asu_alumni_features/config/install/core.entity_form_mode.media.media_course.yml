@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.media_course
+label: 'Media Course'
+targetEntityType: media
+cache: true

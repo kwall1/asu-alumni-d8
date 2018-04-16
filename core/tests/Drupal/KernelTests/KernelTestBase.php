@@ -251,7 +251,7 @@ abstract class KernelTestBase extends TestCase implements ServiceProviderInterfa
    * Should not be called by tests. Only visible for DrupalKernel integration
    * tests.
    *
-   * @see \Drupal\KernelTests\Core\DrupalKernel\DrupalKernelTest
+   * @see \Drupal\system\Tests\DrupalKernel\DrupalKernelTest
    * @internal
    */
   protected function bootEnvironment() {

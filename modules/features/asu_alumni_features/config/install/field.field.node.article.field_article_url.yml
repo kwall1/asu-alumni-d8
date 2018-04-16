@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_url
+    - node.type.article
+  module:
+    - link
+id: node.article.field_article_url
+field_name: field_article_url
+entity_type: node
+bundle: article
+label: 'Article URL'
+description: 'Link to an external article. Add link text to specify what the link URL should say.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:e89b3f59-4be2-4501-9a4a-d29a63bb8c10'
+id: partners_carousel
+label: 'Partners Carousel'
+icon_uuid: e89b3f59-4be2-4501-9a4a-d29a63bb8c10
+description: 'Used e.g. in Travel content type.'
+behavior_plugins: {  }

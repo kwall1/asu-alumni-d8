@@ -1,0 +1,11 @@
+name: 'Wysiwyg Template Plugin'
+description: 'Makes the template features for TinyMCE, CK Editor and FCK Editor available to the Wysiwyg API'
+# core: 8.x
+package: 'User interface'
+type: module
+
+# Information added by Drupal.org packaging script on 2016-05-27
+version: '8.x-2.x-dev'
+core: '8.x'
+project: 'wysiwyg_template'
+datestamp: 1464366843

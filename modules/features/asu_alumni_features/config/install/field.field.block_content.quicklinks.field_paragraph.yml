@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.quicklinks
+    - field.storage.block_content.field_paragraph
+    - paragraphs.paragraphs_type.quicklink_item
+  module:
+    - entity_reference_revisions
+id: block_content.quicklinks.field_paragraph
+field_name: field_paragraph
+entity_type: block_content
+bundle: quicklinks
+label: 'Quicklink Items'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      quicklink_item: quicklink_item
+    target_bundles_drag_drop:
+      quicklink_item:
+        enabled: true
+        weight: 3
+      hero_slides:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

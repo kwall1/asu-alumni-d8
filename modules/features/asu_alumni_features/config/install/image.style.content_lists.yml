@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: content_lists
+label: 'Content Lists'
+effects:
+  24a0e800-1c62-41eb-9221-3c25a02d92d6:
+    uuid: 24a0e800-1c62-41eb-9221-3c25a02d92d6
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 283
+      height: 167

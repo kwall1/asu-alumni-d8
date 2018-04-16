@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_slideshow
+    - node.type.page
+    - paragraphs.paragraphs_type.interior_slideshow
+  module:
+    - entity_reference_revisions
+id: node.page.field_hero_slideshow
+field_name: field_hero_slideshow
+entity_type: node
+bundle: page
+label: 'Hero Slideshow'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      interior_slideshow: interior_slideshow
+    target_bundles_drag_drop:
+      chapters_cta:
+        weight: 9
+        enabled: false
+      featured_travel:
+        weight: 10
+        enabled: false
+      grid_cta:
+        weight: 11
+        enabled: false
+      grid_cta_item:
+        weight: 12
+        enabled: false
+      hero_slides:
+        weight: 13
+        enabled: false
+      quicklink_item:
+        weight: 14
+        enabled: false
+      interior_slideshow:
+        enabled: true
+        weight: 15
+      section:
+        weight: 15
+        enabled: false
+      simple:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

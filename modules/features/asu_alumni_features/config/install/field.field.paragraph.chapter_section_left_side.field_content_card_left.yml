@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_card_left
+    - media_entity.bundle.content_card
+    - paragraphs.paragraphs_type.chapter_section_left_side
+id: paragraph.chapter_section_left_side.field_content_card_left
+field_name: field_content_card_left
+entity_type: paragraph
+bundle: chapter_section_left_side
+label: 'Content Card'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      content_card: content_card
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

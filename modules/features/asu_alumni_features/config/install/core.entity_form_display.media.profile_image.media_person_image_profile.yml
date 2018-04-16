@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_person_image_profile
+    - field.field.media.profile_image.field_profile_image
+    - image.style.thumbnail
+    - media_entity.bundle.profile_image
+  module:
+    - field_layout
+    - image
+    - imce
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.profile_image.media_person_image_profile
+targetEntityType: media
+bundle: profile_image
+mode: media_person_image_profile
+content:
+  field_profile_image:
+    weight: 1
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  uid: true

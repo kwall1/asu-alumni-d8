@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: featured_travel_background
+label: 'Featured Travel Background'
+effects:
+  22a74b0c-bacb-40e2-929d-02d159a70c2c:
+    uuid: 22a74b0c-bacb-40e2-929d-02d159a70c2c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1098
+      height: 648
+      crop_type: focal_point

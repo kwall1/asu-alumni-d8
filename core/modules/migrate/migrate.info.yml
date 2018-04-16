@@ -1,6 +1,6 @@
 name: Migrate
 type: module
 description: 'Handles migrations'
-package: Migration
+package: Core (Experimental)
 version: VERSION
 core: 8.x

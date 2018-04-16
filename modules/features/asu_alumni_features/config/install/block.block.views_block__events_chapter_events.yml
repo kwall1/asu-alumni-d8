@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - block_class
+    - node
+    - views
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: views_block__events_chapter_events
+theme: asu_alumni_custom
+region: content
+weight: -16
+provider: null
+plugin: 'views_block:events-chapter_events'
+settings:
+  id: 'views_block:events-chapter_events'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      chapter: chapter
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

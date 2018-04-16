@@ -1,0 +1,42 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_travel
+    - field.field.media.image_travel.field_travel_image
+    - image.style.thumbnail
+    - media_entity.bundle.image_travel
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.image_travel.media_travel
+targetEntityType: media
+bundle: image_travel
+mode: media_travel
+content:
+  field_travel_image:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  uid: true

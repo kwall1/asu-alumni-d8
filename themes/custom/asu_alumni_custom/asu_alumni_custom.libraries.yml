@@ -1,0 +1,43 @@
+global-styling:
+  css:
+    theme:
+      fonts/stylesheet.css: {}
+      css/style.css: {}
+
+slick:
+  remote: http://kenwheeler.github.io/slick/
+  version: 1.x
+  license:
+    name: MIT
+    url: https://github.com/kenwheeler/slick/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    /libraries/slick/slick/slick.min.js: { weight: -3, minified: true }
+  css:
+    base:
+      /libraries/slick/slick/slick.css: {}
+  dependencies:
+    - core/jquery
+
+flexslider:
+  remote: http://flexslider.woothemes.com
+  license:
+    name: GNU-GPL-2.0-or-later
+    url: https://github.com/woothemes/FlexSlider/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    /libraries/flexslider/jquery.flexslider-min.js: { minified: true }
+  css:
+    component:
+      /libraries/flexslider/flexslider.css: {}
+
+js-scripts:
+  js:
+    css/styleguide/assets/scripts/highlight.js: {}
+    js/scripts.js: {}
+    js/hero_slideshow.js: {}
+
+#fontawesome:
+#  css:
+#    theme:
+#      https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.8/css/font-awesome.min.css: {}

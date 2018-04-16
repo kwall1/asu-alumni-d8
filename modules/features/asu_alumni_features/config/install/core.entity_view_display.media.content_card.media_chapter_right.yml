@@ -1,0 +1,68 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_chapter_right
+    - field.field.media.content_card.field_description
+    - field.field.media.content_card.field_image
+    - field.field.media.content_card.field_label
+    - field.field.media.content_card.field_link
+    - image.style.chapter_section_right_side
+    - media_entity.bundle.content_card
+  module:
+    - fences
+    - image
+    - link
+id: media.content_card.media_chapter_right
+targetEntityType: media
+bundle: content_card
+mode: media_chapter_right
+content:
+  field_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: chapter_section_right_side
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+  field_label:
+    type: string
+    weight: 7
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

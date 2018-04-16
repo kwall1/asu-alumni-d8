@@ -1,0 +1,102 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full_html
+  module:
+    - ckeditor
+    - editor_file
+third_party_settings:
+  editor_file:
+    status: true
+    scheme: public
+    directory: inline-files
+    extensions: 'txt pdf doc docx ppt pptx pdfx zip'
+format: full_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Italic
+            - Underline
+            - Strike
+            - Superscript
+            - Subscript
+            - '-'
+            - RemoveFormat
+            - SpecialChar
+        -
+          name: Linking
+          items:
+            - Anchor
+            - DrupalFile
+            - Linkit
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Embed
+            - Blockquote
+            - DrupalImage
+            - ImceImage
+            - node
+            - video_embed
+            - Table
+            - HorizontalRule
+            - medias
+        -
+          name: 'Block Formatting'
+          items:
+            - Format
+        -
+          name: Tools
+          items:
+            - ShowBlocks
+            - TemplateSelector
+            - Source
+            - file_browser
+            - Boxout
+        -
+          name: Align
+          items:
+            - Indent
+            - Outdent
+            - JustifyLeft
+            - JustifyBlock
+            - JustifyCenter
+            - JustifyRight
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    autoembed:
+      status: ''
+    linkit:
+      linkit_profile: internal_links
+    video_embed:
+      defaults:
+        children:
+          autoplay: true
+          responsive: true
+          width: '854'
+          height: '480'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

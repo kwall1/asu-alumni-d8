@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image_blog_post.field_featured_image
+    - image.style.event_slide
+    - media_entity.bundle.image_blog_post
+  module:
+    - fences
+    - image
+id: media.image_blog_post.default
+targetEntityType: media
+bundle: image_blog_post
+mode: default
+content:
+  field_featured_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: event_slide
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

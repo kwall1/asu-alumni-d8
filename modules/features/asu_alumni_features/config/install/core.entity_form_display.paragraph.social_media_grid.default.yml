@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_media_grid.field_social_media_grid
+    - paragraphs.paragraphs_type.social_media_grid
+  module:
+    - content_moderation
+    - field_layout
+    - layout_discovery
+    - viewfield
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.social_media_grid.default
+targetEntityType: paragraph
+bundle: social_media_grid
+mode: default
+content:
+  field_social_media_grid:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

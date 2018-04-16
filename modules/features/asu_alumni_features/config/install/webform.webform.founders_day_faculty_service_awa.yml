@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 55
+template: false
+id: founders_day_faculty_service_awa
+title: 'Founders'' Day Faculty Service Award Nomination Form'
+description: ''
+category: ''
+elements: "processed_text:\n  '#type': processed_text\n  '#text': \"<h1>Founders' Day Faculty Service Award Nomination Form</h1>\\r\\n\\r\\n<p>The Faculty Service Award is presented to an ASU Faculty member whose service to the University and/or the community has made a significant impact and contributed to the evolution of ASU as the New American University. &nbsp;The award is presented at the annual Founders’ Day Dinner celebration held at the Arizona Biltmore.</p>\\r\\n\\r\\n<p><strong>Selection Criteria</strong></p>\\r\\n\\r\\n<p><br />\\r\\nSince the service awards primarily recognize excellence and professional accomplishment, a nominee is judged by:</p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>Service as a full-time ASU faculty member for at least five (5) years.</li>\\r\\n\\t<li>Service to Arizona State University and/or the community.</li>\\r\\n\\t<li>Beneficial service to students.</li>\\r\\n\\t<li>Useful service to others.</li>\\r\\n\\t<li>Significant contribution.</li>\\r\\n\\t<li>Participation in professional organizations, including any offices held.</li>\\r\\n</ul>\\r\\n\\r\\n<p><strong>Supporting Documentation</strong><br />\\r\\nAll applicants must submit the following&nbsp;<u><strong>as one document</strong></u>&nbsp;in order to be considered for the award:</p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>A minimum/maximum of two (2) to six (6) letters of recommendation including letters from students, faculty, and alumni.</li>\\r\\n\\t<li>A vita/résumé of the nominee</li>\\r\\n</ul>\\r\\n\\r\\n\\r\\nNominee Information\"\n  '#format': full_html\nname:\n  '#type': textfield\n  '#title': Name\n  '#required': true\naddress:\n  '#type': textfield\n  '#title': Address\n  '#required': true\ncity:\n  '#type': textfield\n  '#title': City\n  '#required': true\nstate:\n  '#type': textfield\n  '#title': State\n  '#required': true\nbusiness_phone:\n  '#type': textfield\n  '#title': 'Business Phone'\n  '#required': true\ne_mail:\n  '#type': textfield\n  '#title': E-mail\n  '#required': true\nyear_graduated_from_asu:\n  '#type': textfield\n  '#title': 'Year graduated from ASU'\n  '#required': true\nprocessed_text_01:\n  '#type': processed_text\n  '#text': \"<p>Nominator Information</p>\\r\\n\"\n  '#format': full_html\nnominated_by:\n  '#type': textfield\n  '#title': 'Nominated by'\n  '#required': true\naddress2:\n  '#type': textfield\n  '#title': Address\n  '#required': true\ncity2:\n  '#type': textfield\n  '#title': City\n  '#required': true\nstate2:\n  '#type': textfield\n  '#title': State\n  '#required': true\nzip2:\n  '#type': textfield\n  '#title': 'Zip '\n  '#required': true\nbusiness_phone2:\n  '#type': textfield\n  '#title': 'Business Phone'\n  '#required': true\ne_mail2:\n  '#type': textfield\n  '#title': 'E-mail '\n  '#required': true\nby_clicking_yes_and_no:\n  '#type': radios\n  '#title': 'By clicking \"yes,\" applicants agree to abide by the rules set forth for this award program and agree to accept the awards committee’s decision. Applicants also agree to attest that the information reported in this form and supplied in the supporting documents is true and correct.'\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\nsupporting_documentation:\n  '#type': webform_document_file\n  '#title': 'Supporting Documentation'\n  '#required': true\ncaptcha:\n  '#type': captcha\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

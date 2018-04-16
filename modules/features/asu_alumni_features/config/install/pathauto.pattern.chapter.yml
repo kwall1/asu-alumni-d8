@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: chapter
+label: Chapter
+type: 'canonical_entities:node'
+pattern: 'chapter/[node:title]'
+selection_criteria:
+  73c63631-bbbd-45d2-b453-b414e2f99c08:
+    id: node_type
+    bundles:
+      chapter: chapter
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 73c63631-bbbd-45d2-b453-b414e2f99c08
+selection_logic: and
+weight: -5
+relationships: {  }

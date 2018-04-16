@@ -1,0 +1,268 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_person_image_profile
+    - field.field.node.person.body
+    - field.field.node.person.field_courses_taught
+    - field.field.node.person.field_cv_or_resume
+    - field.field.node.person.field_email
+    - field.field.node.person.field_employee_id
+    - field.field.node.person.field_facebook
+    - field.field.node.person.field_instagram
+    - field.field.node.person.field_linkedin
+    - field.field.node.person.field_name
+    - field.field.node.person.field_office_hours
+    - field.field.node.person.field_person_address
+    - field.field.node.person.field_person_awards
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_education
+    - field.field.node.person.field_phone_number
+    - field.field.node.person.field_prof
+    - field.field.node.person.field_profile_image
+    - field.field.node.person.field_twitter
+    - field.field.node.person.field_web_address
+    - node.type.person
+  module:
+    - address
+    - content_moderation
+    - entity_browser_entity_form
+    - field_layout
+    - inline_entity_form
+    - layout_discovery
+    - link
+    - name
+    - office_hours
+    - path
+    - scheduler
+    - telephone
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 8
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_courses_taught:
+    weight: 21
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_cv_or_resume:
+    weight: 26
+    settings:
+      form_mode: media_person_resume
+      override_labels: true
+      label_singular: 'CV or Resume'
+      label_plural: 'CV or Resume'
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_email:
+    weight: 11
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_employee_id:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_facebook:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_instagram:
+    weight: 18
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_linkedin:
+    weight: 15
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_name:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: name_default
+    region: content
+  field_office_hours:
+    weight: 19
+    settings: {  }
+    third_party_settings: {  }
+    type: office_hours_default
+    region: content
+  field_person_address:
+    weight: 12
+    settings:
+      default_country: null
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_person_awards:
+    weight: 20
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_person_department:
+    weight: 25
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_person_education:
+    weight: 22
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_phone_number:
+    weight: 13
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_prof:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_profile_image:
+    weight: 27
+    settings:
+      form_mode: media_person_image_profile
+      override_labels: true
+      label_singular: 'Profile Image'
+      label_plural: 'Profile Image'
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_twitter:
+    weight: 16
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_web_address:
+    weight: 14
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 6
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 4
+    region: content
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  title: true

@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_slideshow
+    - field.field.block_content.hero_slideshow.body
+    - field.field.block_content.hero_slideshow.field_hero_slides
+    - field.field.block_content.hero_slideshow.field_view
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+    - viewfield
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: block_content.hero_slideshow.default
+targetEntityType: block_content
+bundle: hero_slideshow
+mode: default
+content:
+  field_hero_slides:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_view:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
+  moderation_state: true

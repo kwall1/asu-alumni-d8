@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_slideshow_field
+    - media_entity.bundle.document
+    - media_entity.bundle.facebook
+    - media_entity.bundle.image
+    - media_entity.bundle.instagram
+    - media_entity.bundle.slideshow
+    - media_entity.bundle.twitter
+    - media_entity.bundle.video
+id: media.slideshow.field_slideshow_field
+field_name: field_slideshow_field
+entity_type: media
+bundle: slideshow
+label: 'Slideshow Field'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+      facebook: facebook
+      image: image
+      instagram: instagram
+      twitter: twitter
+      video: video
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: document
+field_type: entity_reference

@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: chapter_section_left_side
+label: 'Chapter Section - Left Side'
+effects:
+  cc33288b-37c0-4144-a663-6652cc041089:
+    uuid: cc33288b-37c0-4144-a663-6652cc041089
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 282
+      height: 185
+      crop_type: focal_point

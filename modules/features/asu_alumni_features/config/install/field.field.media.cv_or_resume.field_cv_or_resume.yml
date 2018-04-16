@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_cv_or_resume
+    - media_entity.bundle.cv_or_resume
+  module:
+    - file
+id: media.cv_or_resume.field_cv_or_resume
+field_name: field_cv_or_resume
+entity_type: media
+bundle: cv_or_resume
+label: 'CV or Resume'
+description: 'Upload CV or Resume'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'resume/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf pdfx xpdf doc docx zip'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

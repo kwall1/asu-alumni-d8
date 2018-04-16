@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: featured_list
+label: 'Featured List (793 x 482)'
+effects:
+  25eb7a08-f96f-4b36-9d8f-2982c07038d8:
+    uuid: 25eb7a08-f96f-4b36-9d8f-2982c07038d8
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 793
+      height: 482
+      crop_type: focal_point

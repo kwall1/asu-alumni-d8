@@ -1260,7 +1260,7 @@ function archiver_get_extensions() {
  */
 function archiver_get_archiver($file) {
   // Archivers can only work on local paths
-  $filepath = \Drupal::service('file_system')->realpath($file);
+  $filepath = drupal_realpath($file);
   if (!is_file($filepath)) {
     throw new Exception(t('Archivers can only operate on local files: %file not supported', ['%file' => $file]));
   }

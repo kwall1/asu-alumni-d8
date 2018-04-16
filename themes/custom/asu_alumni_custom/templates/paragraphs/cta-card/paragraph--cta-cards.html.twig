@@ -1,0 +1,11 @@
+{% extends 'paragraph.html.twig' %}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+        <div class="row">
+          {{ content }}
+        </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,170 @@
+<?php
+
+/**
+ * @file
+ * Contains kwall_news_feed.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use \Drupal\media_entity\Entity\Media;
+
+/**
+ * Implements hook_help().
+ */
+function kwall_news_feed_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the kwall_news_feed module.
+        case 'help.page.kwall_news_feed':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Import News Feed from ASU Now') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * Save content at midnight.
+ * Implements hook_cron().
+ */
+function kwall_news_feed_cron()
+{
+    $config = \Drupal::config('kwall_news_feed.newsfeed');
+    // if (date('G') == 0) {
+    if ($config->get('active_schedule') == 1) {
+        pullContent();
+        //   }
+    }
+}
+
+/**
+ * Save content in db.
+ */
+function pullContent()
+{
+
+    $config = \Drupal::config('kwall_news_feed.newsfeed');
+    if (!empty($config->get('json_url'))) {
+        $feeds_content = file_get_contents($config->get('json_url'));
+        $data = json_decode($feeds_content, true);
+        if (!empty($config->get('limit')) && $config->get('limit') > 0) {
+            $limit = $config->get('limit');
+        } else {
+            $limit = count($data['nodes']);
+        }
+        if (isset($data['nodes'])) {
+
+            $all_data = getNodesFromJsonUrl($data['nodes'], $limit);
+            foreach ($all_data as $item) {
+                // Check if title from url feed exist in the database.
+                if (!checkIfContentExistByTitle($item['title'])) {
+                    // Format image url.
+                    $pos = strpos($item['field_hero_image_url'], '?');
+                    $final_pos = strlen($item['field_hero_image_url']);
+                    $image_url = substr_replace($item['field_hero_image_url'], '', $pos, $final_pos);
+                    $explode_url = explode('/', $image_url);
+                    $file_name_image = array_pop($explode_url);
+                    // Create file object from remote URL.
+                    $data_field_hero_image = file_get_contents($image_url);
+                    $image_file = file_save_data($data_field_hero_image, 'public://' . $file_name_image, FILE_EXISTS_REPLACE);
+
+                    $values_news = [
+                        'type' => 'article',
+                        'title' => $item['title'],
+                        'field_article_url' => [
+                            'title' => isset($item['external_link'])?$item['external_link']:"",
+                            'uri' => isset($item['external_link'])?$item['external_link']:"",
+                        ],
+                        'status' => 1,
+                        'body' => [
+                            'value' => $item['body'],
+                            'format' => 'full_html'
+                        ],
+                        'created' => $item['created'],
+
+                    ];
+                    $node_news = Node::create($values_news);
+
+                    $media_image_news = Media::create([
+                        'bundle' => 'image',
+                        'langcode' => \Drupal::languageManager()->getDefaultLanguage()->getId(),
+                        'status' => Node::PUBLISHED,
+                        'field_image' => [
+                            'target_id' => $image_file->id(),
+                            'alt' => $item['field_hero_image_alt'],
+                        ],
+                    ]);
+                    $media_image_news->save();
+
+
+                    $node_news->field_image = ['target_id' => $media_image_news->id()];
+
+
+                    // Save Node in DB.
+                    $node_news->setPublished(TRUE);
+                    $node_news->set('moderation_state', 'published');
+                    $node_news->save();
+
+                    // Add alias
+                    $node_news_id = $node_news->id();
+                    $source = '/node/' . $node_news_id;
+                    \Drupal::service('path.alias_storage')->save($source, $item['path']);
+
+                    drupal_set_message(t('The content news :title has been saved successfully!', [':title' => $item['title']]));
+                    \Drupal::logger('kwall_news_feed')->notice(t('The content news :title has been added successfully!', [':title' => $item['title']]));
+                } else {
+                    drupal_set_message(t('The content news :title is already exist!', [':title' => $item['title']]), 'warning');
+                    \Drupal::logger('kwall_news_feed')->notice(t('The content news :title is already exist!', [':title' => $item['title']]));
+
+
+                }
+            }
+        }
+    }
+}
+
+/**
+ * @param $nodes
+ * @param $limit
+ * @return array $res
+ */
+function getNodesFromJsonUrl($nodes, $limit)
+{
+    $res = [];
+
+    foreach ($nodes as $index => $node) {
+        if ($index < $limit) {
+            // TODO : dynamics keys.
+            $res[$index]['field_hero_image_url'] = $node['node']['field_hero_image_url'];
+            $res[$index]['field_hero_image_alt'] = isset($node['node']['field_hero_image_alt']) ? $node['node']['field_hero_image_alt'] : "";
+            $res[$index]['title'] = $node['node']['title'];
+            $res[$index]['body'] = $node['node']['body'];
+            $res[$index]['path'] = str_replace("https://asunow.asu.edu", "", $node['node']['field_original_url']);
+            $res[$index]['external_link'] = $node['node']['field_original_url'];
+            $res[$index]['created'] = strtotime($node['node']['field_imported_created']);
+        }
+    }
+    return $res;
+}
+
+
+/**
+ * @param $title_from_feed
+ * @return bool
+ */
+function checkIfContentExistByTitle($title_from_feed)
+{
+    $articles = \Drupal::entityManager()->getStorage('node')->loadByProperties(['type' => 'article']);
+    $titles_exists = [];
+    foreach ($articles as $nid => $article) {
+        $titles_exists[$nid] = $article->getTitle();
+    }
+    if (in_array($title_from_feed, $titles_exists)) {
+        return true;
+    } else {
+        return false;
+    }
+}

@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.events_travels_latest_list.field_events
+    - field.field.paragraph.events_travels_latest_list.field_events_view
+    - field.field.paragraph.events_travels_latest_list.field_title
+    - field.field.paragraph.events_travels_latest_list.field_travel
+    - field.field.paragraph.events_travels_latest_list.field_travel_view
+    - field.field.paragraph.events_travels_latest_list.field_view
+    - paragraphs.paragraphs_type.events_travels_latest_list
+  module:
+    - viewfield
+id: paragraph.events_travels_latest_list.default
+targetEntityType: paragraph
+bundle: events_travels_latest_list
+mode: default
+content:
+  field_events_view:
+    weight: 1
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: 0
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_travel_view:
+    weight: 2
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: 0
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+hidden:
+  field_events: true
+  field_travel: true
+  field_view: true

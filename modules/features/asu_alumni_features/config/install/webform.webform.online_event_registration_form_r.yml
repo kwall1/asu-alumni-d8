@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 40
+template: false
+id: online_event_registration_form_r
+title: 'Online Event Registration Form Request'
+description: ''
+category: ''
+elements: "header:\n  '#type': processed_text\n  '#text': \"<p>This form is for submitting a request for the creation of an online event registration form.</p>\\r\\n\"\n  '#format': full_html\nchapter_type:\n  '#type': radios\n  '#title': 'Chapter Type'\n  '#options':\n    Academic: Academic\n    Geographic: Geographic\n    International: International\n    'Special Interest': 'Special Interest'\n  '#required': true\nchapter_name:\n  '#type': textfield\n  '#title': 'Chapter Name'\n  '#required': true\nrequestor_s_contact_:\n  '#type': webform_contact\n  '#title': 'Requestor''s Contact '\n  '#name__title': 'Requestor''s Name'\n  '#name__required': true\n  '#company__access': false\n  '#email__title': 'Requestor''s Email Address'\n  '#email__required': true\n  '#phone__title': 'Requestor''s Phone Number'\n  '#phone__required': true\n  '#address__access': false\n  '#address_2__access': false\n  '#city__access': false\n  '#state_province__access': false\n  '#postal_code__access': false\n  '#country__access': false\nbody:\n  '#type': processed_text\n  '#text': \"<h1>Event Information</h1>\\r\\n\"\n  '#format': full_html\ntitle:\n  '#type': textfield\n  '#title': Title\n  '#required': true\ndate:\n  '#type': date\n  '#title': Date\n  '#datepicker': true\n  '#date_date_format': m/d/Y\n  '#required': true\nstart_time:\n  '#type': webform_time\n  '#title': 'Start Time'\n  '#required': true\n  '#time_format': 'g:i A'\nend_time:\n  '#type': webform_time\n  '#title': 'End Time'\n  '#time_format': 'g:i A'\n  '#required': true\ntime_zone:\n  '#type': textfield\n  '#title': 'Time Zone'\n  '#required': true\nevent_location:\n  '#type': webform_address\n  '#title': 'Event Location'\n  '#address__title': 'Event Address'\n  '#address__required': true\n  '#address_2__access': false\n  '#city__title': 'Event City/Town'\n  '#city__required': true\n  '#state_province__title': 'Event State/Province'\n  '#state_province__required': true\n  '#postal_code__title': 'Event Zip/Postal Code'\n  '#postal_code__required': true\n  '#country__title': 'Event Country'\n  '#country__required': true\ncontact:\n  '#type': webform_contact\n  '#title': Contact\n  '#name__title': 'Contact Name'\n  '#name__required': true\n  '#company__access': false\n  '#email__title': 'Contact Email'\n  '#phone__access': false\n  '#address__access': false\n  '#address_2__access': false\n  '#city__access': false\n  '#state_province__access': false\n  '#postal_code__access': false\n  '#country__access': false\nevent_description:\n  '#type': textarea\n  '#title': 'Event Description'\n  '#placeholder': 'Include prices & RSVP deadline, etc'\nhas_this_event_taken_place_before_:\n  '#type': radios\n  '#title': 'Has this event taken place before?'\n  '#options': yes_no\nif_yes_date_of_the_most_recent_occurrence_:\n  '#type': date\n  '#title': 'If yes, date of the most recent occurrence?'\n  '#datepicker': true\nbody2:\n  '#type': processed_text\n  '#text': \"<h1>Costs to Attend Event</h1>\\r\\n\"\n  '#format': full_html\nis_there_tiered_pricing_for_members_non_members_and_or_early_reg:\n  '#type': radios\n  '#title': 'Is there tiered pricing for members/non-members and/or early registration?'\n  '#options': yes_no\n  '#required': true\nif_yes_what_are_the_tiered_prices_:\n  '#type': textarea\n  '#title': 'If yes, what are the tiered prices?'\ndescription_of_cost_s_to_attend_event:\n  '#type': textarea\n  '#title': 'Description of Cost(s) to attend event'\nif_there_is_a_price_difference_for_members_will_the_member_price:\n  '#type': radios\n  '#title': 'If there is a price difference for members, will the member price apply for guests too?'\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\n    'Not Applicable': 'Not Applicable'\n  '#required': true\ntotal_tickets_available_for_this_event:\n  '#type': textfield\n  '#title': 'Total tickets available for this event'\n  '#placeholder': 'Please enter the total number of tickets you have available for this event'\n  '#required': true\nbody3:\n  '#type': processed_text\n  '#text': \"<h1>Confirmation Email</h1>\\r\\n\"\n  '#format': full_html\nemail_address_that_will_receive_registration_confirmations:\n  '#type': email\n  '#title': 'Email address that will receive registration confirmations'\n  '#required': true\nsecondary_email_address_that_will_receive_registration_confirmat:\n  '#type': email\n  '#title': 'Secondary email address that will receive registration confirmations'\n  '#required': true\nsubject_line_of_confirmation_e_mail_that_will_be_sent_to_registr:\n  '#type': textfield\n  '#title': 'Subject line of confirmation e-mail that will be sent to registrants'\n  '#required': true\ncustom_message_text_for_confirmation_e_mail:\n  '#type': textarea\n  '#title': 'Custom message text for confirmation e-mail'\n  '#maxlength': '255'\n  '#placeholder': '(Limited to 255 characters)'\nbody4:\n  '#type': processed_text\n  '#text': \"<h1>Graphics to include on the event page</h1>\\r\\n\"\n  '#format': full_html\nbanner_image:\n  '#type': webform_image_file\n  '#title': 'Banner Image'\n  '#max_filesize': '2'\n  '#file_extensions': 'gif jpg jpeg png pdf doc docx'\nthumbnail_image:\n  '#type': webform_image_file\n  '#title': 'Thumbnail Image'\n  '#max_filesize': '2'\n  '#file_extensions': 'gif jpg jpeg png pdf doc docx'\nvenue_image:\n  '#type': webform_image_file\n  '#title': 'Venue Image'\n  '#max_filesize': '2'\n  '#file_extensions': 'gif jpg jpeg png pdf doc docx'\ncaptcha:\n  '#type': captcha\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_course_date
+    - node.type.course
+  module:
+    - datetime_range
+id: node.course.field_course_date
+field_name: field_course_date
+entity_type: node
+bundle: course
+label: 'Course Date'
+description: 'Beginning and end of the course. Note that this isn''t the scheduled days, just the date it begins and ends.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

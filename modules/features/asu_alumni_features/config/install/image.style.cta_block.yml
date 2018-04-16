@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: cta_block
+label: 'CTA Block (387 x 215)'
+effects:
+  d8d613ad-e2e1-4263-8a96-0e858e1de465:
+    uuid: d8d613ad-e2e1-4263-8a96-0e858e1de465
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 387
+      height: 215
+      crop_type: focal_point

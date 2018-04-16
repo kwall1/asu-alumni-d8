@@ -1,0 +1,14 @@
+name: Swift Mailer
+type: module
+description: Installs Swift Mailer as a mail system.
+# core: 8.x
+package: Mail
+configure: swiftmailer.transport_settings
+dependencies:
+  - mailsystem
+
+# Information added by Drupal.org packaging script on 2017-03-02
+version: '8.x-1.0-beta1+4-dev'
+core: '8.x'
+project: 'swiftmailer'
+datestamp: 1488485586

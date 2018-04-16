@@ -1,0 +1,5 @@
+kwall_site_alert.admin:
+  route_name: kwall_site_alert.admin
+  title: 'Site Alert Configuration'
+  description: 'Configure the Site Wide Alert Settings'
+  parent: system.admin_config_system

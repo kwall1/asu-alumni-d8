@@ -1,0 +1,11 @@
+
+kwall_news_feed.news_feed_form:
+  path: '/admin/config/kwall_news_feed'
+  defaults:
+    _form: '\Drupal\kwall_news_feed\Form\NewsFeedForm'
+    _title: 'News Feeds - Article Content type'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

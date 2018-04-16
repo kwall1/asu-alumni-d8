@@ -1,0 +1,7 @@
+kwall_site_alert.admin:
+  path: /admin/config/system/kwall-site-alert
+  defaults:
+    _title: 'Site Alerts Configuration'
+    _form: \Drupal\kwall_site_alert\Form\KwallSiteAlertAdmin
+  requirements:
+    _permission: 'administer kwall site alerts'

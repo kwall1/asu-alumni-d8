@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.crop_16_9
+  module:
+    - crop
+name: crop_image_style_16_9
+label: 'Crop image style 16:9'
+effects:
+  f73882c7-fb6c-42b2-b452-046cb9de76af:
+    uuid: f73882c7-fb6c-42b2-b452-046cb9de76af
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: crop_16_9

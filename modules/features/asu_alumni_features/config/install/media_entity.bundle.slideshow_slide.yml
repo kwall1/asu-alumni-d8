@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_image
+third_party_settings:
+  crop:
+    image_field: field_image
+id: slideshow_slide
+label: 'Slideshow Slide'
+description: 'Uses in "Slideshow" Paragraph.'
+type: image
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: field_image
+  gather_exif: true
+field_map: {  }

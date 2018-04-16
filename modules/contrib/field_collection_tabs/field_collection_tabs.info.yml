@@ -1,0 +1,13 @@
+name: field_collection_tabs
+type: module
+description: Provides a Tabs field formatter for field_collection items
+# core: 8.x
+package: Field types
+dependencies:
+  - field_collection
+
+# Information added by Drupal.org packaging script on 2017-02-06
+version: '8.x-1.0-beta1'
+core: '8.x'
+project: 'field_collection_tabs'
+datestamp: 1486422188

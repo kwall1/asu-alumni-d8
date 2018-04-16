@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: list_with_images_template
+label: 'List with Images Template'
+description: 'Build and Theme WYSIWYG Inline List with Images Template'
+body:
+  value: "<div class=\"row Images_text\">\r\n<div class=\"col-lg-12\">\r\n<div class=\"list\"><img alt=\"\" src=\"https://www.asu.edu/sites/default/files/styles/section_tab_item/public/section-tab-image/Ben_emily-postcasting-homepage.jpg?itok=mBjwZIgr\" title=\"\" />\r\n<div class=\"text\">\r\n<h4>Subheading</h4>\r\n\r\n<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>\r\n</div>\r\n</div>\r\n\r\n<div class=\"list\"><img alt=\"\" src=\"https://www.asu.edu/sites/default/files/styles/section_tab_item/public/section-tab-image/Ben_emily-postcasting-homepage.jpg?itok=mBjwZIgr\" title=\"\" />\r\n<div class=\"text\">\r\n<h4>Subheading</h4>\r\n\r\n<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"row Images_text\">\r\n<div class=\"col-lg-12\">\r\n<div class=\"list\"><img alt=\"\" src=\"https://www.asu.edu/sites/default/files/styles/section_tab_item/public/section-tab-image/Ben_emily-postcasting-homepage.jpg?itok=mBjwZIgr\" title=\"\" />\r\n<div class=\"text\">\r\n<h4>Subheading</h4>\r\n\r\n<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>\r\n"
+  format: full_html
+weight: null
+node_types:
+  - event
+  - page

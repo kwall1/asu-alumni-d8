@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_chapter_types
+    - paragraphs.paragraphs_type.chapters_cta
+    - taxonomy.vocabulary.chapter_type
+id: paragraph.chapters_cta.field_chapter_types
+field_name: field_chapter_types
+entity_type: paragraph
+bundle: chapters_cta
+label: 'Chapter Types'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      chapter_type: chapter_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

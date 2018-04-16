@@ -1,0 +1,45 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - node
+    - system
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: quicklinks
+theme: asu_alumni_custom
+region: sidebar_second
+weight: -11
+provider: null
+plugin: 'entity_field:node:field_quicklinks'
+settings:
+  id: 'entity_field:node:field_quicklinks'
+  label: Quicklinks
+  provider: core
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      travel: travel
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: /events
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.storage.block_content.field_paragraph
+    - paragraphs.paragraphs_type.ad_item
+  module:
+    - entity_reference_revisions
+id: block_content.image_block.field_paragraph
+field_name: field_paragraph
+entity_type: block_content
+bundle: image_block
+label: 'Ad Item'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      ad_item: ad_item
+    target_bundles_drag_drop:
+      ad_item:
+        enabled: true
+        weight: 13
+      chapters_cta:
+        weight: 14
+        enabled: false
+      cta_card:
+        weight: 15
+        enabled: false
+      cta_cards:
+        weight: 16
+        enabled: false
+      featured_travel:
+        weight: 17
+        enabled: false
+      grid_cta:
+        weight: 18
+        enabled: false
+      grid_cta_item:
+        weight: 19
+        enabled: false
+      hero_slides:
+        weight: 20
+        enabled: false
+      interior_slideshow:
+        weight: 21
+        enabled: false
+      quicklink_item:
+        weight: 22
+        enabled: false
+      section:
+        weight: 23
+        enabled: false
+      simple:
+        weight: 24
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_image
+third_party_settings:
+  crop:
+    image_field: field_image
+id: image_gallery
+label: 'Image Gallery'
+description: "Use local image for reusable media.\tUses on Gallery paragraph.\r\n"
+type: image
+queue_thumbnail_downloads: false
+new_revision: true
+type_configuration:
+  source_field: field_image
+  gather_exif: false
+field_map: {  }

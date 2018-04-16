@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_instructor
+    - node.type.course
+id: node.course.field_primary_instructor
+field_name: field_primary_instructor
+entity_type: node
+bundle: course
+label: 'Primary Instructor'
+description: 'Name of the primary instructor for the course.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

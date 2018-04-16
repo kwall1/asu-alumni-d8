@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: focal_point_image_style
+label: 'Focal point image style'
+effects:
+  4fd6fce0-cca1-4a6a-874c-ffa9b2cc4fe7:
+    uuid: 4fd6fce0-cca1-4a6a-874c-ffa9b2cc4fe7
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 200
+      crop_type: focal_point

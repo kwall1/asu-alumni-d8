@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.twitter.field_tweet_url
+    - image.style.thumbnail
+    - media_entity.bundle.twitter
+  module:
+    - image
+    - media_entity_twitter
+    - user
+id: media.twitter.default
+targetEntityType: media
+bundle: twitter
+mode: default
+content:
+  created:
+    label: hidden
+    type: timestamp
+    weight: 0
+    region: content
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+  field_tweet_url:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: twitter_embed
+    region: content
+  name:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  thumbnail:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: thumbnail
+      image_link: ''
+    region: content
+    third_party_settings: {  }
+  uid:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

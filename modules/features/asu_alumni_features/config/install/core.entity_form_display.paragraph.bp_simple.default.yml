@@ -1,0 +1,76 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_simple.bp_background
+    - field.field.paragraph.bp_simple.bp_tab_section
+    - field.field.paragraph.bp_simple.bp_text
+    - field.field.paragraph.bp_simple.bp_width
+    - field.field.paragraph.bp_simple.field_background_image
+    - field.field.paragraph.bp_simple.field_css_class
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.bp_simple
+  module:
+    - content_moderation
+    - field_layout
+    - image
+    - layout_discovery
+    - paragraphs
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.bp_simple.default
+targetEntityType: paragraph
+bundle: bp_simple
+mode: default
+content:
+  bp_tab_section:
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  bp_text:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_background_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_css_class:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 2
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  bp_background: true
+  bp_width: true
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:9cbfbaf0-e90e-46f8-9d31-f185d0c377c2'
+id: slideshow
+label: Slideshow
+icon_uuid: 9cbfbaf0-e90e-46f8-9d31-f185d0c377c2
+description: 'Image/slideshow paragraph with a design based on Flexslider http://flexslider.woothemes.com/.'
+behavior_plugins: {  }

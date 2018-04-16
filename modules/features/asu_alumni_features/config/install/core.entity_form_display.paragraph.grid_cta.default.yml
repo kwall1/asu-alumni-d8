@@ -1,0 +1,64 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.grid_cta.field_links
+    - field.field.paragraph.grid_cta.field_paragraph
+    - field.field.paragraph.grid_cta.field_paragraph_caption
+    - field.field.paragraph.grid_cta.field_title
+    - paragraphs.paragraphs_type.grid_cta
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.grid_cta.default
+targetEntityType: paragraph
+bundle: grid_cta
+mode: default
+content:
+  field_links:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_paragraph:
+    type: entity_reference_paragraphs
+    weight: 2
+    settings:
+      title: Items
+      title_plural: Items
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: grid_cta_item
+    third_party_settings: {  }
+    region: content
+  field_paragraph_caption:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

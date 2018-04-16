@@ -1,0 +1,13 @@
+name: Field Group Background Image
+type: module
+description: Field Group Background Image
+# core: 8.x
+package: Fields
+dependencies:
+  - field
+  - field_group
+# Information added by Drupal.org packaging script on 2017-01-22
+version: '8.x-1.1'
+core: '8.x'
+project: 'field_group_background_image'
+datestamp: 1485113286

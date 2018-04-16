@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: interior_slideshow
+label: 'Interior Slideshow'
+icon_uuid: null
+description: 'Slideshow below breadcrumb and title region for interior pages'
+behavior_plugins: {  }

@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.featured_list
+label: 'Featured List'
+targetEntityType: media
+cache: true

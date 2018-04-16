@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: featured_travel_image
+label: 'Featured Travel Image'
+effects:
+  cbc80036-bae7-4ad1-a803-4aa196aa4e1e:
+    uuid: cbc80036-bae7-4ad1-a803-4aa196aa4e1e
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 285
+      height: 436
+      crop_type: focal_point

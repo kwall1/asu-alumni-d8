@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: landing_page_list
+label: 'Landing page list ( 283 x 167 )'
+effects:
+  db7a0fe4-3f53-4048-a741-d98ba8635fce:
+    uuid: db7a0fe4-3f53-4048-a741-d98ba8635fce
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 283
+      height: 167
+      crop_type: focal_point

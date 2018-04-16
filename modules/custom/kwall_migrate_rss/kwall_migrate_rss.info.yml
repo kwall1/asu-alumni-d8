@@ -1,0 +1,5 @@
+name: 'Migrate RSS'
+description: Module for importing RSS Feeds by KWALL.
+type: module
+core: 8.x
+package: Migrate

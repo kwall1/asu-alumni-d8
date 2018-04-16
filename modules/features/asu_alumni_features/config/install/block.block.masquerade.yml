@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - masquerade
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: masquerade-block
+id: masquerade
+theme: asu_alumni_custom
+region: footer
+weight: -23
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  provider: masquerade
+  label_display: visible
+visibility: {  }

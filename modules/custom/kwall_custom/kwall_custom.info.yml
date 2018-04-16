@@ -1,0 +1,14 @@
+name: 'KWALL Custom Module'
+type: module
+description: "Custom code from KWALL for all kinds of amazing things."
+package: KWALL
+#version: VERSION
+core: '8.x'
+dependencies:
+  - block
+  - menu_block
+  - layout_plugin
+  - addtocalendar
+  - paragraphs
+libraries:
+  - kwall_custom/global

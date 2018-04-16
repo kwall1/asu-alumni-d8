@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_slideshow
+    - field.storage.block_content.field_view
+    - views.view.hero_slideshow
+  module:
+    - viewfield
+id: block_content.hero_slideshow.field_view
+field_name: field_view
+entity_type: block_content
+bundle: hero_slideshow
+label: View
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    token_help: ''
+    display_id: block_1
+    arguments: ''
+    target_uuid: 92d66bc9-11a5-4e7c-89b3-47cf06290b6e
+default_value_callback: ''
+settings:
+  force_default: 1
+  allowed_views:
+    campus_map: 0
+    comment: 0
+    content: 0
+    block_content: 0
+    file_entity_browser: 0
+    files: 0
+    frontpage: 0
+    glossary: 0
+    hero_slideshow: 0
+    locations: 0
+    media: 0
+    media_entities: 0
+    user_admin_people: 0
+    comments_recent: 0
+    content_recent: 0
+    scheduler_scheduled_content: 0
+    taxonomy_term: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  allowed_display_types:
+    block: block
+    attachment: 0
+    entity_browser: 0
+    feed: 0
+    default: 0
+    page: 0
+    rest_export: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

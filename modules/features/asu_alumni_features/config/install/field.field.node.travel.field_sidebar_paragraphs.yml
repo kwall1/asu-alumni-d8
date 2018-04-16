@@ -1,0 +1,140 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar_paragraphs
+    - node.type.travel
+    - paragraphs.paragraphs_type.quicklinks
+    - paragraphs.paragraphs_type.simple
+  module:
+    - entity_reference_revisions
+id: node.travel.field_sidebar_paragraphs
+field_name: field_sidebar_paragraphs
+entity_type: node
+bundle: travel
+label: 'Sidebar Paragraphs'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      quicklinks: quicklinks
+      simple: simple
+    target_bundles_drag_drop:
+      ad_item:
+        weight: 33
+        enabled: false
+      bp_accordion:
+        weight: 34
+        enabled: false
+      bp_accordion_section:
+        weight: 35
+        enabled: false
+      bp_blank:
+        weight: 36
+        enabled: false
+      bp_block:
+        weight: 37
+        enabled: false
+      quicklinks:
+        enabled: true
+        weight: 38
+      bp_carousel:
+        weight: 38
+        enabled: false
+      bp_columns:
+        weight: 39
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 40
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 41
+        enabled: false
+      bp_column_wrapper:
+        weight: 42
+        enabled: false
+      bp_contact:
+        weight: 43
+        enabled: false
+      bp_image:
+        weight: 44
+        enabled: false
+      bp_modal:
+        weight: 45
+        enabled: false
+      bp_simple:
+        weight: 46
+        enabled: false
+      bp_tabs:
+        weight: 47
+        enabled: false
+      bp_tab_section:
+        weight: 48
+        enabled: false
+      bp_view:
+        weight: 49
+        enabled: false
+      chapters_cta:
+        weight: 50
+        enabled: false
+      cta_card:
+        weight: 51
+        enabled: false
+      cta_cards:
+        weight: 52
+        enabled: false
+      events_travels_latest_list:
+        weight: 53
+        enabled: false
+      featured_travel:
+        weight: 54
+        enabled: false
+      chapter_section:
+        weight: 54
+        enabled: false
+      chapter_section_left_side:
+        weight: 55
+        enabled: false
+      grid_cta:
+        weight: 55
+        enabled: false
+      chapter_section_right_side:
+        weight: 56
+        enabled: false
+      grid_cta_item:
+        weight: 56
+        enabled: false
+      hero_slides:
+        weight: 57
+        enabled: false
+      interior_slideshow:
+        weight: 58
+        enabled: false
+      leadership_and_contact:
+        weight: 59
+        enabled: false
+      partners_carousel:
+        weight: 60
+        enabled: false
+      quicklink_item:
+        weight: 61
+        enabled: false
+      section:
+        weight: 62
+        enabled: false
+      simple:
+        enabled: true
+        weight: 63
+      slideshow:
+        weight: 64
+        enabled: false
+      social_links:
+        weight: 72
+        enabled: false
+field_type: entity_reference_revisions

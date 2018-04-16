@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_view
+    - node.type.page
+  module:
+    - viewfield
+id: node.page.field_view
+field_name: field_view
+entity_type: node
+bundle: page
+label: View
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  force_default: 0
+  allowed_views:
+    asu_travel: 0
+    campus_map: 0
+    chapter_near_you: 0
+    chapters_taxonomy: 0
+    comment: 0
+    content: 0
+    block_content: 0
+    events: 0
+    events_travels: 0
+    file_entity_browser: 0
+    files: 0
+    frontpage: 0
+    glossary: 0
+    hero_slideshow: 0
+    interior_slideshow_header: 0
+    locations: 0
+    media: 0
+    media_entities: 0
+    news: 0
+    user_admin_people: 0
+    comments_recent: 0
+    content_recent: 0
+    scheduler_scheduled_content: 0
+    solr_search_content: 0
+    taxonomy_term: 0
+    travel: 0
+    trip_details: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  allowed_display_types:
+    block: block
+    default: default
+    page: page
+    attachment: 0
+    entity_browser: 0
+    feed: 0
+    rest_export: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

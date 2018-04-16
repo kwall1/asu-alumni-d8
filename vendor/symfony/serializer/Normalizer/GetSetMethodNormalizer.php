@@ -35,14 +35,13 @@ namespace Symfony\Component\Serializer\Normalizer;
 class GetSetMethodNormalizer extends AbstractObjectNormalizer
 {
     private static $setterAccessibleCache = array();
-    private $cache = array();
 
     /**
      * {@inheritdoc}
      */
     public function supportsNormalization($data, $format = null)
     {
-        return parent::supportsNormalization($data, $format) && (isset($this->cache[$type = \get_class($data)]) ? $this->cache[$type] : $this->cache[$type] = $this->supports($type));
+        return parent::supportsNormalization($data, $format) && $this->supports(get_class($data));
     }
 
     /**
@@ -50,7 +49,7 @@ class GetSetMethodNormalizer extends AbstractObjectNormalizer
      */
     public function supportsDenormalization($data, $type, $format = null)
     {
-        return parent::supportsDenormalization($data, $type, $format) && (isset($this->cache[$type]) ? $this->cache[$type] : $this->cache[$type] = $this->supports($type));
+        return parent::supportsDenormalization($data, $type, $format) && $this->supports($type);
     }
 
     /**
@@ -76,6 +75,8 @@ class GetSetMethodNormalizer extends AbstractObjectNormalizer
     /**
      * Checks if a method's name is get.* or is.*, and can be called without parameters.
      *
+     * @param \ReflectionMethod $method the method to check
+     *
      * @return bool whether the method is a getter or boolean getter
      */
     private function isGetMethod(\ReflectionMethod $method)
@@ -86,8 +87,7 @@ class GetSetMethodNormalizer extends AbstractObjectNormalizer
             !$method->isStatic() &&
             (
                 ((0 === strpos($method->name, 'get') && 3 < $methodLength) ||
-                (0 === strpos($method->name, 'is') && 2 < $methodLength) ||
-                (0 === strpos($method->name, 'has') && 3 < $methodLength)) &&
+                (0 === strpos($method->name, 'is') && 2 < $methodLength)) &&
                 0 === $method->getNumberOfRequiredParameters()
             )
         ;
@@ -132,11 +132,6 @@ class GetSetMethodNormalizer extends AbstractObjectNormalizer
         $isser = 'is'.$ucfirsted;
         if (is_callable(array($object, $isser))) {
             return $object->$isser();
-        }
-
-        $haser = 'has'.$ucfirsted;
-        if (is_callable(array($object, $haser))) {
-            return $object->$haser();
         }
     }
 

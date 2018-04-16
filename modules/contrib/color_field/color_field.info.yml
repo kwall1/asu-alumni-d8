@@ -1,0 +1,8 @@
+name: Color Field
+type: module
+description: 'Defines a color field type using a hexadecimal notation (HEX).'
+core: 8.x
+package: Core
+version: VERSION
+dependencies:
+  - field

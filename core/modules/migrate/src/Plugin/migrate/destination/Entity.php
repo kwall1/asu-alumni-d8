@@ -11,48 +11,7 @@ use Drupal\migrate\Row;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a generic destination to import entities.
- *
- * Available configuration keys:
- * - translations: (optional) Boolean, if TRUE, the destination will be
- *   associated with the langcode provided by the source plugin. Defaults to
- *   FALSE.
- *
- * Examples:
- *
- * @code
- * source:
- *   plugin: d7_node
- * process:
- *   nid: tnid
- *   vid: vid
- *   langcode: language
- *   title: title
- *   ...
- *   revision_timestamp: timestamp
- * destination:
- *   plugin: entity:node
- * @endcode
- *
- * This will save the processed, migrated row as a node.
- *
- * @code
- * source:
- *   plugin: d7_node
- * process:
- *   nid: tnid
- *   vid: vid
- *   langcode: language
- *   title: title
- *   ...
- *   revision_timestamp: timestamp
- * destination:
- *   plugin: entity:node
- *   translations: true
- * @endcode
- *
- * This will save the processed, migrated row as a node with the relevant
- * langcode because the translations configuration is set to "true".
+ * Provides entity destination plugin.
  *
  * @MigrateDestination(
  *   id = "entity",
@@ -94,10 +53,6 @@ abstract class Entity extends DestinationBase implements ContainerFactoryPluginI
    *   The list of bundles this entity type has.
    */
   public function __construct(array $configuration, $plugin_id, $plugin_definition, MigrationInterface $migration, EntityStorageInterface $storage, array $bundles) {
-    $plugin_definition += [
-      'label' => $storage->getEntityType()->getPluralLabel(),
-    ];
-
     parent::__construct($configuration, $plugin_id, $plugin_definition, $migration);
     $this->storage = $storage;
     $this->bundles = $bundles;

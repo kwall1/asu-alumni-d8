@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.field_collection_item.field_leadership_contact.field_contact_name
+    - field.field.field_collection_item.field_leadership_contact.field_email
+    - field.field.field_collection_item.field_leadership_contact.field_position
+    - field_collection.field_collection.field_leadership_contact
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: field_collection_item.field_leadership_contact.default
+targetEntityType: field_collection_item
+bundle: field_leadership_contact
+mode: default
+content:
+  field_contact_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_email:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_position:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  moderation_state: true

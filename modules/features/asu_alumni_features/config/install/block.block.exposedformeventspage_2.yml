@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: exposed-filters-block
+id: exposedformeventspage_2
+theme: asu_alumni_custom
+region: sidebar_second
+weight: -21
+provider: null
+plugin: 'views_exposed_filter_block:events-page_2'
+settings:
+  id: 'views_exposed_filter_block:events-page_2'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /engage/events-all
+    negate: false
+    context_mapping: {  }

@@ -13,7 +13,7 @@ namespace Symfony\Component\Serializer\Normalizer;
 
 use Symfony\Component\Serializer\Exception\BadMethodCallException;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
-use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
+use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 use Symfony\Component\Serializer\SerializerAwareInterface;
 use Symfony\Component\Serializer\SerializerInterface;
 
@@ -21,8 +21,6 @@ use Symfony\Component\Serializer\SerializerInterface;
  * Denormalizes arrays of objects.
  *
  * @author Alexander M. Turek <me@derrabus.de>
- *
- * @final since version 3.3.
  */
 class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterface
 {
@@ -33,18 +31,16 @@ class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterfa
 
     /**
      * {@inheritdoc}
-     *
-     * @throws NotNormalizableValueException
      */
     public function denormalize($data, $class, $format = null, array $context = array())
     {
-        if (null === $this->serializer) {
+        if ($this->serializer === null) {
             throw new BadMethodCallException('Please set a serializer before calling denormalize()!');
         }
         if (!is_array($data)) {
             throw new InvalidArgumentException('Data expected to be an array, '.gettype($data).' given.');
         }
-        if ('[]' !== substr($class, -2)) {
+        if (substr($class, -2) !== '[]') {
             throw new InvalidArgumentException('Unsupported class: '.$class);
         }
 
@@ -54,7 +50,7 @@ class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterfa
         $builtinType = isset($context['key_type']) ? $context['key_type']->getBuiltinType() : null;
         foreach ($data as $key => $value) {
             if (null !== $builtinType && !call_user_func('is_'.$builtinType, $key)) {
-                throw new NotNormalizableValueException(sprintf('The type of the key "%s" must be "%s" ("%s" given).', $key, $builtinType, gettype($key)));
+                throw new UnexpectedValueException(sprintf('The type of the key "%s" must be "%s" ("%s" given).', $key, $builtinType, gettype($key)));
             }
 
             $data[$key] = $serializer->denormalize($value, $class, $format, $context);
@@ -66,12 +62,10 @@ class ArrayDenormalizer implements DenormalizerInterface, SerializerAwareInterfa
     /**
      * {@inheritdoc}
      */
-    public function supportsDenormalization($data, $type, $format = null/*, array $context = array()*/)
+    public function supportsDenormalization($data, $type, $format = null)
     {
-        $context = \func_num_args() > 3 ? func_get_arg(3) : array();
-
-        return '[]' === substr($type, -2)
-            && $this->serializer->supportsDenormalization($data, substr($type, 0, -2), $format, $context);
+        return substr($type, -2) === '[]'
+            && $this->serializer->supportsDenormalization($data, substr($type, 0, -2), $format);
     }
 
     /**

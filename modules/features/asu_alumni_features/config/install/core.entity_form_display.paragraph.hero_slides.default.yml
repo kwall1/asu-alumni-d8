@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.hero_slides.field_caption
+    - field.field.paragraph.hero_slides.field_image
+    - field.field.paragraph.hero_slides.field_link
+    - field.field.paragraph.hero_slides.field_title
+    - field.field.paragraph.hero_slides.field_video_mp4
+    - field.field.paragraph.hero_slides.field_video_webm
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.hero_slides
+  module:
+    - field_layout
+    - file
+    - image
+    - layout_discovery
+    - link
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.hero_slides.default
+targetEntityType: paragraph
+bundle: hero_slides
+mode: default
+content:
+  field_caption:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_image:
+    weight: 3
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_video_mp4:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_video_webm:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.partner_slideshow_slide.field_image
+    - field.field.media.partner_slideshow_slide.field_link
+    - image.style.partners_carousel
+    - media_entity.bundle.partner_slideshow_slide
+  module:
+    - fences
+    - image
+    - linked_field
+id: media.partner_slideshow_slide.default
+targetEntityType: media
+bundle: partner_slideshow_slide
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: partners_carousel
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_link
+        advanced: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  field_link: true
+  name: true
+  thumbnail: true
+  uid: true

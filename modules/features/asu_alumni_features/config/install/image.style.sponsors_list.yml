@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: sponsors_list
+label: 'Sponsors List'
+effects:
+  402f24b7-5052-4234-9fb0-5949fdfd2ad0:
+    uuid: 402f24b7-5052-4234-9fb0-5949fdfd2ad0
+    id: image_scale
+    weight: 2
+    data:
+      width: 182
+      height: null
+      upscale: false

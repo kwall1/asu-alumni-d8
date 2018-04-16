@@ -188,7 +188,7 @@ class BrowserTestBaseTest extends BrowserTestBase {
   /**
    * Tests legacy text asserts.
    */
-  public function testTextAsserts() {
+  public function testLegacyTextAsserts() {
     $this->drupalGet('test-encoded');
     $dangerous = 'Bad html <script>alert(123);</script>';
     $sanitized = Html::escape($dangerous);
@@ -202,7 +202,7 @@ class BrowserTestBaseTest extends BrowserTestBase {
   /**
    * Tests legacy field asserts which use xpath directly.
    */
-  public function testXpathAsserts() {
+  public function testLegacyXpathAsserts() {
     $this->drupalGet('test-field-xpath');
     $this->assertFieldsByValue($this->xpath("//h1[@class = 'page-title']"), NULL);
     $this->assertFieldsByValue($this->xpath('//table/tbody/tr[2]/td[1]'), 'one');
@@ -245,7 +245,7 @@ class BrowserTestBaseTest extends BrowserTestBase {
   /**
    * Tests legacy field asserts using textfields.
    */
-  public function testFieldAssertsForTextfields() {
+  public function testLegacyFieldAssertsForTextfields() {
     $this->drupalGet('test-field-xpath');
 
     // *** 1. assertNoField().
@@ -387,7 +387,7 @@ class BrowserTestBaseTest extends BrowserTestBase {
   /**
    * Tests legacy field asserts for options field type.
    */
-  public function testFieldAssertsForOptions() {
+  public function testLegacyFieldAssertsForOptions() {
     $this->drupalGet('test-field-xpath');
 
     // Option field type.
@@ -443,7 +443,7 @@ class BrowserTestBaseTest extends BrowserTestBase {
   /**
    * Tests legacy field asserts for button field type.
    */
-  public function testFieldAssertsForButton() {
+  public function testLegacyFieldAssertsForButton() {
     $this->drupalGet('test-field-xpath');
 
     $this->assertFieldById('edit-save', NULL);
@@ -485,7 +485,7 @@ class BrowserTestBaseTest extends BrowserTestBase {
   /**
    * Tests legacy field asserts for checkbox field type.
    */
-  public function testFieldAssertsForCheckbox() {
+  public function testLegacyFieldAssertsForCheckbox() {
     $this->drupalGet('test-field-xpath');
 
     // Part 1 - Test by name.

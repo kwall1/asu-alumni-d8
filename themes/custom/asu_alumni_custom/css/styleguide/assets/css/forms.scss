@@ -1,0 +1,232 @@
+/**
+ * $file
+ * Forms
+ *
+ ****
+ *
+ * Buttons
+ * Inputs
+ * Select List
+ *
+ ****
+*/
+
+
+
+
+/****
+ *
+ * Buttons
+ *
+ ****/
+html input[type="button"],
+input[type="reset"],
+input[type="submit"],
+button,
+.button,
+.btn,
+a.button,
+.node-readmore a,
+%button {
+	background-color: $color-maroon;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-family-bold;
+	font-size: 1.6rem;
+	font-weight: normal;
+	line-height: 1.44;
+	margin-bottom: 0;
+	padding: 6px 19px;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.25s ease-in-out;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	vertical-align: middle;
+	white-space: nowrap;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: #fff;
+    background-color: #d1005a;
+	}
+	&.btn-gold {
+	background-color: $color-yellow;
+  color: #2a2a2a;
+	}
+
+	&.btn-blue {
+		color: white;
+		background-color: $color-blue;
+		&:focus, &:hover, &:active {
+			color: white;
+	    background-color: #0aa9fc;
+		}
+	}
+
+	&.btn-lg, .btn-group-lg > .btn {
+		padding: 12px 24px;
+		font-size: 20px;
+		line-height: 1.33;
+		border-radius: 4px;
+	}
+}
+
+
+
+
+/****
+ *
+ * Inputs
+ *
+ ****/
+/*form {
+	.form-item {
+		margin: .25em 0 2.5rem;
+
+		label {
+			display: inline-block;
+	    font-size: 1.4rem;
+	    font-weight: normal;
+	    line-height: 20px;
+	    max-width: 100%;
+	    margin-bottom: 5px;
+		}
+	}
+
+	input[type='search'],
+	input[type='text'],
+	input[type='email'],
+	.form-textarea,
+	textarea,
+	.form-text {
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+		box-sizing: border-box;
+		color: #555;
+		display: inline-block;
+		font-size: 1.4rem;
+		height: 20px;
+		line-height: 20px;
+		margin-bottom: 10px;
+		padding: 4px 6px;
+		transition: border linear .2s,box-shadow linear .2s;
+		-webkit-transition: border linear .2s,box-shadow linear .2s;
+    -moz-transition: border linear .2s,box-shadow linear .2s;
+    -o-transition: border linear .2s,box-shadow linear .2s;
+    vertical-align: middle;
+	}
+
+	.form-textarea,
+	textarea,
+	.form-text {
+		font-family: inherit;
+    font-size: inherit;
+    height: auto;
+    line-height: inherit;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		color: $color-black;
+		font-size: 1.5rem;
+		margin-top: .2em;
+		margin-right: .5em;
+	}
+
+	.form-type-radio,
+	.form-type-checkbox {
+		margin-bottom: 0;
+		label {
+			display: inline-block;
+			margin-bottom: 0;
+		}
+	}
+}*/
+// Alumni Grey Form Style
+.webform-grey-form,
+form {
+	.form-item {
+		label {
+			display: block;
+			font-family: $font-family-bold;
+			font-size: 1.6rem;
+		}
+	}
+
+	input[type='search'],
+	input[type='text'],
+	input[type='email'],
+	.form-textarea,
+	textarea,
+	.form-text,
+	select,
+	.form-select {
+		background-color: $color-grey-light;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+		height: 45px;
+		padding: 11.5px 12px;
+	}
+
+	.form-textarea,
+	textarea,
+	.form-text {
+		font-family: inherit;
+    font-size: inherit;
+    height: auto;
+    line-height: inherit;
+	}
+
+	select,
+	.form-select {
+		appearance: none;
+		background-image: none;
+		border-radius: 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		width: 100%;
+	}
+	.webform-component-select {
+		margin-bottom: 1.5rem;
+    position: relative;
+    text-align: left;
+		&:after {
+			color: $color-grey-dark;
+			content: "\f0d7";
+			font-family: $font-awesome;
+			font-size: 2.6rem;
+			position: absolute;
+			right: 30px;
+			top: 28px;
+		}
+	}
+}
+
+
+
+/****
+ *
+ * Select List
+ *
+ ****/
+select {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}

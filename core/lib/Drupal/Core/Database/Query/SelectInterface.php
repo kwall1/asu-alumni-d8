@@ -95,7 +95,7 @@ interface SelectInterface extends ConditionInterface, AlterableInterface, Extend
    * Note that this method must be called by reference as well:
    *
    * @code
-   * $tables =& $query->getTables();
+   * $fields =& $query->getTables();
    * @endcode
    *
    * @return

@@ -1,0 +1,141 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_information_contact
+    - node.type.event
+    - paragraphs.paragraphs_type.leadership_and_contact
+  module:
+    - entity_reference_revisions
+id: node.event.field_information_contact
+field_name: field_information_contact
+entity_type: node
+bundle: event
+label: 'Information Contact'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      leadership_and_contact: leadership_and_contact
+    target_bundles_drag_drop:
+      ad_item:
+        weight: 39
+        enabled: false
+      bp_accordion:
+        weight: 40
+        enabled: false
+      bp_accordion_section:
+        weight: 41
+        enabled: false
+      bp_blank:
+        weight: 42
+        enabled: false
+      bp_block:
+        weight: 43
+        enabled: false
+      bp_carousel:
+        weight: 44
+        enabled: false
+      bp_columns:
+        weight: 45
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 46
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 47
+        enabled: false
+      bp_column_wrapper:
+        weight: 48
+        enabled: false
+      bp_contact:
+        weight: 49
+        enabled: false
+      bp_image:
+        weight: 50
+        enabled: false
+      bp_modal:
+        weight: 51
+        enabled: false
+      bp_simple:
+        weight: 52
+        enabled: false
+      bp_tabs:
+        weight: 53
+        enabled: false
+      bp_tab_section:
+        weight: 54
+        enabled: false
+      bp_view:
+        weight: 55
+        enabled: false
+      chapters_cta:
+        weight: 56
+        enabled: false
+      chapter_section:
+        weight: 57
+        enabled: false
+      chapter_section_left_side:
+        weight: 58
+        enabled: false
+      chapter_section_right_side:
+        weight: 59
+        enabled: false
+      cta_card:
+        weight: 60
+        enabled: false
+      cta_cards:
+        weight: 61
+        enabled: false
+      events_travels_latest_list:
+        weight: 62
+        enabled: false
+      featured_travel:
+        weight: 63
+        enabled: false
+      grid_cta:
+        weight: 64
+        enabled: false
+      grid_cta_item:
+        weight: 65
+        enabled: false
+      hero_slides:
+        weight: 66
+        enabled: false
+      interior_slideshow:
+        weight: 67
+        enabled: false
+      leadership_and_contact:
+        enabled: true
+        weight: 68
+      partners_carousel:
+        weight: 69
+        enabled: false
+      quicklinks:
+        weight: 70
+        enabled: false
+      quicklink_item:
+        weight: 71
+        enabled: false
+      section:
+        weight: 72
+        enabled: false
+      simple:
+        weight: 73
+        enabled: false
+      slideshow:
+        weight: 74
+        enabled: false
+      social_links:
+        weight: 75
+        enabled: false
+      social_media_grid:
+        weight: 76
+        enabled: false
+field_type: entity_reference_revisions

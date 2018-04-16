@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: chapter_section_left_side
+label: 'Chapter Section - Left Side'
+icon_uuid: null
+description: 'Used in "Chapter Section" paragraph.'
+behavior_plugins: {  }

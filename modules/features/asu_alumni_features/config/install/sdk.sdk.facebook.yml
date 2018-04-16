@@ -1,0 +1,10 @@
+langcode: en
+id: facebook
+label: Facebook
+settings:
+  app_id: '2007244149528666'
+  app_secret: f0d00edb8e10657b22521d8db06e8204
+  api_version: '2.12'
+  scope:
+    public_profile: public_profile
+    user_posts: user_posts

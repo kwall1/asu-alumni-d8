@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: short_month_and_day
+label: 'Short Month and Day'
+locked: false
+pattern: 'M t'

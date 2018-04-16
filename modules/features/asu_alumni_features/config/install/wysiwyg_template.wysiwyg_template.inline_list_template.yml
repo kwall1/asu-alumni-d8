@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: inline_list_template
+label: 'Inline List Template'
+description: ' Build and Theme WYSIWYG Inline List Template'
+body:
+  value: "<div class=\"row marketing\">\r\n<div class=\"col-lg-12\">\r\n<div class=\"list\">\r\n<h4>Subheading</h4>\r\n\r\n<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>\r\n</div>\r\n\r\n<div class=\"list\">\r\n<h4>Subheading</h4>\r\n\r\n<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>\r\n</div>\r\n</div>\r\n</div>\r\n"
+  format: full_html
+weight: null
+node_types:
+  - event
+  - page

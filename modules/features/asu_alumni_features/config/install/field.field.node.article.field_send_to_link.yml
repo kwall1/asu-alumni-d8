@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_send_to_link
+    - node.type.article
+id: node.article.field_send_to_link
+field_name: field_send_to_link
+entity_type: node
+bundle: article
+label: 'Send to link'
+description: 'Click this to send people to the external URL when they come to this page. This will push traffic from the node to the external URL except for logged in content authors. '
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

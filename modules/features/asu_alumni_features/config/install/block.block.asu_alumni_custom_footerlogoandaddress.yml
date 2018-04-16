@@ -1,0 +1,28 @@
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:728748f1-3402-4501-9173-5271d188f77e'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: asu_alumni_custom_footerlogoandaddress
+theme: asu_alumni_custom
+region: footer
+weight: -20
+provider: null
+plugin: 'block_content:728748f1-3402-4501-9173-5271d188f77e'
+settings:
+  id: 'block_content:728748f1-3402-4501-9173-5271d188f77e'
+  label: 'Footer Logo and Address'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

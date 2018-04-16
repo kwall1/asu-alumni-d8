@@ -1,0 +1,14 @@
+name: 'Group Menu'
+description: 'Gives the ability to create and manage menus for groups'
+package: 'Group'
+type: 'module'
+# core: '8.x'
+dependencies:
+  - 'menu_ui'
+  - 'group'
+
+# Information added by Drupal.org packaging script on 2017-10-10
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'groupmenu'
+datestamp: 1507623556

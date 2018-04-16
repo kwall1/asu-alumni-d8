@@ -1,0 +1,35 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.paragraph.travel_quicklink_item
+    - field.field.paragraph.quicklink_item.field_image
+    - field.field.paragraph.quicklink_item.field_link
+    - paragraphs.paragraphs_type.quicklink_item
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.quicklink_item.travel_quicklink_item
+targetEntityType: paragraph
+bundle: quicklink_item
+mode: travel_quicklink_item
+content:
+  field_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  field_image: true
+  moderation_state: true
+  status: true
+  uid: true

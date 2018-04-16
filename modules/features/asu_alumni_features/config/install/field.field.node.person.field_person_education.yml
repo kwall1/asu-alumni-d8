@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_education
+    - node.type.person
+  module:
+    - allowed_formats
+    - better_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    full_html: '0'
+    basic_html: '0'
+    unrestricted_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
+  better_formats:
+    allowed_formats_toggle: 0
+    allowed_formats:
+      full_html: full_html
+      basic_html: basic_html
+      unrestricted_html: unrestricted_html
+      restricted_html: restricted_html
+    default_order_toggle: 0
+    default_order_wrapper:
+      formats:
+        full_html:
+          weight: '-10'
+        basic_html:
+          weight: '-9'
+        unrestricted_html:
+          weight: '-8'
+        restricted_html:
+          weight: '-7'
+id: node.person.field_person_education
+field_name: field_person_education
+entity_type: node
+bundle: person
+label: Education
+description: 'List persons education, degrees, etc.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

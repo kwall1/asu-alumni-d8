@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_leadership_contact
+    - paragraphs.paragraphs_type.leadership_and_contact
+  module:
+    - field_collection
+id: paragraph.leadership_and_contact.field_leadership_contact
+field_name: field_leadership_contact
+entity_type: paragraph
+bundle: leadership_and_contact
+label: Contacts
+description: ''
+required: false
+translatable: false
+default_value:
+  - {  }
+  - {  }
+  - {  }
+default_value_callback: ''
+settings: {  }
+field_type: field_collection

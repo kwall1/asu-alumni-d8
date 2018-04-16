@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:4a2b98b9-dcd4-44b2-bec7-26e01680a3da'
+id: sidebar_cta
+label: 'Sidebar CTA'
+icon_uuid: 4a2b98b9-dcd4-44b2-bec7-26e01680a3da
+description: 'CTA with white background behind text'
+behavior_plugins: {  }

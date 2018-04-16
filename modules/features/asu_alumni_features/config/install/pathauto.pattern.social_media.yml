@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: social_media
+label: 'Social Media'
+type: 'canonical_entities:node'
+pattern: 'social/[node:title]'
+selection_criteria:
+  02241c45-3fdb-4696-989b-5ec08170ab6d:
+    id: node_type
+    bundles:
+      tweet: tweet
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 02241c45-3fdb-4696-989b-5ec08170ab6d
+selection_logic: and
+weight: -5
+relationships: {  }

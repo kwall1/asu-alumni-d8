@@ -1,0 +1,121 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta
+    - field.field.block_content.cta.body
+    - field.field.block_content.cta.field_description
+    - field.field.block_content.cta.field_image
+    - field.field.block_content.cta.field_links
+    - field.field.block_content.cta.field_location
+    - field.field.block_content.cta.field_title
+    - image.style.cta_block
+  module:
+    - fences
+    - field_group
+    - image
+    - link
+third_party_settings:
+  field_group:
+    group_top:
+      children:
+        - field_image
+        - field_title
+      parent_name: group_block_cta_wrapper
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: top-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Top Wrapper'
+    group_bottom_wrapper:
+      children:
+        - field_description
+        - field_links
+      parent_name: group_block_cta_wrapper
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: bottom-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Bottom Wrapper'
+    group_block_cta_wrapper:
+      children:
+        - group_top
+        - group_bottom_wrapper
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: block-cta-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Block CTA Wrapper'
+id: block_content.cta.default
+targetEntityType: block_content
+bundle: cta
+mode: default
+content:
+  field_description:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: cta_block
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+  field_links:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  body: true
+  field_location: true

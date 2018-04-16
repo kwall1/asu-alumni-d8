@@ -1,0 +1,74 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_travel_view
+    - paragraphs.paragraphs_type.events_travels_latest_list
+    - views.view.events_travel
+  module:
+    - viewfield
+id: paragraph.events_travels_latest_list.field_travel_view
+field_name: field_travel_view
+entity_type: paragraph
+bundle: events_travels_latest_list
+label: 'Travel View'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    token_help: ''
+    display_id: block_2
+    arguments: '[paragraph:id]'
+    target_uuid: 0015d95a-ac51-46d6-966b-7d39c59e1250
+default_value_callback: ''
+settings:
+  force_default: 1
+  allowed_views:
+    events_travel: events_travel
+    asu_travel: 0
+    blog: 0
+    campus_map: 0
+    chapter_near_you: 0
+    chapters: 0
+    chapters_taxonomy: 0
+    comment: 0
+    content: 0
+    block_content: 0
+    events: 0
+    file_entity_browser: 0
+    files: 0
+    frontpage: 0
+    glossary: 0
+    hero_slideshow: 0
+    interior_slideshow_header: 0
+    locations: 0
+    map_of_chapters: 0
+    media: 0
+    media_entities: 0
+    news: 0
+    user_admin_people: 0
+    comments_recent: 0
+    content_recent: 0
+    redirect: 0
+    redirect_404: 0
+    scheduler_scheduled_content: 0
+    social_media_grid: 0
+    solr_search_content: 0
+    taxonomy_term: 0
+    travel: 0
+    trip_details: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  allowed_display_types:
+    block: block
+    attachment: 0
+    entity_browser: 0
+    feed: 0
+    default: 0
+    page: 0
+    rest_export: 0
+  handler: 'default:view'
+  handler_settings: {  }
+field_type: viewfield

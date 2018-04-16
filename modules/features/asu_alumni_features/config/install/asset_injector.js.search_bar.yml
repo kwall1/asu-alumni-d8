@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+id: search_bar
+label: 'Search Bar'
+code: "jQuery(document).ready(function () {\r\n\tvar searchpage = window.location.pathname.split('/');\r\nfunction getSearchParams(k){\r\n var p={};\r\n location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})\r\n return k?p[k]:p;\r\n}\r\n\r\n\tif(searchpage[1] == 'global') {\r\n\t\tjQuery('.search-tabs li.local').removeClass('active');\r\n\t\tjQuery('.search-tabs li.global-search').addClass('active');\r\n\t\tjQuery('.search-tabs li.local a').attr('href',\"/search?search_api_fulltext=\"+searchpage[2]);\r\n\t}\r\n\tif(searchpage[1] == 'search') {\r\n\t\tjQuery('.search-tabs li.global-search a').attr('href',\"/global/\"+getSearchParams(\"search_api_fulltext\"));\r\n\t} \r\n});"
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: true
+conditions:
+  request_path:
+    id: request_path
+    pages: "/search\r\n/search/*\r\n/global\r\n/global/*"
+    negate: false
+conditions_require_all: true

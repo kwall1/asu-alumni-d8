@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.alert.body
+    - field.field.node.alert.field_alert_active_date
+    - node.type.alert
+  module:
+    - datetime_range
+    - text
+    - user
+id: node.alert.default
+targetEntityType: node
+bundle: alert
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_alert_active_date:
+    weight: 102
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

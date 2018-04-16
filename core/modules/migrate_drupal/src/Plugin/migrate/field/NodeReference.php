@@ -11,8 +11,6 @@ use Drupal\migrate\Plugin\MigrationInterface;
  *   type_map = {
  *     "nodereference" = "entity_reference",
  *   },
- *   source_module = "nodereference",
- *   destination_module = "core",
  * )
  */
 class NodeReference extends FieldPluginBase {

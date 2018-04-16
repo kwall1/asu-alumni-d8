@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.chapters
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: slideshow-view
+id: views_block__chapters_block_1
+theme: asu_alumni_custom
+region: highlighted
+weight: 0
+provider: null
+plugin: 'views_block:chapters-block_1'
+settings:
+  id: 'views_block:chapters-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/chapters\r\n/chapters-international\r\n/chapters-academics\r\n/chapters-special-interest"
+    negate: false
+    context_mapping: {  }

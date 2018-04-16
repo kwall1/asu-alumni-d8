@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: featured_travel
+label: 'Featured Travel'
+icon_uuid: null
+description: 'CTA for featured travel'
+behavior_plugins: {  }

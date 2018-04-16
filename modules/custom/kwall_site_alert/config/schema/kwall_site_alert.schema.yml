@@ -1,0 +1,54 @@
+kwall_site_alert.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    kwall_site_alert_active1:
+      type: boolean
+    kwall_site_alert_severity1:
+      type: string
+    kwall_site_alert_dismiss1:
+      type: boolean
+    kwall_site_alert_message1:
+      type: text_format
+    kwall_site_alert_key1:
+      type: string
+    kwall_site_alert_active2:
+      type: boolean
+    kwall_site_alert_severity2:
+      type: string
+    kwall_site_alert_dismiss2:
+      type: boolean
+    kwall_site_alert_message2:
+      type: text_format
+    kwall_site_alert_key2:
+      type: string
+    kwall_site_alert_active3:
+      type: boolean
+    kwall_site_alert_severity3:
+      type: string
+    kwall_site_alert_dismiss3:
+      type: boolean
+    kwall_site_alert_message3:
+      type: text_format
+    kwall_site_alert_key3:
+      type: string
+    kwall_site_alert_active4:
+      type: boolean
+    kwall_site_alert_severity4:
+      type: string
+    kwall_site_alert_dismiss4:
+      type: boolean
+    kwall_site_alert_message4:
+      type: text_format
+    kwall_site_alert_key4:
+      type: string
+    kwall_site_alert_active5:
+      type: boolean
+    kwall_site_alert_severity5:
+      type: string
+    kwall_site_alert_dismiss5:
+      type: boolean
+    kwall_site_alert_message5:
+      type: text_format
+    kwall_site_alert_key5:
+      type: string

@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.partner_carousel
+    - field.field.block_content.partner_carousel.body
+    - field.field.block_content.partner_carousel.field_paragraph
+  module:
+    - entity_reference_revisions
+id: block_content.partner_carousel.default
+targetEntityType: block_content
+bundle: partner_carousel
+mode: default
+content:
+  field_paragraph:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  body: true

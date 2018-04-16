@@ -1,0 +1,32 @@
+schemas:
+  bootstrap: 8000
+  asu_alumni_custom: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://alumni.asu.development-preview.com/themes/custom/asu_alumni_custom/favicon.ico'
+  use_default: true
+region_wells:
+  navigation: ''
+  navigation_collapsible: ''
+  header: ''
+  highlighted: ''
+  page_title: ''
+  help: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  content_bottom: ''
+  footer: ''
+table_responsive: '-1'
+table: ''
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true
+logo:
+  path: ''
+  url: ''
+  use_default: true
+fluid_container: 1

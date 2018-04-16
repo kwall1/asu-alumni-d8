@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - asu_alumni_custom
+id: asu_alumni_custom_local_actions
+theme: asu_alumni_custom
+region: content
+weight: -22
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

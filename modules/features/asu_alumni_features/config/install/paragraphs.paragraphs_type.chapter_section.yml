@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: chapter_section
+label: 'Chapter Section'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

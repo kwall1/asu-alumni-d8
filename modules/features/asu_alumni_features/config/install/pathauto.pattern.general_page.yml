@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: general_page
+label: 'General Page'
+type: 'canonical_entities:node'
+pattern: '[node:menu-link:parents:join-path]/[node:title]'
+selection_criteria:
+  95d244fd-ed03-4ccc-a572-fabaef3e2dcf:
+    id: node_type
+    bundles:
+      page: page
+      webform: webform
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 95d244fd-ed03-4ccc-a572-fabaef3e2dcf
+selection_logic: and
+weight: -5
+relationships: {  }

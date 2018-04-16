@@ -1,0 +1,97 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.travel.body
+    - field.field.node.travel.field_attachment
+    - field.field.node.travel.field_contact_email
+    - field.field.node.travel.field_contact_name
+    - field.field.node.travel.field_contact_phone
+    - field.field.node.travel.field_content_bottom
+    - field.field.node.travel.field_cost
+    - field.field.node.travel.field_end_date
+    - field.field.node.travel.field_sidebar_paragraphs
+    - field.field.node.travel.field_slideshow
+    - field.field.node.travel.field_sponsors
+    - field.field.node.travel.field_start_date
+    - field.field.node.travel.field_thumbnail
+    - field.field.node.travel.field_travel_category
+    - image.style.content_lists
+    - node.type.travel
+  module:
+    - fences
+    - media_entity
+    - text
+    - user
+id: node.travel.teaser
+targetEntityType: node
+bundle: travel
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 4
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  content_moderation_control:
+    weight: -20
+    region: content
+  field_cost:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_thumbnail:
+    type: media_thumbnail
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: content_lists
+      image_link: content
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+  field_travel_category:
+    type: entity_reference_label
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+  links:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_attachment: true
+  field_contact_email: true
+  field_contact_name: true
+  field_contact_phone: true
+  field_content_bottom: true
+  field_end_date: true
+  field_sidebar_paragraphs: true
+  field_slideshow: true
+  field_sponsors: true
+  field_start_date: true

@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.audio.field_audio_file
+    - field.field.media.audio.field_audio_url
+    - media_entity.bundle.audio
+  module:
+    - audiofield
+id: media.audio.default
+targetEntityType: media
+bundle: audio
+mode: default
+content:
+  field_audio_file:
+    weight: 0
+    label: hidden
+    settings:
+      audio_player: default_mp3_player
+      audio_player_jplayer_theme: none
+      audio_player_wavesurfer_combine_files: false
+      audio_player_wordpress_combine_files: false
+      audio_player_wordpress_animation: true
+      audio_player_soundmanager_theme: default
+      audio_player_initial_volume: 8
+      audio_player_autoplay: false
+      audio_player_lazyload: false
+      download_button: false
+      download_link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: audiofield_audioplayer
+    region: content
+  field_audio_url:
+    weight: 1
+    label: hidden
+    settings:
+      audio_player: default_mp3_player
+      audio_player_jplayer_theme: none
+      audio_player_wavesurfer_combine_files: false
+      audio_player_wordpress_combine_files: false
+      audio_player_wordpress_animation: true
+      audio_player_soundmanager_theme: default
+      audio_player_initial_volume: 8
+      audio_player_autoplay: false
+      audio_player_lazyload: false
+      download_button: false
+      download_link: false
+    third_party_settings: {  }
+    type: audiofield_audioplayer
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

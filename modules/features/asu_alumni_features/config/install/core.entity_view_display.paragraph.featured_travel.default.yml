@@ -1,0 +1,102 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.featured_travel.field_background_image
+    - field.field.paragraph.featured_travel.field_featured_travel
+    - field.field.paragraph.featured_travel.field_image
+    - field.field.paragraph.featured_travel.field_link
+    - field.field.paragraph.featured_travel.field_paragraph_caption
+    - field.field.paragraph.featured_travel.field_title
+    - image.style.featured_travel_image
+    - paragraphs.paragraphs_type.featured_travel
+  module:
+    - fences
+    - field_layout
+    - image
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.featured_travel.default
+targetEntityType: paragraph
+bundle: featured_travel
+mode: default
+content:
+  field_background_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: featured_travel_background
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+  field_featured_travel:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: list
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: entity_reference_entity_view
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: featured_travel_image
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+  field_link:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_paragraph_caption:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

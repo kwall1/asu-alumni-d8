@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - block_class
+    - ctools
+    - menu_block
+    - system
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: sidebar-menu-block
+id: mainnavigation_2
+theme: asu_alumni_custom
+region: sidebar_second
+weight: -19
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation'
+  provider: menu_block
+  label_display: visible
+  level: 2
+  depth: 0
+  expand: 1
+  expand_only_active_trails: 0
+  label_type: parent
+  label_link: 1
+  parent: 'main:'
+  follow: 1
+  follow_parent: 1
+  suggestion: main
+visibility:
+  request_path:
+    id: request_path
+    pages: "<front>\r\n/node/57\r\n/node/3311\r\n/node/3312\r\n/node/3313\r\n/node/173\r\n/node/2382\r\n/node/174"
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

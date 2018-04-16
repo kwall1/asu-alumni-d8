@@ -1,0 +1,19 @@
+leaflet_more_maps_custom_maps:
+  1:
+    map-key: 'Default Google'
+    layer-keys:
+      'google-hybrid layer': 'google-hybrid layer'
+      'google-hybrid overlay': 'google-hybrid overlay'
+      'google-satellite layer': 'google-satellite layer'
+      'google-roadmap layer': 'google-roadmap layer'
+      'google-high-res terrain': 'google-high-res terrain'
+      'google-high-res roadmap': 'google-high-res roadmap'
+    reverse-order: 0
+  2:
+    map-key: ''
+    layer-keys: {  }
+    reverse-order: 0
+  3:
+    map-key: ''
+    layer-keys: {  }
+    reverse-order: 0

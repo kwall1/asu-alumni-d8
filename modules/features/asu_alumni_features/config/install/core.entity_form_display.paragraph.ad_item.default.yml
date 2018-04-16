@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ad_item.field_image
+    - field.field.paragraph.ad_item.field_link
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.ad_item
+  module:
+    - field_layout
+    - image
+    - imce
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.ad_item.default
+targetEntityType: paragraph
+bundle: ad_item
+mode: default
+content:
+  field_image:
+    weight: 0
+    settings:
+      preview_image_style: thumbnail
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: true
+    type: image_image
+    region: content
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

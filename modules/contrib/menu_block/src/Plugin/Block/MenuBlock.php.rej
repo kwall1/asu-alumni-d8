@@ -1,0 +1,16 @@
+***************
+*** 299,304 ****
+        'expand_only_active_trails' => 0,
+        'parent' => $this->getDerivativeId() . ':',
+        'label_type' => 'block',
+        'suggestion' => strtr($this->getDerivativeId(), '-', '_'),
+      ];
+    }
+--- 316,322 ----
+        'expand_only_active_trails' => 0,
+        'parent' => $this->getDerivativeId() . ':',
+        'label_type' => 'block',
++       'label_link' => 0,
+        'suggestion' => strtr($this->getDerivativeId(), '-', '_'),
+      ];
+    }

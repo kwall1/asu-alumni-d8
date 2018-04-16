@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.body
+    - field.field.node.location.field_address
+    - field.field.node.location.field_geolocation
+    - node.type.location
+  module:
+    - address
+    - fences
+    - geolocation
+    - text
+    - user
+id: node.location.default
+targetEntityType: node
+bundle: location
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_trimmed
+    weight: 3
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: left
+  content_moderation_control:
+    weight: 0
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+  field_address:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_plain
+    region: left
+  field_geolocation:
+    weight: 4
+    label: hidden
+    settings:
+      type: ROADMAP
+      zoom: '13'
+      height: 400px
+      width: 100%
+      info_text: ''
+      info_auto_display: '1'
+      title: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: geolocation_map
+    region: right
+  links:
+    weight: 1
+    region: left
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

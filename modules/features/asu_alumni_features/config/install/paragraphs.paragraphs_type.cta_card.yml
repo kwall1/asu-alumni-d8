@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:feca1f71-25f1-47f8-ae58-fe814cd3a8c7'
+id: cta_card
+label: 'CTA Card'
+icon_uuid: feca1f71-25f1-47f8-ae58-fe814cd3a8c7
+description: 'Call to action cards with image, description and titles'
+behavior_plugins: {  }

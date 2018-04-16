@@ -1,0 +1,14 @@
+name: 'Group Menu Block'
+description: 'Provides a block to display the group menus for content in a group.'
+package: 'Group'
+type: 'module'
+# core: '8.x'
+dependencies:
+ - 'gnode'
+ - 'groupmenu'
+
+# Information added by Drupal.org packaging script on 2017-10-10
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'groupmenu'
+datestamp: 1507623556

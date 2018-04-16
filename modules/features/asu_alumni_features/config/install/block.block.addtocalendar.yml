@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - kwall_custom
+    - node
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: addtocalendar
+theme: asu_alumni_custom
+region: sidebar_second
+weight: -17
+provider: null
+plugin: kwall_custom_addtocalendar
+settings:
+  id: kwall_custom_addtocalendar
+  label: 'Add to calendar'
+  provider: kwall_custom
+  label_display: '0'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

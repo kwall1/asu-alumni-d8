@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.max_325x325
+    - image.style.max_650x650
+    - image.style.medium
+  theme:
+    - asu_alumni_custom
+id: landing_page_article
+label: 'Demo Style'
+image_style_mappings:
+  -
+    breakpoint_id: asu_alumni_custom.screen-sm-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: max_650x650
+  -
+    breakpoint_id: asu_alumni_custom.screen-xs-max
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: max_325x325
+breakpoint_group: asu_alumni_custom
+fallback_image_style: medium

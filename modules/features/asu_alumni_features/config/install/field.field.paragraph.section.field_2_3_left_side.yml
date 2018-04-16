@@ -1,0 +1,51 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_2_3_left_side
+    - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.simple
+  module:
+    - entity_reference_revisions
+id: paragraph.section.field_2_3_left_side
+field_name: field_2_3_left_side
+entity_type: paragraph
+bundle: section
+label: '2/3 Left Side'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      simple: simple
+    target_bundles_drag_drop:
+      section:
+        weight: 9
+        enabled: false
+      chapters_cta:
+        weight: 10
+        enabled: false
+      featured_travel:
+        weight: 11
+        enabled: false
+      grid_cta:
+        weight: 12
+        enabled: false
+      grid_cta_item:
+        weight: 13
+        enabled: false
+      hero_slides:
+        weight: 14
+        enabled: false
+      quicklink_item:
+        weight: 15
+        enabled: false
+      simple:
+        enabled: true
+        weight: 16
+field_type: entity_reference_revisions

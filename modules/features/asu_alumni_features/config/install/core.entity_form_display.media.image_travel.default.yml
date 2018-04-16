@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image_travel.field_travel_image
+    - image.style.thumbnail
+    - media_entity.bundle.image_travel
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.image_travel.default
+targetEntityType: media
+bundle: image_travel
+mode: default
+content:
+  field_travel_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  uid: true

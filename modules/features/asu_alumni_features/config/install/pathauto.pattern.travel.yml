@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: travel
+label: Travel
+type: 'canonical_entities:node'
+pattern: 'travel/[node:title]'
+selection_criteria:
+  8d3357f5-fdb2-494c-b6ce-c6421ac1c491:
+    id: node_type
+    bundles:
+      travel: travel
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 8d3357f5-fdb2-494c-b6ce-c6421ac1c491
+selection_logic: and
+weight: -5
+relationships: {  }

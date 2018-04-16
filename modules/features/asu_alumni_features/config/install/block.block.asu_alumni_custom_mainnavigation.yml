@@ -1,0 +1,23 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - block_class
+    - tb_megamenu
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: asu_alumni_custom_mainnavigation
+theme: asu_alumni_custom
+region: navigation_collapsible
+weight: -6
+provider: null
+plugin: 'tb_megamenu_menu_block:main'
+settings:
+  id: 'tb_megamenu_menu_block:main'
+  label: 'Main navigation'
+  provider: tb_megamenu
+  label_display: '0'
+visibility: {  }

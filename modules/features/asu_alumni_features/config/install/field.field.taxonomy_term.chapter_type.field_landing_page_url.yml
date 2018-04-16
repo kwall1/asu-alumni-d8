@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_landing_page_url
+    - taxonomy.vocabulary.chapter_type
+  module:
+    - link
+id: taxonomy_term.chapter_type.field_landing_page_url
+field_name: field_landing_page_url
+entity_type: taxonomy_term
+bundle: chapter_type
+label: 'Landing page URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 1
+  title: 1
+  title_predefined: ''
+field_type: link

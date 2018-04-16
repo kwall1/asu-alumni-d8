@@ -1,0 +1,71 @@
+id: migrate_kwall_rss
+label: 'RSS migration'
+migration_group: default
+status: true
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  urls: 'http://gohighlanders.com/calendar.ashx/calendar.rss?sport_id=&han='
+  data_parser_plugin: simple_xml
+  item_selector: /rss/channel/item
+  fields:
+    -
+      name: guid
+      label: GUID
+      selector: guid
+    -
+      name: title
+      label: Title
+      selector: title
+    -
+      name: link
+      label: 'Origin link'
+      selector: link
+    -
+      name: description
+      label: Description
+      selector: description
+    -
+      name: start_date
+      label: 'Start date'
+      selector: 's:localstartdate'
+    -
+      name: end_date
+      label: 'End date'
+      selector: 's:localenddate'
+    -
+      name: location
+      label: 'Location'
+      selector: 'ev:location'
+  ids:
+    guid:
+      type: string
+
+process:
+  title: title
+  'field_event_url/0/uri': link
+  field_location_description: location
+  'body/0/value': description
+  'body/0/format':
+     plugin: default_value
+     default_value: rich_text_editor_limited
+  field_event_start_date:
+    plugin: format_date
+    from_format: 'U'
+    to_format: 'Y-m-d\TH:i:s'
+    source: start_date
+  field_event_end_date:
+    plugin: format_date
+    from_format: 'U'
+    to_format: 'Y-m-d\TH:i:s'
+    source: end_date
+  field_event_type:
+    plugin: default_value
+    default_value: 1
+  status:
+    plugin: default_value
+    default_value: 1
+
+destination:
+  plugin: 'entity:node'
+  default_bundle: event

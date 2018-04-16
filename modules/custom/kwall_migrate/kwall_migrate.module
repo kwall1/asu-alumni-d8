@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_migrate.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function kwall_migrate_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_migrate module.
+    case 'help.page.kwall_migrate':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('KWALL Migrate') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function kwall_migrate_theme() {
+  $theme = [];
+
+  return $theme;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function kwall_migrate_uninstall() {
+  //remove configuration so the module will reinstall and update the configuration as expected.
+  Drupal::configFactory()->getEditable('MIGRATE_PLUS.MIGRATION.KWALL_MIGRATE')->delete();
+}

@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entities
+  module:
+    - entity_browser_entity_form
+    - views
+name: image_browser
+label: 'Image Browser'
+display: modal
+display_configuration:
+  width: '600'
+  height: '768'
+  link_text: 'Select Medias'
+  auto_open: false
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: media
+  display: label
+  display_settings: {  }
+  select_text: 'Use selected'
+  selection_hidden: false
+  view: media
+  view_display: media_page_list
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  9d41ef0f-4122-493e-b29a-4f3196fa548d:
+    settings:
+      view: media_entities
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: true
+    uuid: 9d41ef0f-4122-493e-b29a-4f3196fa548d
+    weight: 1
+    label: 'Files listing'
+    id: view
+  a6ce36e8-8ee6-48fc-9506-d5eeb30e6062:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: 'Save entity'
+    uuid: a6ce36e8-8ee6-48fc-9506-d5eeb30e6062
+    weight: 2
+    label: 'Upload Media Images'
+    id: entity_form

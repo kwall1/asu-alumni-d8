@@ -1,0 +1,143 @@
+<?php
+
+/**
+ * @file
+ * Examples demonstrating how to implement and invoke hooks.
+ */
+
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\editor\Entity\Editor;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function kwall_custom_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'kwall_custom/global';
+}
+
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function kwall_custom_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle) {
+  if (!empty($fields['field_end_date'])) {
+    $fields['field_end_date']->addConstraint('StartEndDateChecking');
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function kwall_custom_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function kwall_custom_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function kwall_custom_entity_base_field_info_alter(&$fields, \Drupal\Core\Entity\EntityTypeInterface $entity_type) {
+  if ($entity_type->id() == 'media') {
+    $fields['uid']
+      ->setDescription(t('This is your User ID. Please do not change this field.'))
+      ->setDisplayConfigurable('form', TRUE);
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function kwall_custom_form_editor_link_dialog_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $editor_full_html = Editor::load('full_html');
+  $file_upload = $editor_full_html->getThirdPartySettings('editor_file');
+  // Extensions related to full html text format.
+  $extensions = $file_upload['extensions'];
+  $form['fid']['#description'] = t('Allowed file extensions: :allowed_files', [':allowed_files' => $extensions]);
+}
+
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function kwall_custom_views_pre_build(ViewExecutable $view) {
+  if ($view->id() == 'events' && $view->current_display == 'home_page'
+    || $view->id() == 'events' && $view->current_display == 'attachment_1'
+    || $view->id() == 'chapter_near_you' && $view->current_display == 'home_page'
+    || $view->id() == 'chapters' && $view->current_display == 'block_1'
+    || $view->id() == 'events' && $view->current_display == 'page_1'
+    || $view->id() == 'map_of_chapters' && $view->current_display == 'page_1'
+    || $view->id() == 'map_of_chapters' && $view->current_display == 'attachment_1') {
+
+    $exposed_filters = $view->getExposedInput();
+    if ((!isset($exposed_filters['field_geolocation_proximity-lat'])
+        || empty($exposed_filters['field_geolocation_proximity-lat']))
+      && (!isset($exposed_filters['field_geolocation_proximity-lng'])
+        || empty($exposed_filters['field_geolocation_proximity-lng']))
+    ) {
+      if (\Drupal::moduleHandler()->moduleExists('smart_ip')) {
+
+        /** @var \Drupal\smart_ip\SmartIpLocation $location */
+        $location = \Drupal::service('smart_ip.smart_ip_location');
+
+        if ($location->get('latitude') && $location->get('longitude')) {
+          $exposed_filters['field_geolocation_proximity-lat'] = $location->get('latitude');
+          $exposed_filters['field_geolocation_proximity-lng'] = $location->get('longitude');
+          $exposed_filters['field_geolocation_proximity'] = 24859;
+          $view->setExposedInput($exposed_filters);
+        }
+      }
+    }
+
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function kwall_custom_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  //  if ($view->id() == 'events' && $view->current_display == 'home_page'
+  //    || $view->id() == 'events' && $view->current_display == 'attachment_1'
+  //    || $view->id() == 'chapter_near_you' && $view->current_display == 'home_page'
+  //    || $view->id() == 'chapters' && $view->current_display == 'block_1'
+  //    || $view->id() == 'events' && $view->current_display == 'page_1') {
+  //    foreach ($query->where as &$condition_group) {
+  //      foreach ($condition_group['conditions'] as &$condition) {
+  //
+  //        echo '<pre>';
+  //        print_r($condition);
+  //        echo '</pre>';
+  //
+  //      }
+  //    }
+  //  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function kwall_custom_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  if ($view->id() == 'events' && $view->current_display == 'home_page'
+    || $view->id() == 'events' && $view->current_display == 'attachment_1'
+    || $view->id() == 'chapter_near_you' && $view->current_display == 'home_page'
+    || $view->id() == 'chapters' && $view->current_display == 'block_1'
+    || $view->id() == 'events' && $view->current_display == 'page_1'
+    || $view->id() == 'map_of_chapters' && $view->current_display == 'page_1'
+    || $view->id() == 'map_of_chapters' && $view->current_display == 'attachment_1') {
+
+
+    $view->element['#cache']['tags'][] = 'user:'
+      . \Drupal::currentUser()->id()
+      . '.ip.'
+      . \Drupal::request()->getClientIp();
+
+  }
+}

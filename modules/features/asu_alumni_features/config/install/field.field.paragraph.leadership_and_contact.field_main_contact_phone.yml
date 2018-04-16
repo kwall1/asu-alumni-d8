@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_main_contact_phone
+    - paragraphs.paragraphs_type.leadership_and_contact
+  module:
+    - telephone
+id: paragraph.leadership_and_contact.field_main_contact_phone
+field_name: field_main_contact_phone
+entity_type: paragraph
+bundle: leadership_and_contact
+label: 'Main Contact Phone'
+description: 'Optional contact person''s phone number.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

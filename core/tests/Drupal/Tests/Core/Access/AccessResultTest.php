@@ -128,9 +128,6 @@ class AccessResultTest extends UnitTestCase {
     $reason = $this->getRandomGenerator()->string();
     $b = AccessResult::forbidden($reason);
     $verify($b, $reason);
-
-    $b = AccessResult::forbiddenIf(TRUE, $reason);
-    $verify($b, $reason);
   }
 
   /**

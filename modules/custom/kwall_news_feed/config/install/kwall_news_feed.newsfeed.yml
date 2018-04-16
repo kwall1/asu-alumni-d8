@@ -1,0 +1,8 @@
+title: "title"
+field_image_url: "field_hero_image_url"
+field_image_alt: "field_hero_image_alt"
+created: "field_imported_created"
+path: "field_original_url"
+limit: 5
+json_url: "https://taxonomy.asu.edu/api/loyalty/news/list"
+active_schedule: 1

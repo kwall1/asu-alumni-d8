@@ -1,0 +1,138 @@
+<?php
+/**
+ * @file
+ * An color field with a custom color picker using the Field Types API.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_help().
+ */
+function color_field_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#color_field':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Color Field is simple field that use a hexadecimal notation (HEX) for the combination of Red, Green, and Blue color values (RGB).. See the <a href="@field-help">Field module help page</a> for more information about fields.', array('@field-help' => url('admin/help/field'))) . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_field_info().
+ */
+function color_field_field_info() {
+  $types['color_field'] = array(
+    'label' => t('Color Field'),
+    'description' => t('Field using a hexadecimal notation.'),
+    'instance_settings' => array(
+      'alfa' => TRUE,
+    ),
+    'default_widget' => 'color_field_default',
+    'default_formatter' => 'color_field_hex',
+    'field item class' => '\Drupal\color_field\Type\ColorFieldItem',
+  );
+  return $types;
+}
+
+/**
+ * Implements hook_field_is_empty().
+ */
+function color_field_field_is_empty($item, $field) {
+  return !isset($item['rgb']) || $item['rgb'] === '';
+}
+
+/**
+ * Implements hook_field_instance_settings_form().
+ */
+function color_field_field_instance_settings_form($field, $instance) {
+  $settings = $instance['settings'];
+
+  $form['alfa'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Alfa'),
+    '#default_value' => $settings['alfa'],
+    '#description' => t('This allows authors to provide alfa value for the color'),
+  );
+  return $form;
+}
+
+/**
+ * Implements hook_field_load().
+ */
+/*function color_field_field_load($entity_type, $entities, $field, $instances, $langcode, &$items, $age) {
+  foreach ($entities as $id => $entity) {
+    foreach ($items[$id] as $delta => &$item) {
+      // Unserialize the attributes into an array. The value stored in the
+      // field data should either be NULL or a non-empty serialized array.
+      if (empty($item['attributes'])) {
+        $item['attributes'] = array();
+      }
+      else {
+        $item['attributes'] = unserialize($item['attributes']);
+      }
+    }
+  }
+}*/
+
+/**
+ * Implements hook_field_presave().
+ */
+/*function color_field_field_presave(EntityInterface $entity, $field, $instance, $langcode, &$items) {
+  foreach ($items as $delta => &$item) {
+    // Trim any spaces around the rgb.
+    $item['rgb'] = trim($item['rgb']);
+    //$item['title'] = trim($item['title']);
+  }
+}*/
+
+/**
+ * Implements hook_theme().
+ */
+/*function color_field_theme() {
+  return array(
+    'color_field_formatter_color_field_separate' => array(
+      'variables' => array('title' => NULL, 'url_title' => NULL, 'href' => NULL, 'options' => array()),
+    ),
+  );
+}*/
+
+/**
+ * Formats a link as separate title and URL elements.
+ */
+/*function theme_color_field_formatter_color_field_separate($vars) {
+  $output = '';
+  $output .= '<div class="link-item">';
+  if (!empty($vars['title'])) {
+    $output .= '<div class="link-title">' . check_plain($vars['title']) . '</div>';
+  }
+  $output .= '<div class="link-url">' . l($vars['url_title'], $vars['href'], $vars['options']) . '</div>';
+  $output .= '</div>';
+  return $output;
+}*/
+
+/**
+ * Helper: Convert RGB to HEX6
+ * 
+ * @param $rgb Must be an array indexed on r, g and b.
+ */
+function color_field_rgb2hex($rgb = FALSE) {
+  $hex = '';
+  $hex .= str_pad(dechex($rgb[0]), 2, "0", STR_PAD_LEFT);
+  $hex .= str_pad(dechex($rgb[1]), 2, "0", STR_PAD_LEFT);
+  $hex .= str_pad(dechex($rgb[2]), 2, "0", STR_PAD_LEFT);
+  return $hex; // returns the hex value including the number sign (#)
+}
+
+/**
+ * Helper: Convert HEX6 to RGB
+ * 
+ * @param $hex.
+ */
+function color_field_hex2rgb($hex = FALSE) {
+  $r = hexdec(substr($hex,0,2));
+  $g = hexdec(substr($hex,2,2));
+  $b = hexdec(substr($hex,-2));
+  return compact('r', 'g', 'b');
+}

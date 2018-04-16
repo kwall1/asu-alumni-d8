@@ -1,0 +1,135 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_left_section
+    - paragraphs.paragraphs_type.chapter_section
+    - paragraphs.paragraphs_type.chapter_section_left_side
+  module:
+    - entity_reference_revisions
+id: paragraph.chapter_section.field_left_section
+field_name: field_left_section
+entity_type: paragraph
+bundle: chapter_section
+label: 'Left Section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      chapter_section_left_side: chapter_section_left_side
+    target_bundles_drag_drop:
+      ad_item:
+        weight: 36
+        enabled: false
+      bp_accordion:
+        weight: 37
+        enabled: false
+      bp_accordion_section:
+        weight: 38
+        enabled: false
+      bp_blank:
+        weight: 39
+        enabled: false
+      bp_block:
+        weight: 40
+        enabled: false
+      bp_carousel:
+        weight: 41
+        enabled: false
+      bp_column_wrapper:
+        weight: 42
+        enabled: false
+      bp_columns:
+        weight: 43
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 44
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 45
+        enabled: false
+      bp_contact:
+        weight: 46
+        enabled: false
+      bp_image:
+        weight: 47
+        enabled: false
+      bp_modal:
+        weight: 48
+        enabled: false
+      bp_simple:
+        weight: 49
+        enabled: false
+      bp_tab_section:
+        weight: 50
+        enabled: false
+      bp_tabs:
+        weight: 51
+        enabled: false
+      bp_view:
+        weight: 52
+        enabled: false
+      chapter_section:
+        weight: 53
+        enabled: false
+      chapter_section_left_side:
+        enabled: true
+        weight: 54
+      chapter_section_right_side:
+        weight: 55
+        enabled: false
+      chapters_cta:
+        weight: 56
+        enabled: false
+      cta_card:
+        weight: 57
+        enabled: false
+      cta_cards:
+        weight: 58
+        enabled: false
+      events_travels_latest_list:
+        weight: 59
+        enabled: false
+      featured_travel:
+        weight: 60
+        enabled: false
+      grid_cta:
+        weight: 61
+        enabled: false
+      grid_cta_item:
+        weight: 62
+        enabled: false
+      hero_slides:
+        weight: 63
+        enabled: false
+      interior_slideshow:
+        weight: 64
+        enabled: false
+      leadership_and_contact:
+        weight: 65
+        enabled: false
+      partners_carousel:
+        weight: 66
+        enabled: false
+      quicklink_item:
+        weight: 67
+        enabled: false
+      section:
+        weight: 68
+        enabled: false
+      simple:
+        weight: 69
+        enabled: false
+      slideshow:
+        weight: 70
+        enabled: false
+      social_links:
+        weight: 72
+        enabled: false
+field_type: entity_reference_revisions

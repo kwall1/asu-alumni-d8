@@ -24,9 +24,24 @@ use Symfony\Component\Validator\ObjectInitializerInterface;
  */
 class RecursiveValidator implements ValidatorInterface
 {
+    /**
+     * @var ExecutionContextFactoryInterface
+     */
     protected $contextFactory;
+
+    /**
+     * @var MetadataFactoryInterface
+     */
     protected $metadataFactory;
+
+    /**
+     * @var ConstraintValidatorFactoryInterface
+     */
     protected $validatorFactory;
+
+    /**
+     * @var ObjectInitializerInterface[]
+     */
     protected $objectInitializers;
 
     /**

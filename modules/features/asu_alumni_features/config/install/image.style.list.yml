@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: list
+label: 'List (182 x 101)'
+effects:
+  2143955a-2534-4112-b6e7-3ad1bc1e3edd:
+    uuid: 2143955a-2534-4112-b6e7-3ad1bc1e3edd
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 182
+      height: 101
+      crop_type: focal_point

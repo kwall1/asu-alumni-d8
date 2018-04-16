@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: sidebar_listing_image
+label: 'Sidebar Listing Image (282 x 159)'
+effects:
+  52010b0c-293e-473b-91a9-bdb67c2cfa1c:
+    uuid: 52010b0c-293e-473b-91a9-bdb67c2cfa1c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 282
+      height: 159
+      crop_type: focal_point

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_geolocation
+    - node.type.location
+  module:
+    - geolocation
+id: node.location.field_geolocation
+field_name: field_geolocation
+entity_type: node
+bundle: location
+label: Location
+description: "Enter in the geolocation of the location. Find these in the URL like so: https://www.google.com/maps/place/KWALL/@33.6627204,-117.8672121,17z/data=!3m1!4b1!4m5!3m4!1s0x80dcde59f17dcc39:0xff06bdc70a15902e!8m2!3d33.6627204!4d-117.8650181\r\n\r\n@33.666 - lat from Google Map search\r\n-117.86 lon from Google Map search."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

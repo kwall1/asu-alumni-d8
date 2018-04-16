@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_webm
+    - paragraphs.paragraphs_type.hero_slides
+  module:
+    - file
+id: paragraph.hero_slides.field_video_webm
+field_name: field_video_webm
+entity_type: paragraph
+bundle: hero_slides
+label: 'Video webm'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: videos/slides
+  file_extensions: webm
+  max_filesize: '40 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

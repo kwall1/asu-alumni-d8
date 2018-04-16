@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - kwall_migrate
+id: kwall
+label: 'KWALL Legacy Website Migration'
+description: 'Migrations from the legacy site to the new Drupal site (this site)'
+source_type: CSV
+module: null
+shared_configuration:
+  source:
+    key: default

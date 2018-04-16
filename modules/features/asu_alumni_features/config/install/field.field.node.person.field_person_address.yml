@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_address
+    - node.type.person
+  module:
+    - address
+id: node.person.field_person_address
+field_name: field_person_address
+entity_type: node
+bundle: person
+label: Address
+description: 'The persons postal address.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+  fields:
+    administrativeArea: administrativeArea
+    locality: locality
+    dependentLocality: dependentLocality
+    postalCode: postalCode
+    sortingCode: sortingCode
+    addressLine1: addressLine1
+    addressLine2: addressLine2
+    organization: organization
+    givenName: '0'
+    additionalName: '0'
+    familyName: '0'
+  langcode_override: ''
+field_type: address

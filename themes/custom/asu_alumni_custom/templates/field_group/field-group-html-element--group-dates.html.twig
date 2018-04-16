@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a fieldgroup html element.
+ *
+ * Available variables:
+ * - title: Title of the group.
+ * - title_element: Element to wrap the title.
+ * - children: The children of the group.
+ * - wrapper_element: The html element to use
+ * - attributes: A list of HTML attributes for the group wrapper.
+ *
+ * @see template_preprocess_field_group_html_element()
+ *
+ * @ingroup themeable
+ */
+#}
+
+<div class="field field--dates">
+  {% if title %}
+    <div class="field--label">{{ title }}</div>
+  {% endif %}
+  <div class="field--item">
+    <span class="start">{{ field_start_date['value']|date("l, F d, Y") }}</span>
+    {% if field_end_date['value'] != '' %}
+      <span class="diliver">to</span>
+      <span class="end">{{ field_end_date['value']|date("l, F d, Y") }}</span>
+    {% endif %}
+  </div>
+</div>

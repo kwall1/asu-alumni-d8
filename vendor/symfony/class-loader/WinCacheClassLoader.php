@@ -11,8 +11,6 @@
 
 namespace Symfony\Component\ClassLoader;
 
-@trigger_error('The '.__NAMESPACE__.'\WinCacheClassLoader class is deprecated since Symfony 3.3 and will be removed in 4.0. Use `composer install --apcu-autoloader` instead.', E_USER_DEPRECATED);
-
 /**
  * WinCacheClassLoader implements a wrapping autoloader cached in WinCache.
  *
@@ -45,8 +43,6 @@ namespace Symfony\Component\ClassLoader;
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Kris Wallsmith <kris@symfony.com>
  * @author Artem Ryzhkov <artem@smart-core.org>
- *
- * @deprecated since version 3.3, to be removed in 4.0. Use `composer install --apcu-autoloader` instead.
  */
 class WinCacheClassLoader
 {
@@ -60,6 +56,8 @@ class WinCacheClassLoader
     protected $decorated;
 
     /**
+     * Constructor.
+     *
      * @param string $prefix    The WinCache namespace prefix to use
      * @param object $decorated A class loader object that implements the findFile() method
      *

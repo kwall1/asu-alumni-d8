@@ -1,0 +1,22 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - asu_alumni_custom
+id: asu_alumni_custom_branding
+theme: asu_alumni_custom
+region: navigation
+weight: -18
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero_slideshow
+label: 'Hero Slideshow'
+revision: 1
+description: 'Slideshow that allows videos and images in slides'

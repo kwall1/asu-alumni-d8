@@ -16,9 +16,6 @@ use Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-/**
- * @group legacy
- */
 class ContainerAwareEventDispatcherTest extends AbstractEventDispatcherTest
 {
     protected function createEventDispatcher()
@@ -143,7 +140,7 @@ class ContainerAwareEventDispatcherTest extends AbstractEventDispatcherTest
 
         $listeners = $dispatcher->getListeners();
 
-        $this->assertArrayHasKey('onEvent', $listeners);
+        $this->assertTrue(isset($listeners['onEvent']));
 
         $this->assertCount(1, $dispatcher->getListeners('onEvent'));
     }

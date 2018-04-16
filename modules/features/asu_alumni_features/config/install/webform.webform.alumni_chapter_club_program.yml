@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 55
+template: false
+id: alumni_chapter_club_program
+title: 'Alumni Chapter & Club Program Report'
+description: ''
+category: ''
+elements: "alumni_chapter_header:\n  '#type': processed_text\n  '#text': \"<p>The Alumni Chapter &amp; Club Program Report must be submitted within 30 days after any event that utilized Allocated or Holding Funds from the ASU Alumni Association to ensure continued funding for future programs. If you have questions about the Program Report, contact&nbsp;<a href=\\\"mailto:Trish.Thiele-Keating@asu.edu\\\">Trish.Thiele-Keating@asu.edu</a>. You can still fill out the <a href=\\\"/sites/default/files/inline-files/FY15ChapterProgramReport.doc\\\">hard copy </a>if you prefer.</p>\\r\\n\\r\\n\\r\\n\\r\\n<p>Chapter/Club Information</p>\\r\\n\"\n  '#format': full_html\nchapter_club_name:\n  '#type': textfield\n  '#title': 'Chapter/Club Name'\n  '#required': true\ntoday_s_date:\n  '#type': datelist\n  '#title': 'Today''s Date'\n  '#required': true\n  '#date_part_order':\n    - year\n    - month\n    - day\n  '#date_date_element': datepicker\n  '#date_time_element': none\nreport_submitted_by:\n  '#type': textfield\n  '#title': 'Report submitted by'\n  '#required': true\nposition_title:\n  '#type': textfield\n  '#title': Position/title\n  '#required': true\nphone_number:\n  '#type': textfield\n  '#title': 'Phone number'\n  '#required': true\ne_mail:\n  '#type': email\n  '#title': E-mail\n  '#required': true\nchapter_club_program:\n  '#type': processed_text\n  '#text': \"<p>Chapter/Club program</p>\\r\\n\"\n  '#format': full_html\nprogram_name:\n  '#type': textfield\n  '#title': 'Program name'\n  '#required': true\ndate_time:\n  '#type': datetime\n  '#title': 'Date & Time'\n  '#required': true\n  '#date_date_element': datepicker\n  '#date_time_element': timepicker\nlocation:\n  '#type': textfield\n  '#title': Location\n  '#required': true\nprogram_description:\n  '#type': textarea\n  '#title': 'Program Description'\n  '#required': true\nregistration_fees_if_any:\n  '#type': textfield\n  '#title': 'Registration fees (if any)'\n  '#required': true\nfunding_evenue_header:\n  '#type': processed_text\n  '#text': \"<p>Funding and Revenue</p>\\r\\n\"\n  '#format': full_html\nactual_program_total_cost:\n  '#type': textfield\n  '#title': 'Actual Program Total Cost'\n  '#field_prefix': $\n  '#required': true\nestimated_program_total_cost:\n  '#type': textfield\n  '#title': 'Estimated Program Total Cost'\n  '#field_prefix': $\n  '#required': true\nmarketing_header:\n  '#type': processed_text\n  '#text': \"<p>Marketing</p>\\r\\n\"\n  '#format': full_html\nwhat_resources_were_used_to_promote_the_program_:\n  '#type': textarea\n  '#title': 'What resources were used to promote the program? '\n  '#required': true\nchapter_club_s_follow_up_plans_with_attend:\n  '#type': textarea\n  '#title': 'Chapter/Club''s follow-up plans with attend'\n  '#required': true\nwhat_type_of_membership_incentives_were_provided_at_program_disc:\n  '#type': textarea\n  '#title': 'What type of membership incentives were provided at program (discounted pricing, giveaway/drawing)?'\n  '#required': true\nevent_header:\n  '#type': processed_text\n  '#text': \"<p>Event Summary</p>\\r\\n\"\n  '#format': full_html\nplease_provide_some_comments_about_the_overall_program_what_went:\n  '#type': textarea\n  '#title': 'Please provide some comments about the overall program (what went well, areas for improvement ,etc.)'\n  '#required': true\nattendees_header:\n  '#type': processed_text\n  '#text': \"<p>Event attendees</p>\\r\\n\"\n  '#format': full_html\nplease_provide_a_full_list_of_attendees_first_and_last_names:\n  '#type': textarea\n  '#title': 'Please provide a full list of attendees, first and last names'\n  '#required': true\nupload_attendee_list_and_any_supporting_documents_:\n  '#type': webform_document_file\n  '#title': 'Upload attendee list and any supporting documents.'\n  '#required': true\n  '#max_filesize': '10'\ncaptcha:\n  '#type': captcha\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

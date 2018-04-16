@@ -29,6 +29,8 @@ use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 abstract class MemberMetadata extends GenericMetadata implements PropertyMetadataInterface
 {
     /**
+     * @var string
+     *
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getClassName()} instead.
@@ -36,6 +38,8 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
     public $class;
 
     /**
+     * @var string
+     *
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getName()} instead.
@@ -43,6 +47,8 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
     public $name;
 
     /**
+     * @var string
+     *
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getPropertyName()} instead.
@@ -55,6 +61,8 @@ abstract class MemberMetadata extends GenericMetadata implements PropertyMetadat
     private $reflMember = array();
 
     /**
+     * Constructor.
+     *
      * @param string $class    The name of the class this member is defined on
      * @param string $name     The name of the member
      * @param string $property The property the member belongs to

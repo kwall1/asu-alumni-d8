@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ef8e8c84-bb12-4847-b34e-066b3461bc9f'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: site-title-block
+id: sitetitle
+theme: asu_alumni_custom
+region: navigation
+weight: -20
+provider: null
+plugin: 'block_content:ef8e8c84-bb12-4847-b34e-066b3461bc9f'
+settings:
+  id: 'block_content:ef8e8c84-bb12-4847-b34e-066b3461bc9f'
+  label: 'Site Title'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

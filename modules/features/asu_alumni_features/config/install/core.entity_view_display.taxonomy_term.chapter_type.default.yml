@@ -1,0 +1,50 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.chapter_type.field_icon
+    - field.field.taxonomy_term.chapter_type.field_landing_page_url
+    - taxonomy.vocabulary.chapter_type
+  module:
+    - field_layout
+    - image
+    - link
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: taxonomy_term.chapter_type.default
+targetEntityType: taxonomy_term
+bundle: chapter_type
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_icon:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_landing_page_url:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

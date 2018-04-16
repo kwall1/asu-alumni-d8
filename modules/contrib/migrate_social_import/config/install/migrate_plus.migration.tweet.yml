@@ -1,0 +1,18 @@
+id: tweet
+label: 'Twitter migration'
+migration_group: social
+source:
+  plugin: social_network
+  social_network_plugin: 'twitter'
+process:
+  title: text
+  'body/0/value': text
+  'body/0/format':
+     plugin: default_value
+     default_value: basic_html
+destination:
+  plugin: entity:node
+  default_bundle: tweet
+migration_dependencies:
+  required:
+    - migrate_social

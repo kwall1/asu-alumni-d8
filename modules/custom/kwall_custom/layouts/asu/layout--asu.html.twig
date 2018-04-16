@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a two column layout.
+ *
+ * This template provides a two column display layout with full width areas at
+ * the top, bottom and in the middle.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'layout',
+  'layout--asu',
+] %}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if content.main %}
+      <details open>
+        <summary>{{ 'Main Content'|t }}</summary>
+        <div class="details-wrapper">
+          <div {{ region_attributes.main.addClass('layout__region', 'layout__region--main') }}>
+            {{ content.main }}
+          </div>
+        </div>
+      </details>
+    {% endif %}
+
+    {% if content.header %}
+      <details>
+        <summary>{{ 'Header Content'|t }}</summary>
+        <div class="details-wrapper">
+          <div {{ region_attributes.header.addClass('layout__region', 'layout__region--header') }}>
+            {{ content.header }}
+          </div>
+        </div>
+      </details>
+    {% endif %}
+
+    {% if content.below %}
+      <details>
+        <summary>{{ 'Below Content'|t }}</summary>
+        <div class="details-wrapper">
+          <div {{ region_attributes.below.addClass('layout__region', 'layout__region--below') }}>
+            {{ content.below }}
+          </div>
+        </div>
+      </details>
+    {% endif %}
+
+    {% if content.second_sidebar %}
+      <details>
+        <summary>{{ 'Sidebar Content'|t }}</summary>
+        <div class="details-wrapper">
+          <div {{ region_attributes.second_sidebar.addClass('layout__region', 'layout__region--second_sidebar') }}>
+            {{ content.second_sidebar }}
+          </div>
+        </div>
+      </details>
+    {% endif %}
+
+    {% if content.other %}
+      <div {{ region_attributes.other.addClass('layout__region', 'layout__region--other') }}>
+        {{ content.other }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

@@ -1,0 +1,25 @@
+[33ma3c724d [34m26 seconds ago [32mGeorgi Georgiev[31m (HEAD, 8.x-5.x) [m[Issue #2889689] WebformHandlerBase and WebformHandlerInterface moved to the Plugin namespace
+diff --git a/src/Plugin/WebformHandler/WebformMailChimpHandler.php b/src/Plugin/WebformHandler/WebformMailChimpHandler.php
+index b3da235..5b4a900 100644
+--- a/src/Plugin/WebformHandler/WebformMailChimpHandler.php
++++ b/src/Plugin/WebformHandler/WebformMailChimpHandler.php
+@@ -3,7 +3,7 @@
+ namespace Drupal\webform_mailchimp\Plugin\WebformHandler;
+ 
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\webform\WebformHandlerBase;
++use Drupal\webform\Plugin\WebformHandlerBase;
+ use Drupal\webform\WebformSubmissionInterface;
+ use Psr\Log\LoggerInterface;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+@@ -16,8 +16,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
+  *   label = @Translation("MailChimp"),
+  *   category = @Translation("MailChimp"),
+  *   description = @Translation("Sends a form submission to a MailChimp list."),
+- *   cardinality = \Drupal\webform\WebformHandlerInterface::CARDINALITY_UNLIMITED,
+- *   results = \Drupal\webform\WebformHandlerInterface::RESULTS_PROCESSED,
++ *   cardinality = \Drupal\webform\Plugin\WebformHandlerInterface::CARDINALITY_UNLIMITED,
++ *   results = \Drupal\webform\Plugin\WebformHandlerInterface::RESULTS_PROCESSED,
+  * )
+  */
+ class WebformMailChimpHandler extends WebformHandlerBase {

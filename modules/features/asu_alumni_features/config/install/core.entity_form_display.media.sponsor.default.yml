@@ -1,0 +1,47 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.sponsor.field_link
+    - field.field.media.sponsor.field_logo
+    - image.style.sponsors_list
+    - media_entity.bundle.sponsor
+  module:
+    - field_layout
+    - image
+    - imce
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.sponsor.default
+targetEntityType: media
+bundle: sponsor
+mode: default
+content:
+  field_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_logo:
+    weight: 1
+    settings:
+      preview_image_style: sponsors_list
+      progress_indicator: throbber
+    third_party_settings:
+      imce:
+        enabled: false
+    type: image_image
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  name: true
+  path: true
+  uid: true

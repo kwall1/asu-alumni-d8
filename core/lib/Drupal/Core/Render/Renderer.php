@@ -218,7 +218,7 @@ class Renderer implements RendererInterface {
 
     // Early-return nothing if user does not have access.
     if (isset($elements['#access'])) {
-      // If #access is an AccessResultInterface object, we must apply its
+      // If #access is an AccessResultInterface object, we must apply it's
       // cacheability metadata to the render array.
       if ($elements['#access'] instanceof AccessResultInterface) {
         $this->addCacheableDependency($elements, $elements['#access']);

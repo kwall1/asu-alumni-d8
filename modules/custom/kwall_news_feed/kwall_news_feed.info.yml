@@ -1,0 +1,9 @@
+name: 'KWALL News Feed'
+type: module
+description: 'Import News Feed from ASU Now'
+core: 8.x
+package: 'Feed'
+dependencies:
+  - node
+  - media_entity
+configure: kwall_news_feed.news_feed_form

@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: event_slide
+label: 'Event Slide (1014 x 570)'
+effects:
+  eec01224-feef-4b35-b736-630881ba5959:
+    uuid: eec01224-feef-4b35-b736-630881ba5959
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1014
+      height: 570
+      crop_type: focal_point

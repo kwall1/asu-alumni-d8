@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - auto_nodetitle
+id: auto_nodetitle_update_action
+label: 'Update automatic nodetitles'
+type: node
+plugin: auto_nodetitle_update_action
+configuration: {  }

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: partner_carousel
+label: 'Partner Carousel'
+revision: 1
+description: ''

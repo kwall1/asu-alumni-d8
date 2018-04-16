@@ -1,0 +1,52 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_sponsor
+    - field.field.media.sponsor.field_link
+    - field.field.media.sponsor.field_logo
+    - image.style.thumbnail
+    - media_entity.bundle.sponsor
+  module:
+    - field_layout
+    - image
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.sponsor.media_sponsor
+targetEntityType: media
+bundle: sponsor
+mode: media_sponsor
+content:
+  field_link:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_logo:
+    weight: 2
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  moderation_state: true
+  path: true
+  uid: true

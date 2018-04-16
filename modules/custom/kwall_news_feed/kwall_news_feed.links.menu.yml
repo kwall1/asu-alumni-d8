@@ -1,0 +1,7 @@
+kwall_news_feed.news_feed_form:
+  title: 'News Feed Settings Form'
+  route_name: kwall_news_feed.news_feed_form
+  description: 'Import news feeds Article'
+  parent: system.admin_config_services
+  weight: 99
+

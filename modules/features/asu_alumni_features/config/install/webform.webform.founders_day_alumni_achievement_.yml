@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 55
+template: false
+id: founders_day_alumni_achievement_
+title: 'Founders'' Day Alumni Achievement Award Nomination Form'
+description: ''
+category: ''
+elements: "header:\n  '#type': processed_text\n  '#text': \"<p>The Alumni Achievement Award is presented annually to an alumnus/alumna who has excelled in his or her profession and has contributed to Arizona State University and/or the ASU Alumni Association and the community. This award is presented annually at&nbsp;Founders’ Day in February/March..</p>\\r\\n\\r\\n<h3>Selection Criteria</h3>\\r\\n\\r\\n<p>Since the achievement awards primarily recognize excellence and professional accomplishment, a nominee is judged by:</p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>50% significant achievement in his or her professional field.</li>\\r\\n\\t<li>25% contributions to Arizona State University and/or the ASU Alumni Association.</li>\\r\\n\\t<li>25% contributions to the national or local community.</li>\\r\\n</ul>\\r\\n\\r\\n<h3>Supporting Documentation</h3>\\r\\n\\r\\n<p>All applicants must have the following in order to be considered for the award:</p>\\r\\n\\r\\n<ul>\\r\\n\\t<li>A list of accomplishments, achievements, volunteer involvements and work history.</li>\\r\\n\\t<li>Two (2) letters of recommendation.</li>\\r\\n</ul>\\r\\n\\r\\n\\r\\n<p>Nominee Information</p>\\r\\n\"\n  '#format': full_html\nname:\n  '#type': textfield\n  '#title': Name\n  '#required': true\naddress:\n  '#type': textfield\n  '#title': Address\n  '#required': true\ncity:\n  '#type': textfield\n  '#title': City\n  '#required': true\nstate:\n  '#type': textfield\n  '#title': State\n  '#required': true\nbusiness_phone:\n  '#type': textfield\n  '#title': 'Business Phone'\n  '#required': true\nyear_graduated_from_asu:\n  '#type': textfield\n  '#title': 'Year graduated from ASU'\n  '#required': true\ne_mail:\n  '#type': textfield\n  '#title': E-mail\n  '#required': true\nnominee_information:\n  '#type': processed_text\n  '#text': \"<p>Nominator Information</p>\\r\\n\"\n  '#format': full_html\nnominated_by:\n  '#type': textfield\n  '#title': 'Nominated by'\n  '#required': true\nnominator_address:\n  '#type': textfield\n  '#title': Address\n  '#required': true\nnominator_city:\n  '#type': textfield\n  '#title': City\n  '#required': true\nnominated_state:\n  '#type': textfield\n  '#title': State\n  '#required': true\nnominated_zip:\n  '#type': textfield\n  '#title': Zip\nbusiness_phone2:\n  '#type': textfield\n  '#title': 'Business Phone'\n  '#required': true\ne_mail2:\n  '#type': textfield\n  '#title': E-mail\n  '#required': true\nby_clicking_yes_and_no:\n  '#type': radios\n  '#title': 'By clicking \"yes,\" applicants agree to abide by the rules set forth for this award program and agree to accept the awards committee’s decision. Applicants also agree to attest that the information reported in this form and supplied in the supporting documents is true and correct. '\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\n  '#required': true\naccomplishments:\n  '#type': webform_document_file\n  '#title': 'A list of accomplishments, achievements, volunteer involvements and work history'\n  '#required': true\nfirst_letter_of_recommendation:\n  '#type': webform_document_file\n  '#title': 'First letter of recommendation'\n  '#required': true\nsecond_letter_of_recommendation:\n  '#type': webform_document_file\n  '#title': 'Second letter of recommendation'\n  '#required': true\ncaptcha:\n  '#type': captcha\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

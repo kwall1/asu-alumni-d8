@@ -11,15 +11,13 @@
 
 namespace Symfony\Component\Process;
 
-@trigger_error(sprintf('The %s class is deprecated since Symfony 3.4 and will be removed in 4.0. Use the Process class instead.', ProcessBuilder::class), E_USER_DEPRECATED);
-
 use Symfony\Component\Process\Exception\InvalidArgumentException;
 use Symfony\Component\Process\Exception\LogicException;
 
 /**
- * @author Kris Wallsmith <kris@symfony.com>
+ * Process builder.
  *
- * @deprecated since version 3.4, to be removed in 4.0. Use the Process class instead.
+ * @author Kris Wallsmith <kris@symfony.com>
  */
 class ProcessBuilder
 {
@@ -28,12 +26,14 @@ class ProcessBuilder
     private $env = array();
     private $input;
     private $timeout = 60;
-    private $options;
+    private $options = array();
     private $inheritEnv = true;
     private $prefix = array();
     private $outputDisabled = false;
 
     /**
+     * Constructor.
+     *
      * @param string[] $arguments An array of arguments
      */
     public function __construct(array $arguments = array())
@@ -167,7 +167,7 @@ class ProcessBuilder
     /**
      * Sets the input of the process.
      *
-     * @param resource|string|int|float|bool|\Traversable|null $input The input content
+     * @param resource|scalar|\Traversable|null $input The input content
      *
      * @return $this
      *
@@ -262,11 +262,12 @@ class ProcessBuilder
             throw new LogicException('You must add() command arguments before calling getProcess().');
         }
 
+        $options = $this->options;
+
         $arguments = array_merge($this->prefix, $this->arguments);
-        $process = new Process($arguments, $this->cwd, $this->env, $this->input, $this->timeout, $this->options);
-        // to preserve the BC with symfony <3.3, we convert the array structure
-        // to a string structure to avoid the prefixing with the exec command
-        $process->setCommandLine($process->getCommandLine());
+        $script = implode(' ', array_map(array(__NAMESPACE__.'\\ProcessUtils', 'escapeArgument'), $arguments));
+
+        $process = new Process($script, $this->cwd, $this->env, $this->input, $this->timeout, $options);
 
         if ($this->inheritEnv) {
             $process->inheritEnvironmentVariables();

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:90d25ba4-d4dd-423b-b774-a7b50bcd84e0'
+id: gallery
+label: Gallery
+icon_uuid: 90d25ba4-d4dd-423b-b774-a7b50bcd84e0
+description: ''
+behavior_plugins: {  }

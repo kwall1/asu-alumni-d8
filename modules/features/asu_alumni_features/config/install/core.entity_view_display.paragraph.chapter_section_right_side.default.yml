@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.chapter_section_right_side.field_content_card_right
+    - field.field.paragraph.chapter_section_right_side.field_title
+    - paragraphs.paragraphs_type.chapter_section_right_side
+  module:
+    - fences
+id: paragraph.chapter_section_right_side.default
+targetEntityType: paragraph
+bundle: chapter_section_right_side
+mode: default
+content:
+  field_content_card_right:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: media_chapter_right
+      link: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: entity_reference_entity_view
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

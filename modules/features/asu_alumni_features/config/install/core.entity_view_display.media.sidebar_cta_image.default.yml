@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.sidebar_cta_image.field_sidebar_cta_image
+    - image.style.sidebar_listing_image
+    - media_entity.bundle.sidebar_cta_image
+  module:
+    - fences
+    - image
+id: media.sidebar_cta_image.default
+targetEntityType: media
+bundle: sidebar_cta_image
+mode: default
+content:
+  field_sidebar_cta_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: sidebar_listing_image
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

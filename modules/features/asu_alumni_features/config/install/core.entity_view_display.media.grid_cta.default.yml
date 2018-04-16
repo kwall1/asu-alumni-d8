@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.grid_cta.field_grid_cta_image
+    - image.style.600x400
+    - media_entity.bundle.grid_cta
+  module:
+    - fences
+    - image
+id: media.grid_cta.default
+targetEntityType: media
+bundle: grid_cta
+mode: default
+content:
+  field_grid_cta_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 600x400
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

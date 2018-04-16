@@ -1,0 +1,19 @@
+{% extends 'paragraph.html.twig' %}
+
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+    <div class="bg-wrapper"
+         style="background: url('{{ file_url(content.field_background_image|field_target_entity.uri.value) }}') center center no-repeat; background-size:cover;">
+      <div class="container">
+        <h3 class="paragraph-title">{{ content.field_title.0 }}</h3>
+        <p class="paragraph-description">{{ content.field_paragraph_caption.0 }}</p>
+        <div class="chapter-lists row row-eq-height">
+          <div class="col-sm-3">{{ content.chapter_near_you }}</div>
+          {{ content.field_chapter_types }}
+        </div>
+      </div>
+      {% endblock %}
+    </div>
+  </div>
+{% endblock paragraph %}

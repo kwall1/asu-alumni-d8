@@ -1,0 +1,18 @@
+data_source: maxmind_geoip2_bin_db
+roles_to_geolocate:
+  anonymous: anonymous
+  authenticated: authenticated
+  cas_user: 0
+  group_member: 0
+  news_editor: 0
+  events_editor: 0
+  blog_editor: 0
+  department_editor: 0
+  content_editor: 0
+  publisher: 0
+  content_adminstrator: 0
+  administrator: 0
+save_user_location_creation: 0
+debug_mode: 0
+debug_mode_ip: 47.75.44.104
+allowed_pages: ''

@@ -17,8 +17,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Configure the selected language negotiation method for this site.
- *
- * @internal
  */
 class NegotiationConfigureForm extends ConfigFormBase {
 

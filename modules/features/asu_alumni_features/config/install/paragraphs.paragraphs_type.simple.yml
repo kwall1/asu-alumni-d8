@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: simple
+label: Simple
+icon_uuid: null
+description: 'Paragraph with Title, Body, View or Block'
+behavior_plugins: {  }

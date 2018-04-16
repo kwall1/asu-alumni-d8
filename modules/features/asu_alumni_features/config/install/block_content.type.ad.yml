@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ad
+label: Ad
+revision: 1
+description: 'Ad blocks'

@@ -1,0 +1,537 @@
+/**
+ * @file - ASU Alumni
+ * Regions -Elements - Content Types - Specific Styles
+ * EX: .region-navigation
+ */
+
+@media screen and (min-width: 768px) {
+  body {
+    margin-top: 0;
+  }
+}
+
+.main-container {
+  //margin-top: 30px;
+  > .container {
+    .page-node-173 &,
+    .page-node-174 &,
+    .page-node-175 &,
+    .page-node-176 &,
+    .page-node-177 &,
+    .page-node-178 &,
+    .page-node-2382 & {
+      padding-top: 6rem;
+    }
+
+    .path-frontpage & {
+      display: none;
+      padding-top: 0;
+    }
+    .user-logged-in.path-frontpage & {
+      display: block;
+    }
+
+    > .row {
+      > section,
+      > aside {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.path-user {
+  .region-content {
+    padding-bottom: 6rem;
+  }
+
+  article .form-item label {
+    color: #000;
+  }
+}
+
+.container {
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+    width: auto;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 1200px;
+    width: auto;
+  }
+  @media (min-width: 768px) {
+    max-width: 1200px;
+    width: auto;
+  }
+}
+
+.main-container > .container {
+  @media (min-width: 1200px) {
+    max-width: 1230px;
+  }
+}
+
+.alert {
+  padding: 1.6rem 4rem 1.9rem 1.6rem;
+}
+
+/*
+ * Row with equal height columns.
+ * --------------------------------------------------
+ */
+@media #{$tablet-min} {
+  .row-eq-height {
+    display: flex;
+  }
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border: none;
+  border-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .navbar-header {
+    float: none;
+  }
+}
+
+.region-highlighted {
+  .path-frontpage & {
+    font-size: 0;
+  }
+}
+
+#asu_hdr {
+  margin: 0 auto;
+  max-width: $width-page;
+  a {
+    border-bottom: 0 none;
+  }
+}
+
+#asu_search_module .asu_search_box {
+  margin-bottom: 0;
+}
+
+.page-title {
+  padding: 3.3rem 1.5rem;
+
+  .path-frontpage & {
+    display: none;
+  }
+}
+
+.breadcrumb {
+  > .active {
+    color: #000;
+  }
+
+  > li {
+    padding-left: 0;
+
+    a {
+      border-bottom: 0 none;
+    }
+
+    + li:before {
+      color: #000;
+      padding: 0 0 0 5px;
+    }
+  }
+  margin-bottom: 1rem;
+}
+
+.page-header {
+  border-bottom: 0 none;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.region-page-title {
+  margin: 0 auto;
+  max-width: $width-page;
+}
+
+h1.page-header {
+  margin-bottom: 0;
+}
+
+.wrap {
+  min-width: 300px;
+  max-width: $width-page;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.footer {
+  border-top: none;
+  margin: 0 auto;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.social-buttons {
+  text-align: left;
+  .social-buttons-title {
+    color: $color-grey-dark-3;
+    font-size: 1.5rem;
+  }
+  ul {
+    padding: 0;
+    background-color: $color-grey-dark-3;;
+    li {
+      display: inline-block;
+      width: 25%;
+      a {
+        display: inline-block;
+        width: 100%;
+        padding-right: 5px;
+        background: none transparent !important;
+      }
+      &:last-child {
+        a {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+/*** Content Types ******/
+// Sponsors field in Travel content type.
+.field--name-field-sponsors {
+  clear: both;
+  .field--item {
+    display: inline-block;
+  }
+  .field--item {
+    margin: 0 12px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+// Contact field-group in Travel content type.
+.field--contact {
+  .field--label {
+  }
+  .contact-name {
+  }
+  .contact-phone {
+    font-weight: normal;
+  }
+}
+
+// Attachment field in Travel content type.
+.field--name-field-attachment {
+  .field--items {
+    margin-right: 0;
+  }
+  .file {
+    margin: 0;
+    font-size: initial;
+    & > span {
+      border: none;
+      color: $color-maroon;
+    }
+    .file-icon,
+    .file-size {
+      display: none;
+    }
+  }
+}
+
+article.page.full {
+  .content > .field--name-body {
+    margin-bottom: 4rem;
+  }
+}
+
+.page-node-type-event {
+  h1 {
+    color: $color-grey-dark-3;
+    margin: 0;
+  }
+  article {
+    &.full {
+      .row.header {
+      }
+      .border {
+        hr {
+          border: 0;
+          height: 0;
+          margin: 3rem 0 4rem 0;
+          border-bottom: 4px solid #E5E5E5;
+        }
+      }
+      .event-date {
+        background-color: $color-grey-dark-3;
+        color: #fff;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        text-transform: uppercase;
+
+        .weekday {
+          font-size: 1.8rem;
+        }
+        .month {
+          font-size: 1.4rem;
+        }
+        .date {
+          background: none;
+          font-size: 4rem
+        }
+
+        .time {
+          font-size: 1.2rem;
+        }
+      }
+
+      .field--type-image {
+        margin-bottom: 15px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/****
+ *
+ * Slick Slider Generic
+ * Slick slider generic styles (for grid slider see content-list.less)
+ *
+ ****/
+.slick-slider h5,
+.slick--slider h5 {
+  padding: 15px 15px 40px 15px;
+}
+
+.slick-slider button.slick-arrow.slick-next,
+.slick--slider button.slick-arrow.slick-next {
+  right: 0;
+}
+
+.slick-slider .slick-slide,
+.slick--slider .slick-slide {
+  background-color: #F4F5F5;
+  padding: 0;
+  position: relative;
+  margin: 0 5px;
+}
+
+.slick-slider .slick-arrow,
+.slick--slider .slick-arrow {
+  background-color: #F6A623;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 0;
+  height: auto;
+  line-height: 0;
+  margin: 0 5px;
+  padding: 2.7rem 1.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.slick-slider .slick-arrow:before,
+.slick--slider .slick-arrow:before {
+  display: block;
+  font-size: 4rem;
+  line-height: 4rem;
+}
+
+.slick-slider .slick-arrow.slick-prev,
+.slick--slider .slick-arrow.slick-prev {
+  left: 0;
+}
+
+.slick-slider .slick-arrow.slick-prev:before,
+.slick--slider .slick-arrow.slick-prev:before {
+  content: url(../images/arrow-left-white.png);
+}
+
+.slick-slider .slick-arrow.slick-next,
+.slick--slider .slick-arrow.slick-next {
+  right: 0;
+}
+
+.slick-slider .slick-arrow.slick-next:before,
+.slick--slider .slick-arrow.slick-next:before {
+  content: url(../images/arrow-right-white.png);
+}
+
+.slick-slider .slick-arrow i,
+.slick--slider .slick-arrow i {
+  color: #00a3bf;
+}
+
+.slick-dots {
+  padding: 0;
+  position: absolute;
+  bottom: 15px;
+  left: 43%;
+}
+
+.slick-dots li {
+  color: #fff;
+  display: inline-block;
+  list-style: none;
+}
+
+.slick-dots li button {
+  padding: 0;
+  color: #F4F5F5;
+  background: none;
+  border: none;
+}
+
+.slick-dots li button i {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+.slide-text {
+  position: relative;
+}
+
+.slide-text h3 {
+  margin-top: 0;
+}
+
+.slick-slider .slick-dots .slick-active i {
+  color: #00a3bf;
+}
+
+#kwall-alerts {
+  display: none;
+  &.slick-processed {
+    display: block;
+  }
+  width: 100%;
+  z-index: 1000;
+  .alert {
+    padding: 15px 150px 15px 15px;
+    display: block;
+    margin: 0;
+    strong,
+    a {
+      color: #831937;
+    }
+    button.close {
+      opacity: 1;
+      text-shadow: none;
+      border: none;
+      box-shadow: none;
+      background: none;
+      line-height: normal;
+      margin: 0;
+      font-size: 40px;
+      float: none;
+      position: absolute;
+      right: 15px;
+      top: 0;
+      height: 100%;
+      color: #831937;
+    }
+  }
+  .alert-info {
+    background-color: #ffc000;
+  }
+  .alert-success {
+    background-color: rgba(17, 162, 11, 1);
+  }
+  .alert-warning {
+    background-color: #ffc000;
+  }
+  .alert-danger {
+    background-color: rgba(113, 0, 54, 1);
+  }
+  .slick-arrow, .slick--slider .slick-arrow {
+    background: none;
+    padding: 5px;
+    right: 60px;
+    height: 100%;
+  }
+  .slick-arrow.slick-prev, .slick--slider .slick-arrow.slick-prev {
+    right: 120px;
+    left: auto;
+  }
+  &.slick-slider .slick-arrow.slick-next:before, &.slick--slider .slick-arrow.slick-next:before {
+    content: '\f054';
+    font-family: $font-awesome;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #831937;
+  }
+  &.slick-slider .slick-arrow.slick-prev:before, &.slick--slider .slick-arrow.slick-prev:before {
+    content: '\f053';
+    font-family: $font-awesome;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #831937;
+  }
+}
+
+table.membership-table {
+  border-collapse: inherit;
+  border: 0 none;
+
+  thead {
+    border: 0 none;
+  }
+
+  th {
+    font-family: $font-family-bold;
+    font-size: 1.4rem;
+  }
+
+  th,
+  td {
+    border: 0 none;
+    border-right: 2px solid #E5E5E5;
+    @media screen and #{$mobile} {
+      padding: 1.4rem;
+    }
+  }
+
+  td {
+    color: #666;
+
+    strong {
+      color: #000;
+      font-family: $font-family-bold;
+      font-size: 2rem;
+    }
+
+    small {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.field--name-field-events-view {
+  margin-bottom: 30px;
+}

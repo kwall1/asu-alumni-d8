@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+id: quote
+label: Quote
+description: 'Build and Theme WYSIWYG Quote Template'
+body:
+  value: "<blockquote class=\"col-lg-12\">\r\n<div class=\"quote\"><span class=\"intro\">During the summer, our rabbit, Tonto, began to have severe redness and itching on his belly and feet. Through diagnostic testing, we learned that Tonto is severely allergic to over a dozens kinds of grass pollens. We've now been doing allergy injections for several months, and his itching and redness have nearly gone away. I'm very thankful to the veterinarians and staff at Wisdom for the excellent care Tonto received, and for nipping his allergies in the bud, so to speak.</span> <span class=\"customer\">Jane H.</span></div>\r\n</blockquote>\r\n"
+  format: full_html
+weight: null
+node_types:
+  - event
+  - page

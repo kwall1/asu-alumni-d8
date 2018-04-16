@@ -38,11 +38,34 @@ use Symfony\Component\Validator\Util\PropertyPath;
  */
 class RecursiveContextualValidator implements ContextualValidatorInterface
 {
+    /**
+     * @var ExecutionContextInterface
+     */
     private $context;
+
+    /**
+     * @var string
+     */
     private $defaultPropertyPath;
+
+    /**
+     * @var array
+     */
     private $defaultGroups;
+
+    /**
+     * @var MetadataFactoryInterface
+     */
     private $metadataFactory;
+
+    /**
+     * @var ConstraintValidatorFactoryInterface
+     */
     private $validatorFactory;
+
+    /**
+     * @var ObjectInitializerInterface[]
+     */
     private $objectInitializers;
 
     /**
@@ -108,7 +131,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
             $this->validateGenericNode(
                 $value,
-                $previousObject,
+                null,
                 is_object($value) ? spl_object_hash($value) : null,
                 $metadata,
                 $this->defaultPropertyPath,
@@ -238,13 +261,11 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
 
         if (is_object($objectOrClass)) {
             $object = $objectOrClass;
-            $class = get_class($object);
             $cacheKey = spl_object_hash($objectOrClass);
             $propertyPath = PropertyPath::append($this->defaultPropertyPath, $propertyName);
         } else {
             // $objectOrClass contains a class name
             $object = null;
-            $class = $objectOrClass;
             $cacheKey = null;
             $propertyPath = $this->defaultPropertyPath;
         }
@@ -259,7 +280,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
             $this->validateGenericNode(
                 $value,
                 $object,
-                $cacheKey.':'.$class.':'.$propertyName,
+                $cacheKey.':'.get_class($object).':'.$propertyName,
                 $propertyMetadata,
                 $propertyPath,
                 $groups,
@@ -374,7 +395,7 @@ class RecursiveContextualValidator implements ContextualValidatorInterface
      * objects are iterated as well. Nested arrays are always iterated,
      * regardless of the value of $recursive.
      *
-     * @param iterable                  $collection   The collection
+     * @param array|\Traversable        $collection   The collection
      * @param string                    $propertyPath The current property path
      * @param string[]                  $groups       The validated groups
      * @param ExecutionContextInterface $context      The current execution context

@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ad_item.field_image
+    - field.field.paragraph.ad_item.field_link
+    - paragraphs.paragraphs_type.ad_item
+  module:
+    - fences
+    - image
+    - linked_field
+id: paragraph.ad_item.default
+targetEntityType: paragraph
+bundle: ad_item
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_link
+        advanced: {  }
+    type: image
+    region: content
+hidden:
+  field_link: true

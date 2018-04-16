@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * The kwall_site_alert module file.
+ */
+
+/**
+ * Implements hook_page_top().
+ */
+function kwall_site_alert_page_top(array &$page_top) {
+	$total = 5;
+	
+	if (!\Drupal::service('router.admin_context')->isAdminRoute(\Drupal::routeMatch()->getRouteObject())) {
+		$alert = '<div id="kwall-alerts">';
+		for ($i = 1; $i <= $total; $i++) {
+		  // If active this is set.
+		  if (\Drupal::config('kwall_site_alert.settings')->get('kwall_site_alert_active' . $i) &&
+		      \Drupal::currentUser()->hasPermission('view kwall site alerts')) {
+		    // Get variables.
+		    $level = \Drupal::config('kwall_site_alert.settings')->get('kwall_site_alert_severity' . $i);
+		
+		    $message = \Drupal::config('kwall_site_alert.settings')->get('kwall_site_alert_message' . $i);
+		
+		    $alert .= '<div data-key="" data-cookie="" class="kwall-site-alert'.$i.' alert ' . $level . '" role="alert"';
+		
+		    // If dismissable, add 'close' button. Also add 'display:none' to the alert
+		    // element to prevent it from momentarily flickering onscreen before we
+		    // have a chance to hide it.
+		    if (\Drupal::config('kwall_site_alert.settings')->get('kwall_site_alert_dismiss' . $i)) {
+		      //$alert .= ' style="display:none;">';
+		      $alert .= '>';
+		      $alert .= '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+		    }
+		    else {
+		      $alert  .= '>';
+		    }
+		
+		    $alert .= $message['value'];
+		    $alert .= '</div>';
+		
+		    // If dismissable, attach JavaScript file and configure drupalSettings.
+		    if (\Drupal::config('kwall_site_alert.settings')->get('kwall_site_alert_dismiss' . $i)) {
+		
+		      // A random key is generated whenever an alert has changed. Pass this key
+		      // to drupalSettings so that it is accessible via JavaScript.
+		      $key = \Drupal::config('kwall_site_alert.settings')->get('kwall_site_alert_key' . $i);
+		
+		      $page_top['kwall_site_alert' . $i]['#attached'] = array(
+		        'library' => array('kwall_site_alert/dismissed-cookie'),
+		        'drupalSettings' => array(
+		          'kwall_site_alert' => array(
+		            'dismissedCookie' => array(
+		              'key' . $i => $key
+		            ),
+		          ),
+		        ),
+		      );
+		    }
+		  }
+	  }
+	  $alert .= '</div>';
+	  $page_top['kwall_site_alert'] = [
+		  '#attached' => array('library' => array('kwall_site_alert/slick')),
+      '#type' => 'inline_template',
+      '#template' => $alert,
+      '#weight' => 1000,
+    ];
+  }
+}

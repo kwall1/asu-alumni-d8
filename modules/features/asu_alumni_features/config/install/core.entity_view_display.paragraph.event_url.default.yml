@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_url.field_link
+    - paragraphs.paragraphs_type.event_url
+  module:
+    - fences
+    - link
+id: paragraph.event_url.default
+targetEntityType: paragraph
+bundle: event_url
+mode: default
+content:
+  field_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      rel: nofollow
+      target: _blank
+      url_only: false
+      url_plain: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: link
+    region: content
+hidden: {  }

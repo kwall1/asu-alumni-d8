@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slide
+    - media_entity.bundle.partner_slideshow_slide
+    - paragraphs.paragraphs_type.partners_carousel
+id: paragraph.partners_carousel.field_slide
+field_name: field_slide
+entity_type: paragraph
+bundle: partners_carousel
+label: Slides
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      partner_slideshow_slide: partner_slideshow_slide
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

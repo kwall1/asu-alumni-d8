@@ -1,0 +1,22 @@
+--- src/Plugin/WebformHandler/WebformMailChimpHandler.php
++++ src/Plugin/WebformHandler/WebformMailChimpHandler.php
+@@ -3,7 +3,7 @@
+ namespace Drupal\webform_mailchimp\Plugin\WebformHandler;
+ 
+ use Drupal\Core\Form\FormStateInterface;
+-use Drupal\webform\WebformHandlerBase;
++use Drupal\webform\Plugin\WebformHandlerBase;
+ use Drupal\webform\WebformSubmissionInterface;
+ use Psr\Log\LoggerInterface;
+ use Symfony\Component\DependencyInjection\ContainerInterface;
+@@ -16,8 +16,8 @@
+  *   label = @Translation("MailChimp"),
+  *   category = @Translation("MailChimp"),
+  *   description = @Translation("Sends a form submission to a MailChimp list."),
+- *   cardinality = \Drupal\webform\WebformHandlerInterface::CARDINALITY_UNLIMITED,
+- *   results = \Drupal\webform\WebformHandlerInterface::RESULTS_PROCESSED,
++ *   cardinality = \Drupal\webform\Plugin\WebformHandlerInterface::CARDINALITY_UNLIMITED,
++ *   results = \Drupal\webform\Plugin\WebformHandlerInterface::RESULTS_PROCESSED,
+  * )
+  */
+ class WebformMailChimpHandler extends WebformHandlerBase {

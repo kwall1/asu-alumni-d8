@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - crop
+    - media_entity_slideshow
+third_party_settings:
+  crop:
+    image_field: null
+id: slideshow
+label: SlideShow
+description: 'Use media entities for slideshow media.'
+type: slideshow
+queue_thumbnail_downloads: false
+new_revision: false
+type_configuration:
+  source_field: field_slideshow_field
+field_map: {  }

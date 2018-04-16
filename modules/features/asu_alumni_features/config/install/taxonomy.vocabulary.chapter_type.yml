@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Chapter Type'
+vid: chapter_type
+description: ''
+hierarchy: 1
+weight: 0

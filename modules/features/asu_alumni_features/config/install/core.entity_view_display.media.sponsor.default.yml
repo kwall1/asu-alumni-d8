@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.sponsor.field_link
+    - field.field.media.sponsor.field_logo
+    - image.style.sponsors_list
+    - media_entity.bundle.sponsor
+  module:
+    - fences
+    - image
+    - link
+id: media.sponsor.default
+targetEntityType: media
+bundle: sponsor
+mode: default
+content:
+  field_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_logo:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: sponsors_list
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

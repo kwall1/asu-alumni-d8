@@ -12,7 +12,7 @@ use Drupal\media\Entity\Media;
 class MediaTest extends MediaKernelTestBase {
 
   /**
-   * Tests various aspects of a media item.
+   * Tests various aspects of a Media entity.
    */
   public function testEntity() {
     $media = Media::create(['bundle' => $this->testMediaType->id()]);
@@ -21,17 +21,14 @@ class MediaTest extends MediaKernelTestBase {
   }
 
   /**
-   * Tests the Media "name" base field behavior.
+   * Ensure media name is configurable on manage display.
    */
-  public function testNameBaseField() {
+  public function testNameIsConfigurable() {
     /** @var \Drupal\Core\Field\BaseFieldDefinition[] $field_definitions */
     $field_definitions = $this->container->get('entity_field.manager')
       ->getBaseFieldDefinitions('media');
 
-    // Ensure media name is configurable on manage display.
     $this->assertTrue($field_definitions['name']->isDisplayConfigurable('view'));
-    // Ensure it is not visible by default.
-    $this->assertEquals($field_definitions['name']->getDisplayOptions('view'), ['region' => 'hidden']);
   }
 
 }

@@ -1,0 +1,11 @@
+
+kwall_events_feed.events_feed_form:
+  path: '/admin/config/kwall_events_feed'
+  defaults:
+    _form: '\Drupal\kwall_events_feed\Form\EventsFeedForm'
+    _title: 'Events Feeds - Event Content Type'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

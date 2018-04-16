@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_chapter_right_section
+    - field.field.media.content_card.field_description
+    - field.field.media.content_card.field_image
+    - field.field.media.content_card.field_label
+    - field.field.media.content_card.field_link
+    - image.style.chapter_section_right_side
+    - media_entity.bundle.content_card
+  module:
+    - field_layout
+    - focal_point
+    - imce
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: media.content_card.media_chapter_right_section
+targetEntityType: media
+bundle: content_card
+mode: media_chapter_right_section
+content:
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textarea
+    region: content
+  field_image:
+    weight: 0
+    settings:
+      preview_image_style: chapter_section_right_side
+      offsets: '50,50'
+      progress_indicator: throbber
+      preview_link: false
+    third_party_settings:
+      imce:
+        enabled: false
+    type: image_focal_point
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  field_label: true
+  moderation_state: true
+  name: true
+  path: true
+  uid: true

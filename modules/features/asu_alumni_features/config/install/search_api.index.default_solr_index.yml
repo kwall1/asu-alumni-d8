@@ -1,0 +1,179 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - search_api.server.default_solr_server
+    - core.entity_view_mode.node.search_index
+  module:
+    - taxonomy
+    - user
+    - search_api
+    - node
+id: default_solr_index
+name: 'Default Solr content index'
+description: 'Default content index created by the Solr Search Defaults module'
+read_only: false
+field_settings:
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+  rendered_item:
+    label: 'Rendered item'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          article: search_index
+          page: search_index
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+  status:
+    label: 'Publishing status'
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+  sticky:
+    label: 'Sticky at top of lists'
+    datasource_id: 'entity:node'
+    property_path: sticky
+    type: boolean
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+  author:
+    label: 'Author name'
+    datasource_id: 'entity:node'
+    property_path: 'uid:entity:name'
+    type: string
+    dependencies:
+      module:
+        - user
+  uid:
+    label: 'Author ID'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+  search_api_node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - article
+        - blog_post
+        - chapter
+        - event
+        - page
+        - person
+        - travel
+        - webform
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  rendered_item:
+    plugin_id: rendered_item
+    settings:
+      weights:
+        add_properties: 0
+        pre_index_save: -10
+  add_url:
+    plugin_id: add_url
+    settings:
+      weights:
+        preprocess_index: -30
+  content_access:
+    plugin_id: content_access
+    settings:
+      weights:
+        preprocess_index: -6
+        preprocess_query: -4
+    weights:
+      preprocess_query: -30
+  html_filter:
+    all_fields: false
+    fields:
+      - title
+      - rendered_item
+      - field_tags
+      - type
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  aggregated_field:
+    plugin_id: aggregated_field
+    settings:
+      weights:
+        add_properties: 20
+  ignorecase:
+    all_fields: false
+    fields:
+      - title
+      - rendered_item
+      - field_tags
+      - type
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: default_solr_server

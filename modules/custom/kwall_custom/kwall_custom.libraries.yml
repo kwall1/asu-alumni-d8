@@ -1,0 +1,11 @@
+asu-layouts:
+  version: VERSION
+  css:
+    theme:
+      layouts/asu/asu.css: {}
+
+global:
+  version: VERSION
+  css:
+    theme:
+      css/kwall-custom.css: {}

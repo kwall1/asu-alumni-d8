@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - ctools
+    - system
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: asu_alumni_custom_page_title
+theme: asu_alumni_custom
+region: page_title
+weight: -10
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

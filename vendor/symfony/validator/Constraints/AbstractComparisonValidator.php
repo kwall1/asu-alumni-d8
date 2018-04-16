@@ -11,12 +11,8 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
-use Symfony\Component\PropertyAccess\PropertyAccess;
-use Symfony\Component\PropertyAccess\PropertyAccessor;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
-use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 /**
@@ -27,13 +23,6 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 abstract class AbstractComparisonValidator extends ConstraintValidator
 {
-    private $propertyAccessor;
-
-    public function __construct(PropertyAccessor $propertyAccessor = null)
-    {
-        $this->propertyAccessor = $propertyAccessor;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -47,19 +36,7 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
             return;
         }
 
-        if ($path = $constraint->propertyPath) {
-            if (null === $object = $this->context->getObject()) {
-                return;
-            }
-
-            try {
-                $comparedValue = $this->getPropertyAccessor()->getValue($object, $path);
-            } catch (NoSuchPropertyException $e) {
-                throw new ConstraintDefinitionException(sprintf('Invalid property path "%s" provided to "%s" constraint: %s', $path, get_class($constraint), $e->getMessage()), 0, $e);
-            }
-        } else {
-            $comparedValue = $constraint->value;
-        }
+        $comparedValue = $constraint->value;
 
         // Convert strings to DateTimes if comparing another DateTime
         // This allows to compare with any date/time value supported by
@@ -69,7 +46,7 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
             if ($value instanceof \DateTimeImmutable) {
                 // If $value is immutable, convert the compared value to a
                 // DateTimeImmutable too
-                $comparedValue = new \DateTimeImmutable($comparedValue);
+                $comparedValue = new \DatetimeImmutable($comparedValue);
             } elseif ($value instanceof \DateTimeInterface) {
                 // Otherwise use DateTime
                 $comparedValue = new \DateTime($comparedValue);
@@ -84,15 +61,6 @@ abstract class AbstractComparisonValidator extends ConstraintValidator
                 ->setCode($this->getErrorCode())
                 ->addViolation();
         }
-    }
-
-    private function getPropertyAccessor()
-    {
-        if (null === $this->propertyAccessor) {
-            $this->propertyAccessor = PropertyAccess::createPropertyAccessor();
-        }
-
-        return $this->propertyAccessor;
     }
 
     /**

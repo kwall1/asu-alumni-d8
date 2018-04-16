@@ -1,0 +1,8 @@
+langcode: en
+id: instagram
+label: Instagram
+settings:
+  client_id: b2b79cf8b023431ba15f46b156ab3bf3
+  client_secret: b1e5fe154798485c8cb20b21f587f7d9
+  scope:
+    basic: basic

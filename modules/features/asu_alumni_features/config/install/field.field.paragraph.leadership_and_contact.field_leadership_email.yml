@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_leadership_email
+    - paragraphs.paragraphs_type.leadership_and_contact
+id: paragraph.leadership_and_contact.field_leadership_email
+field_name: field_leadership_email
+entity_type: paragraph
+bundle: leadership_and_contact
+label: 'Main Contact Email'
+description: 'Email address if you want people to contact via email.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

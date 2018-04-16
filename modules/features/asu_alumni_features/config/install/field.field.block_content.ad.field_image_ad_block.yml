@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ad
+    - field.storage.block_content.field_image_ad_block
+    - media_entity.bundle.ad
+id: block_content.ad.field_image_ad_block
+field_name: field_image_ad_block
+entity_type: block_content
+bundle: ad
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      ad: ad
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ad
+field_type: entity_reference

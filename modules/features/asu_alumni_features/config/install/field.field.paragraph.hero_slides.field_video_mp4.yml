@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video_mp4
+    - paragraphs.paragraphs_type.hero_slides
+  module:
+    - file
+id: paragraph.hero_slides.field_video_mp4
+field_name: field_video_mp4
+entity_type: paragraph
+bundle: hero_slides
+label: 'Video mp4'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: videos/slides
+  file_extensions: mp4
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

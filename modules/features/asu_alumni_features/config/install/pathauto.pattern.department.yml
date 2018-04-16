@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: department
+label: Department
+type: 'canonical_entities:node'
+pattern: 'department/[node:title]'
+selection_criteria:
+  f07463d1-5dcc-480b-becc-235913ea0744:
+    id: node_type
+    bundles:
+      department: department
+    negate: false
+    context_mapping:
+      node: node
+    uuid: f07463d1-5dcc-480b-becc-235913ea0744
+selection_logic: and
+weight: -5
+relationships: {  }

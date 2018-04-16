@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_link
+    - media_entity.bundle.content_card
+  module:
+    - link
+id: media.content_card.field_link
+field_name: field_link
+entity_type: media
+bundle: content_card
+label: Link
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

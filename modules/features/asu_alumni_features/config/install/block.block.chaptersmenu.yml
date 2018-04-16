@@ -1,0 +1,36 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.chapters-menu
+  module:
+    - block_class
+    - menu_block
+    - system
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: tab-menu-block
+id: chaptersmenu
+theme: asu_alumni_custom
+region: content
+weight: -15
+provider: null
+plugin: 'menu_block:chapters-menu'
+settings:
+  id: 'menu_block:chapters-menu'
+  label: 'Chapters Menu'
+  provider: menu_block
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand: 0
+  parent: 'chapters-menu:'
+  suggestion: chapters_menu
+visibility:
+  request_path:
+    id: request_path
+    pages: "/chapters\r\n/chapters-international\r\n/chapters-academics\r\n/chapters-special-interest"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: programs
+label: Programs
+type: 'canonical_entities:node'
+pattern: 'program/[node:title]'
+selection_criteria:
+  72a58f0f-11e3-46bd-9129-1054eff9c9cd:
+    id: node_type
+    bundles:
+      program: program
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 72a58f0f-11e3-46bd-9129-1054eff9c9cd
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -8,14 +8,12 @@ use Drupal\Core\Entity\RevisionLogInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\content_moderation\ModerationInformationInterface;
-use Drupal\content_moderation\StateTransitionValidationInterface;
+use Drupal\content_moderation\StateTransitionValidation;
 use Drupal\workflows\Transition;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * The EntityModerationForm provides a simple UI for changing moderation state.
- *
- * @internal
  */
 class EntityModerationForm extends FormBase {
 
@@ -36,7 +34,7 @@ class EntityModerationForm extends FormBase {
   /**
    * The moderation state transition validation service.
    *
-   * @var \Drupal\content_moderation\StateTransitionValidationInterface
+   * @var \Drupal\content_moderation\StateTransitionValidation
    */
   protected $validation;
 
@@ -45,15 +43,15 @@ class EntityModerationForm extends FormBase {
    *
    * @param \Drupal\content_moderation\ModerationInformationInterface $moderation_info
    *   The moderation information service.
-   * @param \Drupal\content_moderation\StateTransitionValidationInterface $validation
+   * @param \Drupal\content_moderation\StateTransitionValidation $validation
    *   The moderation state transition validation service.
    * @param \Drupal\Component\Datetime\Time $time
    *   The time service.
    */
-  public function __construct(ModerationInformationInterface $moderation_info, StateTransitionValidationInterface $validation, Time $time) {
+  public function __construct(ModerationInformationInterface $moderation_info, StateTransitionValidation $validation, Time $time) {
     $this->moderationInfo = $moderation_info;
-    $this->validation = $validation;
     $this->time = $time;
+    $this->validation = $validation;
   }
 
   /**
@@ -138,9 +136,6 @@ class EntityModerationForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
     $entity = $form_state->get('entity');
-    /** @var \Drupal\Core\Entity\ContentEntityStorageInterface $storage */
-    $storage = \Drupal::entityTypeManager()->getStorage($entity->getEntityTypeId());
-    $entity = $storage->createRevision($entity, $entity->isDefaultRevision());
 
     $new_state = $form_state->getValue('new_state');
 

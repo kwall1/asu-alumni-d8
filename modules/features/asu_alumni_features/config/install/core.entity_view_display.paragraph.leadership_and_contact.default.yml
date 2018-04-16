@@ -1,0 +1,56 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.leadership_and_contact.field_leadership_contact
+    - field.field.paragraph.leadership_and_contact.field_leadership_email
+    - field.field.paragraph.leadership_and_contact.field_leadership_name
+    - field.field.paragraph.leadership_and_contact.field_leadership_position
+    - field.field.paragraph.leadership_and_contact.field_main_contact_phone
+    - paragraphs.paragraphs_type.leadership_and_contact
+  module:
+    - field_collection
+id: paragraph.leadership_and_contact.default
+targetEntityType: paragraph
+bundle: leadership_and_contact
+mode: default
+content:
+  field_leadership_contact:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: field_collection_items
+    region: content
+  field_leadership_email:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_leadership_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_leadership_position:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_main_contact_phone:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

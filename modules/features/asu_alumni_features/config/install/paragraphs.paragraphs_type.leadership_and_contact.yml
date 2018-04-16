@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:eaaa67c6-ffa0-4459-941a-c37fad318bb4'
+id: leadership_and_contact
+label: 'Leadership and Contact'
+icon_uuid: eaaa67c6-ffa0-4459-941a-c37fad318bb4
+description: 'Appears in Chapter content type.'
+behavior_plugins: {  }

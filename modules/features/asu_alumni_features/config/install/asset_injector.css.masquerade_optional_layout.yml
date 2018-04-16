@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: masquerade_optional_layout
+label: 'masquerade optional layout'
+code: ".block-masquerade {\r\n  max-width: 1000px;\r\n  margin: 0 auto;\r\n}"
+media: all
+preprocess: true
+conditions: {  }
+conditions_require_all: true

@@ -227,6 +227,7 @@ class ConstraintViolationAssertion
     private $parameters = array();
     private $invalidValue = 'InvalidValue';
     private $propertyPath = 'property.path';
+    private $translationDomain;
     private $plural;
     private $code;
     private $constraint;
@@ -263,7 +264,7 @@ class ConstraintViolationAssertion
 
     public function setTranslationDomain($translationDomain)
     {
-        // no-op for BC
+        $this->translationDomain = $translationDomain;
 
         return $this;
     }

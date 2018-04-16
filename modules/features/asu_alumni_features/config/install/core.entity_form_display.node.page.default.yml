@@ -1,0 +1,165 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_body_paragraphs
+    - field.field.node.page.field_content_bottom
+    - field.field.node.page.field_hero_slideshow
+    - field.field.node.page.field_sidebar_paragraphs
+    - field.field.node.page.field_view
+    - node.type.page
+  module:
+    - content_moderation
+    - field_layout
+    - kwall_custom
+    - paragraphs
+    - path
+    - scheduler
+    - text
+    - viewfield
+third_party_settings:
+  field_layout:
+    id: layout_asu
+    settings: {  }
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: main
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 15
+    region: other
+    settings: {  }
+    third_party_settings: {  }
+  field_body_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 3
+    settings:
+      title: 'Body Paragraphs'
+      title_plural: 'Body Paragraphs'
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: main
+  field_content_bottom:
+    type: entity_reference_paragraphs
+    weight: 5
+    settings:
+      title: 'Content Bottom'
+      title_plural: 'Content Bottom'
+      edit_mode: closed
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: below
+  field_hero_slideshow:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Slideshow
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: header
+  field_sidebar_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: second_sidebar
+  field_view:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: viewfield_select
+    region: other
+  moderation_state:
+    type: moderation_state_default
+    weight: 8
+    settings: {  }
+    region: other
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 12
+    region: other
+    settings: {  }
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 7
+    region: other
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 13
+    region: other
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 9
+    region: other
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 14
+    region: other
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: main
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 16
+    region: other
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 11
+    region: other
+    settings: {  }
+    third_party_settings: {  }
+  url_redirects:
+    weight: 10
+    region: other
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  promote: true

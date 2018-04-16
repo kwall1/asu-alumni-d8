@@ -1,0 +1,160 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.bp_tab_section
+    - paragraphs.paragraphs_type.bp_accordion
+    - paragraphs.paragraphs_type.bp_blank
+    - paragraphs.paragraphs_type.bp_block
+    - paragraphs.paragraphs_type.bp_carousel
+    - paragraphs.paragraphs_type.bp_columns
+    - paragraphs.paragraphs_type.bp_columns_three_uneven
+    - paragraphs.paragraphs_type.bp_columns_two_uneven
+    - paragraphs.paragraphs_type.bp_contact
+    - paragraphs.paragraphs_type.bp_image
+    - paragraphs.paragraphs_type.bp_modal
+    - paragraphs.paragraphs_type.bp_simple
+  module:
+    - entity_reference_revisions
+id: paragraph.bp_simple.bp_tab_section
+field_name: bp_tab_section
+entity_type: paragraph
+bundle: bp_simple
+label: Columns
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      bp_accordion: bp_accordion
+      bp_blank: bp_blank
+      bp_block: bp_block
+      bp_carousel: bp_carousel
+      bp_columns: bp_columns
+      bp_columns_three_uneven: bp_columns_three_uneven
+      bp_columns_two_uneven: bp_columns_two_uneven
+      bp_contact: bp_contact
+      bp_image: bp_image
+      bp_modal: bp_modal
+      bp_simple: bp_simple
+    target_bundles_drag_drop:
+      ad_item:
+        weight: 39
+        enabled: false
+      bp_accordion:
+        enabled: true
+        weight: 40
+      bp_accordion_section:
+        weight: 41
+        enabled: false
+      bp_blank:
+        enabled: true
+        weight: 42
+      bp_block:
+        enabled: true
+        weight: 43
+      bp_carousel:
+        enabled: true
+        weight: 44
+      bp_columns:
+        enabled: true
+        weight: 45
+      bp_columns_three_uneven:
+        enabled: true
+        weight: 46
+      bp_columns_two_uneven:
+        enabled: true
+        weight: 47
+      bp_column_wrapper:
+        weight: 48
+        enabled: false
+      bp_contact:
+        enabled: true
+        weight: 49
+      bp_image:
+        enabled: true
+        weight: 50
+      bp_modal:
+        enabled: true
+        weight: 51
+      bp_simple:
+        enabled: true
+        weight: 52
+      bp_tabs:
+        weight: 53
+        enabled: false
+      bp_tab_section:
+        weight: 54
+        enabled: false
+      bp_view:
+        weight: 55
+        enabled: false
+      chapters_cta:
+        weight: 56
+        enabled: false
+      chapter_section:
+        weight: 57
+        enabled: false
+      chapter_section_left_side:
+        weight: 58
+        enabled: false
+      chapter_section_right_side:
+        weight: 59
+        enabled: false
+      cta_card:
+        weight: 60
+        enabled: false
+      cta_cards:
+        weight: 61
+        enabled: false
+      events_travels_latest_list:
+        weight: 62
+        enabled: false
+      featured_travel:
+        weight: 63
+        enabled: false
+      grid_cta:
+        weight: 64
+        enabled: false
+      grid_cta_item:
+        weight: 65
+        enabled: false
+      hero_slides:
+        weight: 66
+        enabled: false
+      interior_slideshow:
+        weight: 67
+        enabled: false
+      leadership_and_contact:
+        weight: 68
+        enabled: false
+      partners_carousel:
+        weight: 69
+        enabled: false
+      quicklinks:
+        weight: 70
+        enabled: false
+      quicklink_item:
+        weight: 71
+        enabled: false
+      section:
+        weight: 72
+        enabled: false
+      simple:
+        weight: 73
+        enabled: false
+      slideshow:
+        weight: 74
+        enabled: false
+      social_links:
+        weight: 75
+        enabled: false
+      social_media_grid:
+        weight: 76
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_travel_category
+    - node.type.travel
+    - taxonomy.vocabulary.travel_category
+id: node.travel.field_travel_category
+field_name: field_travel_category
+entity_type: node
+bundle: travel
+label: Categories
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      travel_category: travel_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,144 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_link
+    - node.type.event
+    - paragraphs.paragraphs_type.event_url
+  module:
+    - entity_reference_revisions
+id: node.event.field_event_link
+field_name: field_event_link
+entity_type: node
+bundle: event
+label: 'Event URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      event_url: event_url
+    target_bundles_drag_drop:
+      ad_item:
+        weight: 40
+        enabled: false
+      bp_accordion:
+        weight: 41
+        enabled: false
+      bp_accordion_section:
+        weight: 42
+        enabled: false
+      bp_blank:
+        weight: 43
+        enabled: false
+      bp_block:
+        weight: 44
+        enabled: false
+      bp_carousel:
+        weight: 45
+        enabled: false
+      bp_column_wrapper:
+        weight: 46
+        enabled: false
+      bp_columns:
+        weight: 47
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 48
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 49
+        enabled: false
+      bp_contact:
+        weight: 50
+        enabled: false
+      bp_image:
+        weight: 51
+        enabled: false
+      bp_modal:
+        weight: 52
+        enabled: false
+      bp_simple:
+        weight: 53
+        enabled: false
+      bp_tab_section:
+        weight: 54
+        enabled: false
+      bp_tabs:
+        weight: 55
+        enabled: false
+      bp_view:
+        weight: 56
+        enabled: false
+      chapter_section:
+        weight: 57
+        enabled: false
+      chapter_section_left_side:
+        weight: 58
+        enabled: false
+      chapter_section_right_side:
+        weight: 59
+        enabled: false
+      chapters_cta:
+        weight: 60
+        enabled: false
+      cta_card:
+        weight: 61
+        enabled: false
+      cta_cards:
+        weight: 62
+        enabled: false
+      event_url:
+        enabled: true
+        weight: 63
+      events_travels_latest_list:
+        weight: 64
+        enabled: false
+      featured_travel:
+        weight: 65
+        enabled: false
+      grid_cta:
+        weight: 66
+        enabled: false
+      grid_cta_item:
+        weight: 67
+        enabled: false
+      hero_slides:
+        weight: 68
+        enabled: false
+      interior_slideshow:
+        weight: 69
+        enabled: false
+      leadership_and_contact:
+        weight: 70
+        enabled: false
+      partners_carousel:
+        weight: 71
+        enabled: false
+      quicklink_item:
+        weight: 72
+        enabled: false
+      quicklinks:
+        weight: 73
+        enabled: false
+      section:
+        weight: 74
+        enabled: false
+      simple:
+        weight: 75
+        enabled: false
+      slideshow:
+        weight: 76
+        enabled: false
+      social_links:
+        weight: 77
+        enabled: false
+      social_media_grid:
+        weight: 78
+        enabled: false
+field_type: entity_reference_revisions

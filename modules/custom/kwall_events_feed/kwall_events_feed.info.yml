@@ -1,0 +1,9 @@
+name: 'Kwall Events Feed'
+type: module
+description: 'Import Events Feed from Asu'
+core: 8.x
+package: 'Feed'
+dependencies:
+  - node
+  - media_entity
+configure: kwall_events_feed.events_feed_form

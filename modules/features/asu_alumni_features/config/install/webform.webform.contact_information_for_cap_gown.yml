@@ -1,0 +1,135 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 55
+template: false
+id: contact_information_for_cap_gown
+title: 'Contact information for cap, gown and tassel'
+description: ''
+category: ''
+elements: "header:\n  '#type': processed_text\n  '#text': \"<h1>Contact information for cap, gown and tassel</h1>\\r\\n\\r\\n<p>&nbsp; &nbsp; &nbsp;</p>\\r\\n\\r\\n<p>Congratulations! Due to your academic accomplishments, you have been selected to receive a free cap, gown and tassel from Herff Jones, the official source of all Arizona State University regalia, and partner of ASU Alumni.&nbsp;</p>\\r\\n\\r\\n<p>If you are interested in receiving the free cap, gown and tassel, you MUST complete and submit this form on or before Tuesday, Feb. 27.</p>\\r\\n\"\n  '#format': full_html\nwhat_is_your_first_name_:\n  '#type': textfield\n  '#title': 'What is your first name?'\n  '#required': true\nwhat_is_your_last_name_:\n  '#type': textfield\n  '#title': 'What is your last name?'\n  '#required': true\nwhat_is_your_email_:\n  '#type': textfield\n  '#title': 'What is your email?'\n  '#required': true\nwhat_is_your_phone_number_:\n  '#type': textfield\n  '#title': 'What is your phone number? '\n  '#required': true\nwhat_is_your_height_in_feet_and_inches:\n  '#type': textfield\n  '#title': 'What is your height (in feet and inches)?'\n  '#required': true\nwhat_is_your_weight:\n  '#type': textfield\n  '#title': 'What is your weight?'\n  '#required': true\nacknowledgement:\n  '#type': processed_text\n  '#text': \"<p><strong>Acknowledgement</strong></p>\\r\\n\\r\\n<p>You can pick up your cap, gown and tassel at one of the bookstore locations below&nbsp; starting Tuesday, April 3 through Friday May 4. You must bring your photo ID and copy of the original email to redeem your cap and gown.</p>\\r\\n\\r\\n<p>All caps, gowns and tassels should be picked up no later than Dec. 8&nbsp;at the pickup location that you indicate below.&nbsp;<a href=\\\"http://www.bkstr.com/arizonastatestore/store-info-contact-us\\\" target=\\\"_blank\\\">View store hours</a>.</p>\\r\\n\\r\\n<p>Once you have indicated the pickup location, you cannot change it.</p>\\r\\n\"\n  '#format': full_html\nat_which_campus_bookstore_will_you_pick_up_your_cap_gown_and_tas:\n  '#type': radios\n  '#title': 'At which campus bookstore will you pick up your cap, gown and tassel?'\n  '#options':\n    'Polytechnic campus bookstore, 5999 S. Backus Mall, Mesa, AZ 85212': 'Polytechnic campus bookstore, 5999 S. Backus Mall, Mesa, AZ 85212'\n    'West campus bookstore, 4701 W. Thunderbird Road, Glendale, AZ 85306': 'West campus bookstore, 4701 W. Thunderbird Road, Glendale, AZ 85306'\n    'Tempe campus bookstore, 525 E. Orange Street, Tempe, AZ 85287': 'Tempe campus bookstore, 525 E. Orange Street, Tempe, AZ 85287'\n    'Downtown Phoenix campus bookstore, 111 E. Taylor St. Ste. 160, Phoenix, AZ 85004': 'Downtown Phoenix campus bookstore, 111 E. Taylor St. Ste. 160, Phoenix, AZ 85004'\ncaptcha:\n  '#type': captcha\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_reset: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_login: false
+  form_login_message: ''
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  submission_login: false
+  submission_login_message: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_track: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers: {  }

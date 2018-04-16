@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.quicklinks.field_quicklink_item
+    - field.field.paragraph.quicklinks.field_title
+    - paragraphs.paragraphs_type.quicklinks
+  module:
+    - ds
+    - entity_reference_revisions
+    - fences
+id: paragraph.quicklinks.default
+targetEntityType: paragraph
+bundle: quicklinks
+mode: default
+content:
+  field_quicklink_item:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: 'no'
+      link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+      ds:
+        ds_limit: ''
+    region: content
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -21,6 +21,9 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
  */
 class Psr6Cache implements CacheInterface
 {
+    /**
+     * @var CacheItemPoolInterface
+     */
     private $cacheItemPool;
 
     public function __construct(CacheItemPoolInterface $cacheItemPool)

@@ -1,0 +1,154 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sidebar_paragraphs
+    - node.type.page
+    - paragraphs.paragraphs_type.quicklinks
+    - paragraphs.paragraphs_type.sidebar_cta
+    - paragraphs.paragraphs_type.simple
+  module:
+    - entity_reference_revisions
+id: node.page.field_sidebar_paragraphs
+field_name: field_sidebar_paragraphs
+entity_type: node
+bundle: page
+label: 'Sidebar Paragraphs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      simple: simple
+      quicklinks: quicklinks
+      sidebar_cta: sidebar_cta
+    target_bundles_drag_drop:
+      chapters_cta:
+        weight: 12
+        enabled: false
+      cta_card:
+        weight: 13
+        enabled: false
+      cta_cards:
+        weight: 14
+        enabled: false
+      featured_travel:
+        weight: 15
+        enabled: false
+      grid_cta:
+        weight: 16
+        enabled: false
+      grid_cta_item:
+        weight: 17
+        enabled: false
+      hero_slides:
+        weight: 18
+        enabled: false
+      interior_slideshow:
+        weight: 19
+        enabled: false
+      quicklink_item:
+        weight: 20
+        enabled: false
+      section:
+        weight: 21
+        enabled: false
+      simple:
+        enabled: true
+        weight: 22
+      ad_item:
+        weight: 40
+        enabled: false
+      bp_accordion:
+        weight: 41
+        enabled: false
+      bp_accordion_section:
+        weight: 42
+        enabled: false
+      bp_blank:
+        weight: 43
+        enabled: false
+      bp_block:
+        weight: 44
+        enabled: false
+      bp_carousel:
+        weight: 45
+        enabled: false
+      bp_column_wrapper:
+        weight: 46
+        enabled: false
+      bp_columns:
+        weight: 47
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 48
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 49
+        enabled: false
+      bp_contact:
+        weight: 50
+        enabled: false
+      bp_image:
+        weight: 51
+        enabled: false
+      bp_modal:
+        weight: 52
+        enabled: false
+      bp_simple:
+        weight: 53
+        enabled: false
+      bp_tab_section:
+        weight: 54
+        enabled: false
+      bp_tabs:
+        weight: 55
+        enabled: false
+      bp_view:
+        weight: 56
+        enabled: false
+      chapter_section:
+        weight: 57
+        enabled: false
+      chapter_section_left_side:
+        weight: 58
+        enabled: false
+      chapter_section_right_side:
+        weight: 59
+        enabled: false
+      event_url:
+        weight: 63
+        enabled: false
+      events_travels_latest_list:
+        weight: 64
+        enabled: false
+      gallery:
+        weight: 68
+        enabled: false
+      leadership_and_contact:
+        weight: 70
+        enabled: false
+      partners_carousel:
+        weight: 71
+        enabled: false
+      quicklinks:
+        enabled: true
+        weight: 73
+      slideshow:
+        weight: 76
+        enabled: false
+      social_links:
+        weight: 77
+        enabled: false
+      sidebar_cta:
+        enabled: true
+        weight: 78
+      social_media_grid:
+        weight: 78
+        enabled: false
+field_type: entity_reference_revisions

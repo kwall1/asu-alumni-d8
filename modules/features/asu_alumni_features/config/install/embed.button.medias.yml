@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:c655b381-2e7e-4f6e-87cf-f47055e95ed1'
+  module:
+    - entity_embed
+    - media_entity
+label: Medias
+id: medias
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles: {  }
+  display_plugins: {  }
+  entity_browser: ''
+  entity_browser_settings:
+    display_review: false
+icon_uuid: c655b381-2e7e-4f6e-87cf-f47055e95ed1

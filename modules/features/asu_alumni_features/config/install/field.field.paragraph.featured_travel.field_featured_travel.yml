@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured_travel
+    - node.type.travel
+    - paragraphs.paragraphs_type.featured_travel
+id: paragraph.featured_travel.field_featured_travel
+field_name: field_featured_travel
+entity_type: paragraph
+bundle: featured_travel
+label: 'Featured Travel'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      travel: travel
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

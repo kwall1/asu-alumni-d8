@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slide
+    - media_entity.bundle.slideshow_slide
+    - paragraphs.paragraphs_type.slideshow
+id: paragraph.slideshow.field_slide
+field_name: field_slide
+entity_type: paragraph
+bundle: slideshow
+label: Slides
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      slideshow_slide: slideshow_slide
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

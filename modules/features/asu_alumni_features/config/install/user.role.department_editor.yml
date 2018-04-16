@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: department_editor
+label: 'Department Editor'
+weight: -3
+is_admin: null

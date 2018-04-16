@@ -1,0 +1,16 @@
+{% extends 'paragraph.html.twig' %}
+
+{% block paragraph %}
+  <div class="col-sm-6">
+    <div class="cta-card">
+    {% block content %}
+        {{ content.field_image }}
+        <div class="text-wrapper">
+          <h3 class="title">{{ content.field_title.0 }}</h3>
+          {{ content.field_caption.0 }}
+          {{ content.field_link }}
+        </div>
+    {% endblock %}
+    </div>
+  </div>
+{% endblock paragraph %}

@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.bp_blank.bp_background
+    - field.field.paragraph.bp_blank.bp_unrestricted
+    - field.field.paragraph.bp_blank.bp_width
+    - paragraphs.paragraphs_type.bp_blank
+  module:
+    - content_moderation
+    - field_layout
+    - layout_discovery
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.bp_blank.default
+targetEntityType: paragraph
+bundle: bp_blank
+mode: default
+content:
+  bp_background:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  bp_unrestricted:
+    weight: 2
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  bp_width:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

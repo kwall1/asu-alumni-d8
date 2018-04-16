@@ -1,0 +1,18 @@
+layout_asu:
+  label: 'ASU field grouping'
+  path: layouts/asu
+  template: layout--asu
+  library: kwall_custom/asu-layouts
+  category: 'ASU'
+  default_region: main
+  regions:
+    header:
+      label: 'Header Content'
+    main:
+      label: 'Main Content'
+    second_sidebar:
+      label: 'Sidebar Content'
+    below:
+      label: 'Below Content'
+    other:
+      label: 'Other Content'

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_url.field_link
+    - paragraphs.paragraphs_type.event_url
+  module:
+    - field_layout
+    - layout_discovery
+    - link
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.event_url.default
+targetEntityType: paragraph
+bundle: event_url
+mode: default
+content:
+  field_link:
+    weight: 0
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

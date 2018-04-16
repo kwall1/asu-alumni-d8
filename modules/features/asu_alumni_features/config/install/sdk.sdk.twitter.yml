@@ -1,0 +1,8 @@
+langcode: en
+id: twitter
+label: Twitter
+settings:
+  consumer_key: kbRH4leyxtQGoCLCx5YfAnh7N
+  consumer_secret: TW56qiqRq0Hfeo1dZMeByay7EmiEwNnBkCkrwYU78V2VnshKzc
+  access_key: 18985027-LB6uQZlkeu2MAQyhhT0nDJwhmqAEPBAkCMjEmd4cN
+  access_secret: Ju0w06HXFA0NpBgdR0AFOcELd0GdntM4yvaOMv87kfc3H

@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:507d9ee5-eafe-4e61-950c-0d1a4582079a'
+id: quicklinks
+label: Quicklinks
+icon_uuid: 507d9ee5-eafe-4e61-950c-0d1a4582079a
+description: ''
+behavior_plugins: {  }

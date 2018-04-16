@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a250a4b0-5656-41dd-974b-9871293631e8'
+  module:
+    - block_class
+    - block_content
+    - ctools
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: interest-form
+id: interestformusesontravelcontenttype
+theme: asu_alumni_custom
+region: sidebar_second
+weight: -12
+provider: null
+plugin: 'block_content:a250a4b0-5656-41dd-974b-9871293631e8'
+settings:
+  id: 'block_content:a250a4b0-5656-41dd-974b-9871293631e8'
+  label: 'Interest Form / uses on Travel content type'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      travel: travel
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

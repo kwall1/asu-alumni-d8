@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.cta
+    - field.storage.block_content.field_links
+  module:
+    - link
+id: block_content.cta.field_links
+field_name: field_links
+entity_type: block_content
+bundle: cta
+label: Links
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -1,0 +1,434 @@
+<?php
+
+/**
+ * @file
+ * Contains kwall_events_feed.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\node\Entity\Node;
+use Drupal\media_entity\Entity\Media;
+use PHPHtmlParser\Dom;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function kwall_events_feed_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        // Main module help for the kwall_events_feed module.
+        case 'help.page.kwall_events_feed':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('Import Events Feed from Asu') . '</p>';
+            return $output;
+
+        default:
+    }
+}
+
+/**
+ * @param $title_from_feed
+ * @return bool
+ */
+function checkIfEventExistByTitle($title_from_feed)
+{
+    $articles = \Drupal::entityManager()->getStorage('node')->loadByProperties(['type' => 'event']);
+    $titles_exists = [];
+    foreach ($articles as $nid => $article) {
+        /**
+         * @var \Drupal\node\Entity\Node $article
+         */
+        $titles_exists[$nid] = $article->getTitle();
+    }
+    if (in_array($title_from_feed, $titles_exists)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * @param $nid_from_feed
+ * @return bool
+ */
+function checkIfEventExistByMappingNid($nid_from_feed, $start_date_from_feed, $end_date_from_feed)
+{
+    $events = \Drupal::entityManager()->getStorage('node')->loadByProperties(['type' => 'event']);
+    $maps_nids_exists = [];
+    $start_date_exists = [];
+    $end_date_exists = [];
+
+    $start_date_formatted_from_feed = getRightDateTime($start_date_from_feed);
+    $end_date_formatted_from_feed = getRightDateTime($end_date_from_feed);
+    foreach ($events as $nid => $event) {
+        /**
+         * @var \Drupal\node\Entity\Node $event
+         */
+        if ($event->hasField('field_mapping_nid')) {
+            if (isset($event->get('field_mapping_nid')->value) && $event->get('field_mapping_nid')->value != "") {
+                $maps_nids_exists[$nid] = $event->get('field_mapping_nid')->value;
+            }
+        }
+        if ($event->hasField('field_start_event_date')) {
+            if (isset($event->get('field_start_event_date')->value) && $event->get('field_start_event_date')->value != "") {
+                $start_date_exists[$nid] = $event->get('field_start_event_date')->value;
+            }
+        }
+        if ($event->hasField('field_end_event_date')) {
+            if (isset($event->get('field_end_event_date')->value) && $event->get('field_end_event_date')->value != "") {
+                $end_date_exists[$nid] = $event->get('field_end_event_date')->value;
+            }
+        }
+    }
+    if (in_array($nid_from_feed, $maps_nids_exists) && in_array($start_date_formatted_from_feed, $start_date_exists) && in_array($end_date_formatted_from_feed, $end_date_exists)) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+/**
+ * @param $event
+ * @param $context
+ */
+function _batch_update_if_alumni_events_progress($event, &$context)
+{
+    if (isset($event['audiences']) && !empty($event['audiences']) && in_array("Alumni", $event['audiences'])) {
+        $is_alumni = 1;
+    } else {
+        $is_alumni = 0;
+    }
+    $events_ids = \Drupal::entityQuery('node')
+        ->condition('field_mapping_nid', $event['nid'])
+        ->condition('type', 'event')
+        ->execute();
+    foreach ($events_ids as $event_id) {
+        $event_node = Node::load($event_id);
+        $event_node->set('field_is_alumni', $is_alumni);
+        $event_node->save();
+    }
+    $context['results'][] = $event;
+}
+
+/**
+ * @param $event
+ * @param $context
+ */
+function _batch_import_all_events_progress($event, &$context)
+{
+
+    if (!checkIfEventExistByMappingNid($event['nid'], $event['start_date'], $event['end_date'])) {
+
+        $dateTime_start = getRightDateTime($event['start_date']);
+        $dateTime_end = getRightDateTime($event['end_date']);
+
+
+        if (isset($event['audiences']) && !empty($event['audiences']) && in_array("Alumni", $event['audiences'])) {
+            $is_alumni = 1;
+        } else {
+            $is_alumni = 0;
+        }
+        $values_events = [
+            'type' => 'event',
+            'uid' => 1,
+            'title' => $event['title'],
+            'field_mapping_nid' => $event['nid'],
+            'field_is_alumni' => $is_alumni,
+            'status' => 1,
+            'body' => [
+                'value' => $event['full_body'],
+                'summary' => $event['body_summary'],
+                'format' => 'full_html'
+            ],
+            'field_start_event_date' => [$dateTime_start],
+            'field_end_event_date' => [$dateTime_end],
+        ];
+
+        // Address informations.
+        $address_informations = getAddressInfo($event);
+
+        if (!empty($address_informations)) {
+            $values_events += [
+                'field_geolocation' => [
+                    'lat' => $address_informations['lat'],
+                    'lng' => $address_informations['lng'],
+                    'lat_sin' => 0,
+                    'lat_cos' => 0,
+                    'lng_rad' => 0,
+                ],
+                'field_event_location' => [
+                    'country_code' => 'US',
+                    'locality' => isset($address_informations['city']) ? $address_informations['city'] : "",
+                    'administrative_area' => isset($address_informations['state']) ? $address_informations['state'] : "",
+                    'postal_code' => isset($address_informations['code']) ? $address_informations['code'] : "",
+                    'address_line1' => isset($address_informations['street_address']) ? $address_informations['street_address'] : "",
+                ],
+
+
+            ];
+        }
+        $node_events = Node::create($values_events);
+
+        if(isset($event['image_url']) && $event['image_url'] != ""){
+            $image_url = $event['image_url'];
+            $explode_url = explode('/', $image_url);
+            $file_name_image_event = array_pop($explode_url);
+
+            // Create file object from remote URL.
+            $data_image = file_get_contents($image_url);
+            $image_event_file = file_save_data($data_image, 'public://' . $file_name_image_event, FILE_EXISTS_REPLACE);
+            $media_image_event = Media::create([
+                'bundle' => 'image_event',
+                'uid' => 1,
+                'langcode' => \Drupal::languageManager()->getDefaultLanguage()->getId(),
+                'status' => Node::PUBLISHED,
+                'field_event_image' => [
+                    'target_id' => $image_event_file->id(),
+                    'alt' => $event['image_alt'],
+                    'title' => $event['image_title'],
+                ],
+            ]);
+            $media_image_event->save();
+            $node_events->field_event_image = ['target_id' => $media_image_event->id()];
+        }
+
+        if(isset($event['link_url']) && $event['link_url'] != "" ){
+            if(isset($event['link_text']) && $event['link_text'] != "" ){
+                $node_events->set('field_event_url', [
+                    'uri' => $event['link_url'],
+                    'title' => $event['link_text']
+                ]);
+            }else{
+                $node_events->set('field_event_url', [
+                    'uri' => $event['link_url'],
+                    'title' => $event['link_url']
+                ]);
+            }
+        }
+        $node_events->setPublished(TRUE);
+        $node_events->set('moderation_state', 'published');
+        $node_events->set('field_event_contact_email', $event['email']);
+        $node_events->set('field_event_contact_name', $event['contactname']);
+        $node_events->set('field_event_contact_phone_number', $event['phone']);
+
+        // Save Node in DB.
+        $node_events->save();
+        // Add alias
+        $node_events_id = $node_events->id();
+        $source = '/node/' . $node_events_id;
+        \Drupal::service('path.alias_storage')->save($source, $event['alias']);
+
+        // drupal_set_message(t('The content Event :title has been saved successfully!', [':title' => $event['title']]));
+        \Drupal::logger('kwall_events_feed')->notice(t('The content Event :title has been added successfully!', [':title' => $event['title']]));
+        //Save the title of the node to display it in the progress page.
+        $context['message'] = t('Creating Event : :event', [':event' => $node_events->getTitle()]);
+        $context['results'][] = $event;
+        \Drupal::logger('kwall_events_feed')->notice(t('The content Event :title is created successfully!!', [':title' => $event['title']]));
+    } else {
+        //drupal_set_message(t('The content Event :title is already exist!', [':title' => $event['title']]), 'warning');
+        $context['message'] = t('The event :event is already exist!', [':event' => $event['title']]);
+        \Drupal::logger('kwall_events_feed')->notice(t('The content Event :title is already exist!', [':title' => $event['title']]));
+    }
+
+
+}
+
+/**
+ *
+ * @param $success
+ * @param $results
+ * @param $operations
+ */
+function _batch_import_all_finished($success, $results, $operations)
+{
+    if ($success) {
+        // Message rendered if the batch run successfully.
+        $message = \Drupal::translation()
+            ->formatPlural(count($results), 'One event created.', 'You have @count event created!');
+    } else {
+        // Message rendered if the batch run with errors.
+        $message = t('Finished with an error.');
+    }
+    drupal_set_message($message);
+}
+
+/**
+ * @param $date
+ * @return string
+ */
+function getRightDateTime($date)
+{
+    $userTimezone = new \DateTimeZone(drupal_get_user_timezone());
+    $gmtTimezone = new \DateTimeZone('GMT');
+    if (strpos($date, '-') == false) {
+        $format = "M d Y";
+        $dateTime = \DateTime::createFromFormat($format, $date,$gmtTimezone);
+        //->format("Y-m-d") . "T00:00:00"
+        $offset = $userTimezone->getOffset($dateTime);
+        $myInterval = \DateInterval::createFromDateString((string)$offset . 'seconds');
+        $dateTime->sub($myInterval);
+        $right_date = $dateTime->format("Y-m-d\TH:i:s");
+
+
+    } else {
+        $format = "M d Y - h:ia";
+        $dateTime = \DateTime::createFromFormat($format, $date,$gmtTimezone);
+        //->format()
+        $offset = $userTimezone->getOffset($dateTime);
+        $myInterval = \DateInterval::createFromDateString((string)$offset . 'seconds');
+        $dateTime->sub($myInterval);
+        $right_date = $dateTime->format("Y-m-d\TH:i:s");
+    }
+    return $right_date;
+}
+
+
+/**
+ * @param $string
+ * @param $needle_first
+ * @param $needle_second
+ * @return mixed
+ */
+function extractStringFromTwoPosition($string, $needle_first, $needle_second)
+{
+    $pos = strpos($string, $needle_first);
+    $final_pos = strpos($string, $needle_second);
+    $substr_string = substr($string, $pos, $final_pos);
+    return $substr_string;
+}
+
+/**
+ * @param $string
+ * @param $needle_first
+ * @param $needle_second
+ * @return mixed
+ */
+function extractLatLng($string, $needle_first, $needle_second)
+{
+    $substr_string = extractStringFromTwoPosition($string, $needle_first, $needle_second);
+    $substr_string = str_replace('+', ' ', $substr_string);
+    $explode = explode('/', $substr_string);
+    $res = [];
+
+    if (isset($explode[2])) {
+        $map = str_replace('@', '', $explode[2]);
+        $explode_map = explode(',', $map);
+        $res['lat'] = $explode_map[0];
+        $res['lng'] = $explode_map[1];
+    }
+    return $res;
+}
+
+/**
+ *  Get Address informations.
+ * @param $event
+ * @return array
+ */
+function getAddressInfo($event)
+{
+    $res = [];
+    if (isset($event['event_map_title']) && $event['event_map_title'] !== "") {
+
+        if (strpos($event['event_map_title'], 'http') == FALSE) {
+
+
+            $res['street_address'] = $event['event_map_title'];
+
+
+            if (isset($event['event_map_url']) && $event['event_map_url'] !== "") {
+                $extract_lat_lng = extractLatLng($event['event_map_url'], 'place/', '/@');
+                $title_count = count(explode(' ', $event['event_map_title']));
+                $explode_title = explode(' ', $event['event_map_title']);
+
+                if (isset($explode_title[$title_count - 1])) {
+                    $code_from_title = explode(' ', $event['event_map_title'])[$title_count - 1];
+                }
+                if (isset($explode_title[$title_count - 2])) {
+                    $state_from_title = explode(' ', $event['event_map_title'])[$title_count - 2];
+
+                }
+                if (isset($explode_title[$title_count - 3])) {
+                    $city_from_title = explode(' ', $event['event_map_title'])[$title_count - 3];
+
+                }
+                $title = substr($event['event_map_title'], 0, strpos($event['event_map_title'], $city_from_title));
+
+
+                $res['street_address'] = $title;
+                $res['city'] = isset($city_from_title) ? str_replace(',','',$city_from_title) : "";
+                $res['state'] = isset($state_from_title) ? $state_from_title : "";
+                $res['code'] = isset($code_from_title) ? $code_from_title : "";
+                $res['source'] = 'event_map_title';
+                $res['lat'] = $extract_lat_lng['lat'];
+                $res['lng'] = $extract_lat_lng['lng'];
+            }
+        }
+    }else{
+        if (isset($event['map'])) {
+            $data_map = json_decode($event['map'], true);
+            $description = $data_map[1]['description'];
+            $dom = new Dom;
+            $load_dom = $dom->load($description);
+            if (substr_count($description, 'address_code') > 0) {
+                if (substr_count($description, "address_code") == 2) {
+                    $address_code = $load_dom->find('.address_code', 1)->innerHtml();
+                } else if (substr_count($description, "address_code") == 1) {
+                    $address_code = $load_dom->find('.address_code')->innerHtml();
+                }
+                if (strpos($address_code, "Street Address")) {
+                    $address_code = str_replace("<h5>Street Address</h5>", "", $address_code);
+                    $load_dom_address = $dom->load($address_code);
+                    $address = $load_dom_address->find('p')->innerHtml();
+                    $explode_address = explode('<br />', $address);
+                    if (isset($explode_address[0]) && $explode_address[0] !== "") {
+                        $res['street_address'] = $explode_address[0];
+                    }
+                    if (isset($explode_address[1]) && $explode_address[1] !== "") {
+                        $res['city'] = str_replace(',','',explode(' ', $explode_address[1])[0]);
+                        $res['state'] = explode(' ', $explode_address[1])[1];
+                        $res['code'] = explode(' ', $explode_address[1])[2];
+                    }
+
+                    $res['lat'] = $data_map[1]['lat'];
+                    $res['lng'] = $data_map[1]['lng'];
+                    $res['source'] = 'map';
+                }
+
+            }
+        }
+    }
+    return $res;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function kwall_events_feed_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+    if ($form_id == "node_event_form" || $form_id == "node_event_edit_form") {
+        $form['field_mapping_nid']['#disabled'] = true;
+
+    }
+
+
+}
+
+/**
+ * Get Right date.
+ * @param $nid
+ * @param $field_date
+ */
+function getRightDate($date_value, $format_date)
+{
+    $userTimezone = new \DateTimeZone(drupal_get_user_timezone());
+    $gmtTimezone = new \DateTimeZone('GMT');
+    $myDateTime = new \DateTime($date_value, $gmtTimezone);
+    $offset = $userTimezone->getOffset($myDateTime);
+    $myInterval = \DateInterval::createFromDateString((string)$offset . 'seconds');
+    $myDateTime->sub($myInterval);
+    $right_date = $myDateTime->format($format_date);
+    return $right_date;
+}

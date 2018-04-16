@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+    - webform
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: email-sign-up-block
+id: webform
+theme: asu_alumni_custom
+region: highlighted
+weight: -10
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Email sign up'
+  provider: webform
+  label_display: visible
+  webform_id: email_sign_up
+  default_data: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

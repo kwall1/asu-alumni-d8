@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.simple.field_block
+    - field.field.paragraph.simple.field_caption
+    - field.field.paragraph.simple.field_css_class
+    - field.field.paragraph.simple.field_title
+    - field.field.paragraph.simple.field_view
+    - paragraphs.paragraphs_type.simple
+  module:
+    - text
+    - viewfield
+id: paragraph.simple.default
+targetEntityType: paragraph
+bundle: simple
+mode: default
+content:
+  field_block:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_caption:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_css_class:
+    type: string
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_view:
+    weight: 2
+    label: hidden
+    settings:
+      view_title: hidden
+      always_build_output: 0
+      empty_view_title: hidden
+    third_party_settings: {  }
+    type: viewfield_default
+    region: content
+hidden: {  }

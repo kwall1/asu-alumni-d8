@@ -8,8 +8,6 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Form builder: Builds a form that triggers a simple AJAX callback.
- *
- * @internal
  */
 class AjaxFormsTestSimpleForm extends FormBase {
 

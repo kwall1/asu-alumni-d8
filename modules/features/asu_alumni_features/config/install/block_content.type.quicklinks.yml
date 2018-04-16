@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: quicklinks
+label: Quicklinks
+revision: 1
+description: 'Icon and link list'

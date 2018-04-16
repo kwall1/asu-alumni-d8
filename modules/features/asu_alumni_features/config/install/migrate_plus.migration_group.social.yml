@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: social
+label: Social
+description: 'Social Content'
+source_type: social_content
+module: null
+shared_configuration: null

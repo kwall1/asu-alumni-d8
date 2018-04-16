@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.events
+  module:
+    - block_class
+    - system
+    - views
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: events-slideshow-view
+id: views_block__events_block_3
+theme: asu_alumni_custom
+region: highlighted
+weight: 0
+provider: null
+plugin: 'views_block:events-block_3'
+settings:
+  id: 'views_block:events-block_3'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/engage/events\r\n/engage/events-all\r\n/engage/events-alumni"
+    negate: false
+    context_mapping: {  }

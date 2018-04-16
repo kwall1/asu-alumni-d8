@@ -1,0 +1,66 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_slideshow
+    - node.type.travel
+    - paragraphs.paragraphs_type.slideshow
+  module:
+    - entity_reference_revisions
+id: node.travel.field_slideshow
+field_name: field_slideshow
+entity_type: node
+bundle: travel
+label: Slideshow
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      slideshow: slideshow
+    target_bundles_drag_drop:
+      ad_item:
+        weight: 14
+        enabled: false
+      chapters_cta:
+        weight: 15
+        enabled: false
+      cta_card:
+        weight: 16
+        enabled: false
+      cta_cards:
+        weight: 17
+        enabled: false
+      featured_travel:
+        weight: 18
+        enabled: false
+      grid_cta:
+        weight: 19
+        enabled: false
+      grid_cta_item:
+        weight: 20
+        enabled: false
+      hero_slides:
+        weight: 21
+        enabled: false
+      interior_slideshow:
+        weight: 22
+        enabled: false
+      quicklink_item:
+        weight: 23
+        enabled: false
+      section:
+        weight: 24
+        enabled: false
+      simple:
+        weight: 25
+        enabled: false
+      slideshow:
+        enabled: true
+        weight: 26
+field_type: entity_reference_revisions

@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.section.field_1_3_right_side
+    - field.field.paragraph.section.field_2_3_left_side
+    - paragraphs.paragraphs_type.section
+  module:
+    - field_layout
+    - layout_discovery
+    - paragraphs
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: paragraph.section.default
+targetEntityType: paragraph
+bundle: section
+mode: default
+content:
+  field_1_3_right_side:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+  field_2_3_left_side:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

@@ -1,0 +1,54 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.image_gallery.field_gallery_description
+    - field.field.media.image_gallery.field_gallery_signature
+    - field.field.media.image_gallery.field_image
+    - image.style.flexslider_full
+    - media_entity.bundle.image_gallery
+  module:
+    - fences
+    - image
+    - text
+id: media.image_gallery.default
+targetEntityType: media
+bundle: image_gallery
+mode: default
+content:
+  field_gallery_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_gallery_signature:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: flexslider_full
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

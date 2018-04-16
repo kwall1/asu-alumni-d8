@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: chapter_section_right_side
+label: 'Chapter Section - Right Side'
+effects:
+  a38dd0ef-f673-40ac-957c-058f79758129:
+    uuid: a38dd0ef-f673-40ac-957c-058f79758129
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 250
+      crop_type: focal_point

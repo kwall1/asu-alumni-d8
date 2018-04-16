@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: chapters_slideshow
+label: 'Chapters Slideshow (835 x 469)'
+effects:
+  94374983-b95c-45b3-a91b-773626842f8b:
+    uuid: 94374983-b95c-45b3-a91b-773626842f8b
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 835
+      height: 469
+      crop_type: focal_point

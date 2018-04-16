@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:b3d20b97-45b3-43c3-9cf0-1f6ec5c96171'
+id: ad_item
+label: 'Ad Item'
+icon_uuid: b3d20b97-45b3-43c3-9cf0-1f6ec5c96171
+description: ''
+behavior_plugins: {  }

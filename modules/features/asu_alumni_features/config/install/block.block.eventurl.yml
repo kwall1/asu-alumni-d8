@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - ctools_block
+    - node
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: eventurl
+theme: asu_alumni_custom
+region: sidebar_second
+weight: -18
+provider: null
+plugin: 'entity_field:node:field_event_link'
+settings:
+  id: 'entity_field:node:field_event_link'
+  label: 'Event URL'
+  provider: ctools_block
+  label_display: '0'
+  formatter:
+    label: hidden
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: default
+    third_party_settings: {  }
+    weight: 0
+  context_mapping:
+    entity: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

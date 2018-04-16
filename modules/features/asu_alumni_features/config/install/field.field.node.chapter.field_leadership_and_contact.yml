@@ -1,0 +1,123 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_leadership_and_contact
+    - node.type.chapter
+    - paragraphs.paragraphs_type.leadership_and_contact
+  module:
+    - entity_reference_revisions
+id: node.chapter.field_leadership_and_contact
+field_name: field_leadership_and_contact
+entity_type: node
+bundle: chapter
+label: 'Leadership and Contact'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      leadership_and_contact: leadership_and_contact
+    target_bundles_drag_drop:
+      leadership_and_contact:
+        enabled: true
+        weight: 33
+      ad_item:
+        weight: 34
+        enabled: false
+      bp_accordion:
+        weight: 35
+        enabled: false
+      bp_accordion_section:
+        weight: 36
+        enabled: false
+      bp_blank:
+        weight: 37
+        enabled: false
+      bp_block:
+        weight: 38
+        enabled: false
+      bp_carousel:
+        weight: 39
+        enabled: false
+      bp_column_wrapper:
+        weight: 40
+        enabled: false
+      bp_columns:
+        weight: 41
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 42
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 43
+        enabled: false
+      bp_contact:
+        weight: 44
+        enabled: false
+      bp_image:
+        weight: 45
+        enabled: false
+      bp_modal:
+        weight: 46
+        enabled: false
+      bp_simple:
+        weight: 47
+        enabled: false
+      bp_tab_section:
+        weight: 48
+        enabled: false
+      bp_tabs:
+        weight: 49
+        enabled: false
+      bp_view:
+        weight: 50
+        enabled: false
+      chapters_cta:
+        weight: 51
+        enabled: false
+      cta_card:
+        weight: 52
+        enabled: false
+      cta_cards:
+        weight: 53
+        enabled: false
+      featured_travel:
+        weight: 54
+        enabled: false
+      grid_cta:
+        weight: 55
+        enabled: false
+      grid_cta_item:
+        weight: 56
+        enabled: false
+      hero_slides:
+        weight: 57
+        enabled: false
+      interior_slideshow:
+        weight: 58
+        enabled: false
+      partners_carousel:
+        weight: 59
+        enabled: false
+      quicklink_item:
+        weight: 60
+        enabled: false
+      quicklinks:
+        weight: 61
+        enabled: false
+      section:
+        weight: 62
+        enabled: false
+      simple:
+        weight: 63
+        enabled: false
+      slideshow:
+        weight: 64
+        enabled: false
+field_type: entity_reference_revisions

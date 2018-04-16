@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: featured_events_list_home
+label: 'Featured Events List Home'
+effects:
+  3dc9c5fe-0bde-42f0-b8eb-acdd9f257733:
+    uuid: 3dc9c5fe-0bde-42f0-b8eb-acdd9f257733
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 387
+      height: 231
+      crop_type: focal_point

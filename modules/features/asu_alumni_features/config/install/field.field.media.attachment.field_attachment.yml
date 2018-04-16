@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_attachment
+    - media_entity.bundle.attachment
+  module:
+    - file
+id: media.attachment.field_attachment
+field_name: field_attachment
+entity_type: media
+bundle: attachment
+label: Attachment
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: 'attachment/[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf doc docx xls xlsx ppt pptx'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

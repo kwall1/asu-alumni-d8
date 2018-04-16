@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation for field collection items.
+ *
+ * Available variables:
+ * - content: An array of comment items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {% hide(content.field_example) %} to temporarily suppress the printing
+ *   of a given element.
+ * - title: The (sanitized) field collection item label.
+ * - url: Direct url of the current entity if specified.
+ * - page: Flag for the full page state.
+ * - attributes: HTML attributes for the surrounding element.
+ *    Attributes include the 'class' information.
+ * - content_attributes: HTML attributes for the content element.
+ *
+ * @see template_preprocess()
+ * @see template_preprocess_entity()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if content.field_contact_name|field_value %}
+  <h5 class="field-name">{{ content.field_contact_name|field_value }}  {{ content.field_period|field_value }}</h5>
+{% endif %}
+{% if content.field_position|field_value %}
+  <p class="field-title">{{ content.field_position|field_value }}</p>
+  <p class="field-mail">{{ content.field_email|field_value }}</p>
+{% endif %}

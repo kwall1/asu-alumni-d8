@@ -1,0 +1,73 @@
+// Flex slider, visible in Travel, Chapter content types.
+.image-slideshow {
+  position: relative;
+  margin-bottom: 30px;
+  .flex-caption {
+    width: 100%;
+    min-height: 115px;
+    background-color: $color-black;
+    padding: 20px;
+    opacity: .75;
+    font-family: $font-family-regular;
+    line-height: 22px;
+    @media (min-width: 768px) {
+      position: absolute;
+      bottom: 0;
+    }
+    .flex-label {
+      font-family: $font-family-bold;
+      font-size: 120%;
+      color: #fff;
+      font-weight: bold;
+    }
+    .flex-description {
+      color: #fff;
+    }
+  }
+  .flex-direction-nav {
+    a {
+      border: none;
+      &:before {
+        color: #fff;
+        display: block;
+        font-family: $font-awesome;
+        font-size: 4rem;
+        line-height: 4rem;
+      }
+    }
+
+    .flex-nav-prev {
+      .flex-prev {
+        &::before {
+          content: '\f104';
+        }
+      }
+    }
+    .flex-nav-next {
+      .flex-next {
+        &::before {
+          content: '\f105';
+        }
+      }
+    }
+  }
+  .flex-control-nav {
+    @media (min-width: 768px) {
+      position: absolute;
+      bottom: 120px;
+      z-index: 100;
+    }
+    li {
+      padding: 0;
+      a {
+        background-color: #fff;
+        border: none;
+        &.flex-active {
+          background: none transparent;
+          border: 1px solid #fff;
+        }
+      }
+    }
+  }
+}
+

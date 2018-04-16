@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.ad.field_ad_image
+    - image.style.cta_block
+    - media_entity.bundle.ad
+  module:
+    - fences
+    - image
+id: media.ad.default
+targetEntityType: media
+bundle: ad
+mode: default
+content:
+  field_ad_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: cta_block
+      image_link: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: image
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

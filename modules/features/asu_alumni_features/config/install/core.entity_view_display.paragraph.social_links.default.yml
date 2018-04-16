@@ -1,0 +1,65 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.social_links.field_facebook_link
+    - field.field.paragraph.social_links.field_instagram
+    - field.field.paragraph.social_links.field_linkedin
+    - field.field.paragraph.social_links.field_twitter_link
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - link
+id: paragraph.social_links.default
+targetEntityType: paragraph
+bundle: social_links
+mode: default
+content:
+  field_facebook_link:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_instagram:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_linkedin:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_twitter_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

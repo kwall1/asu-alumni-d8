@@ -1,0 +1,7 @@
+administer kwall site alerts:
+  title: 'Administer Site Alerts'
+  description: 'Administer Site Alerts'
+
+view kwall site alerts:
+  title: 'View Site Alerts'
+  description: 'View Site Alerts'

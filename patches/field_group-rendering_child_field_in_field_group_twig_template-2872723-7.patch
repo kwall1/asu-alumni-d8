@@ -1,0 +1,34 @@
+diff --git a/templates/theme.inc b/templates/theme.inc
+index 2f0d20a..d2eada8 100644
+--- a/templates/theme.inc
++++ b/templates/theme.inc
+@@ -91,4 +91,29 @@ function template_preprocess_field_group_html_element(&$variables) {
+   $variables['attributes'] = $element['#attributes'];
+   $variables['children'] = (!empty($element['#children'])) ? $element['#children'] : '';
+ 
++  // Get group element children.
++  $children = Element::children($element);
++
++  if (!empty($children)) {
++    foreach ($children as $child) {
++      if (isset($variables['element'][$child]['#title'])
++        && isset($variables['element'][$child]['#object'])
++        && $variables['element'][$child]['#title'] !== NULL
++        && $variables['element'][$child]['#object'] !== NULL) {
++        $child_title = $variables['element'][$child]['#title'];
++        $child_object = $variables['element'][$child]['#object'];
++        $variables[$child]['label'] = $child_title;
++        $variables[$child]['field'] = $child_object->get($child);
++        $variables[$child]['value'] = current($child_object->get($child)
++          ->getValue()[0]);
++      }
++      else {
++        $variables[$child]['label'] = '';
++        $variables[$child]['field'] = '';
++        $variables[$child]['value'] = '';
++      }
++
++    }
++  }
++
+ }

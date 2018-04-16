@@ -26,7 +26,6 @@ dependencies:
   - path
   - page_cache
   - dynamic_page_cache
-  - big_pipe
   - taxonomy
   - dblog
   - search

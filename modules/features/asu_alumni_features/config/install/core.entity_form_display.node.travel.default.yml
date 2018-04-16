@@ -1,0 +1,248 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.travel.body
+    - field.field.node.travel.field_attachment
+    - field.field.node.travel.field_contact_email
+    - field.field.node.travel.field_contact_name
+    - field.field.node.travel.field_contact_phone
+    - field.field.node.travel.field_content_bottom
+    - field.field.node.travel.field_cost
+    - field.field.node.travel.field_end_date
+    - field.field.node.travel.field_sidebar_paragraphs
+    - field.field.node.travel.field_slideshow
+    - field.field.node.travel.field_sponsors
+    - field.field.node.travel.field_start_date
+    - field.field.node.travel.field_thumbnail
+    - field.field.node.travel.field_travel_category
+    - node.type.travel
+  module:
+    - content_moderation
+    - datetime
+    - entity_browser_entity_form
+    - field_layout
+    - inline_entity_form
+    - kwall_custom
+    - paragraphs
+    - path
+    - scheduler
+    - telephone
+    - text
+third_party_settings:
+  field_layout:
+    id: layout_asu
+    settings: {  }
+id: node.travel.default
+targetEntityType: node
+bundle: travel
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 10
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: main
+  created:
+    type: datetime_timestamp
+    weight: 16
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  field_attachment:
+    weight: 11
+    settings:
+      form_mode: media_attachment
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: main
+  field_contact_email:
+    weight: 8
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: main
+  field_contact_name:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: main
+  field_contact_phone:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: telephone_default
+    region: main
+  field_content_bottom:
+    weight: 25
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: below
+  field_cost:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: main
+  field_end_date:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: main
+  field_sidebar_paragraphs:
+    weight: 24
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: button
+      form_display_mode: no_icon
+      default_paragraph_type: _none
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: second_sidebar
+  field_slideshow:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Slideshow
+      title_plural: Slideshows
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: slideshow
+    third_party_settings: {  }
+    region: header
+  field_sponsors:
+    weight: 12
+    settings:
+      form_mode: media_sponsor
+      label_singular: Sponsor
+      label_plural: Sponsors
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: main
+  field_start_date:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: main
+  field_thumbnail:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: main
+  field_travel_category:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: main
+  moderation_state:
+    type: moderation_state_default
+    weight: 20
+    settings: {  }
+    region: main
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 18
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 17
+    region: main
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 21
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 23
+    region: main
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 19
+    region: main
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    region: main
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 15
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: main
+    third_party_settings: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 22
+    region: main
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

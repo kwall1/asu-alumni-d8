@@ -1,0 +1,8 @@
+name: 'Migrate Social Migrations UI'
+description: Module for importing social migrations with a UI for migrate_social by KWALL.
+type: module
+core: 8.x
+package: Migrate
+
+dependencies:
+  - 'migrate_social'

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_leadership_position
+    - paragraphs.paragraphs_type.leadership_and_contact
+id: paragraph.leadership_and_contact.field_leadership_position
+field_name: field_leadership_position
+entity_type: paragraph
+bundle: leadership_and_contact
+label: 'Main Contact Position'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

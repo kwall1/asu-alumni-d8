@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - asu_alumni_custom
+id: asu_alumni_custom_help
+theme: asu_alumni_custom
+region: content
+weight: -23
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

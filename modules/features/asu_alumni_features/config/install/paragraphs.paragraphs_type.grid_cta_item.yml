@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: grid_cta_item
+label: 'Grid CTA Item'
+icon_uuid: null
+description: 'Grid CTA items with Title, Caption and Link'
+behavior_plugins: {  }

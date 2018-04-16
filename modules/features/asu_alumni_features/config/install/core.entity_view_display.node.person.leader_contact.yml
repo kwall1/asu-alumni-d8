@@ -1,0 +1,144 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.leader_contact
+    - field.field.node.person.body
+    - field.field.node.person.field_courses_taught
+    - field.field.node.person.field_cv_or_resume
+    - field.field.node.person.field_email
+    - field.field.node.person.field_employee_id
+    - field.field.node.person.field_facebook
+    - field.field.node.person.field_instagram
+    - field.field.node.person.field_linkedin
+    - field.field.node.person.field_name
+    - field.field.node.person.field_office_hours
+    - field.field.node.person.field_person_address
+    - field.field.node.person.field_person_awards
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_education
+    - field.field.node.person.field_phone_number
+    - field.field.node.person.field_prof
+    - field.field.node.person.field_profile_image
+    - field.field.node.person.field_twitter
+    - field.field.node.person.field_web_address
+    - node.type.person
+  module:
+    - fences
+    - link
+    - name
+    - user
+id: node.person.leader_contact
+targetEntityType: node
+bundle: person
+mode: leader_contact
+content:
+  content_moderation_control:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_email:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_facebook:
+    weight: 6
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_instagram:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_linkedin:
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: link
+    region: content
+  field_name:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      output: plain
+      multiple: default
+      multiple_delimiter: ', '
+      multiple_and: text
+      multiple_delimiter_precedes_last: never
+      multiple_el_al_min: '3'
+      multiple_el_al_first: '1'
+      markup: false
+    third_party_settings:
+      fences:
+        fences_field_tag: div
+        fences_field_classes: ''
+        fences_field_item_tag: div
+        fences_field_item_classes: ''
+        fences_label_tag: div
+        fences_label_classes: ''
+    type: name_default
+    region: content
+  field_twitter:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_courses_taught: true
+  field_cv_or_resume: true
+  field_employee_id: true
+  field_office_hours: true
+  field_person_address: true
+  field_person_awards: true
+  field_person_department: true
+  field_person_education: true
+  field_phone_number: true
+  field_prof: true
+  field_profile_image: true
+  field_web_address: true

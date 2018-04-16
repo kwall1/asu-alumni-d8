@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:e89af583-a739-4912-9305-4abfb0b1dc6c'
+id: chapters_cta
+label: 'Chapters CTA'
+icon_uuid: e89af583-a739-4912-9305-4abfb0b1dc6c
+description: ''
+behavior_plugins: {  }

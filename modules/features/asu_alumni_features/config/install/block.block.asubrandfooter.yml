@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - asu_brand
+    - block_class
+  theme:
+    - asu_alumni_custom
+third_party_settings:
+  block_class:
+    classes: ''
+id: asubrandfooter
+theme: asu_alumni_custom
+region: footer
+weight: -21
+provider: null
+plugin: asu_brand_footer
+settings:
+  id: asu_brand_footer
+  label: 'ASU Brand: Footer'
+  provider: asu_brand
+  label_display: '0'
+visibility: {  }

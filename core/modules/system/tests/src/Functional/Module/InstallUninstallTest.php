@@ -72,7 +72,7 @@ class InstallUninstallTest extends ModuleTestBase {
 
     // Go through each module in the list and try to install and uninstall
     // it with its dependencies.
-    foreach ($all_modules as $name => $module) {
+    while (list($name, $module) = each($all_modules)) {
       $was_installed_list = \Drupal::moduleHandler()->getModuleList();
 
       // Start a list of modules that we expect to be installed this time.

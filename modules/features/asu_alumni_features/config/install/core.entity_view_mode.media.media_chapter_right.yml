@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media_entity
+id: media.media_chapter_right
+label: 'Media Chapter Right Section'
+targetEntityType: media
+cache: true

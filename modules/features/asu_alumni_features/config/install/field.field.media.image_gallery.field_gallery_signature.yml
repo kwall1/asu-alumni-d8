@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_gallery_signature
+    - media_entity.bundle.image_gallery
+id: media.image_gallery.field_gallery_signature
+field_name: field_gallery_signature
+entity_type: media
+bundle: image_gallery
+label: Signature
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

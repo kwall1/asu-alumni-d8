@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<title>ASU Alumni | Styleguide</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<link href="https://fontastic.s3.amazonaws.com/4tEacyM6HcjKSoAvFtbG4c/icons.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/solarized-light.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+<script src="https://use.fontawesome.com/38eaee5b57.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+	$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(),
+  $( "#tabs" ).tabs(),
+  $( "#accordion" ).accordion();
+});
+</script>
+
+<link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+</head>
+<body>
+
+
+<!--NAVIGATION-->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="index.html"><img alt="Brand" src="assets/images/logo.png" width="25"><span>Styleguide</span></a>
+          </div>
+            <a type="button" class="navbar-toggle collapsed btn btn-action" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="colors.html">Colors</a></li>
+                <li><a href="typography.html">Typography</a></li>
+                <li><a class="active" href="forms.html">Forms</a></li>
+                <li><a href="contentlists.html">Content List</a></li>
+                <li><a href="components.html">Components</a></li>
+                <li><a href="wysiwyg.html">wysiwyg</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--STYLEGUIDE CONTENT-->
+<div class="wrap">
+
+<!--DEFAULT FORMS-->
+<form id="webform-client-form-25" class="webform-client-form webform-client-form-25" accept-charset="UTF-8" method="post" action="/test-webform" enctype="multipart/form-data">
+
+    <h1 class="style-header">Default Forms</h1>
+    <div>
+    	<!-- FIRST NAME -->
+        <div class="form-item webform-component webform-component-textfield webform-component--name">
+            <label for="edit-submitted-name">Name</label> <input id="edit-submitted-name" class="form-text jquery_placeholder-processed" type="text" maxlength="128" size="60" value="" name="submitted[name]" placeholder="Name">
+        </div>
+        
+		<!-- LAST NAME -->
+        <div class="form-item webform-component webform-component-textfield webform-component--last-name">
+            <label for="edit-submitted-last-name">Last Name</label> <input id="edit-submitted-last-name" class="form-text" type="text" maxlength="128" size="60" value="" name="submitted[last_name]">
+        </div>
+        
+		<!-- TEXT AREA -->
+        <div class="form-item webform-component webform-component-textarea webform-component--message">
+            <label for="edit-submitted-message">Message</label>
+
+            <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+                <textarea id="edit-submitted-message" class="form-textarea" rows="5" cols="60" name="submitted[message]"></textarea>
+                <div class="grippie"></div>
+            </div>
+        </div>
+        
+		<!-- SELECT LIST -->
+        <div class="form-item webform-component webform-component-select">
+		  <label for="edit-submitted-text-fields-how-did-you-hear-about-us">Select List</label>
+		  <select required="required" id="edit-submitted-text-fields" name="submitted[text_fields][how_did_you_hear_about_us]" class="form-select required">
+		  <option value="" selected="selected">- Select -</option>
+		  <option value="1">option 1</option>
+		  <option value="2">option 2</option>	  
+		  </select>
+		</div>
+				
+				<!-- RADIOS -->
+        <h1 class="style-header">Radios</h1>
+        <div class="form-item webform-component webform-component-radios webform-component--newsletter-sign-up">
+            <label for="edit-submitted-newsletter-sign-up">Newsletter Sign Up</label>
+
+            <div id="edit-submitted-newsletter-sign-up" class="form-radios">
+                <div class="form-item form-type-radio form-item-submitted-newsletter-sign-up">
+                    <input id="edit-submitted-newsletter-sign-up-1" class="form-radio" type="radio" value="1" name="submitted[newsletter_sign_up]"> <label class="option" for="edit-submitted-newsletter-sign-up-1">yes</label>
+                </div>
+
+                <div class="form-item form-type-radio form-item-submitted-newsletter-sign-up">
+                    <input id="edit-submitted-newsletter-sign-up-2" class="form-radio" type="radio" value="2" name="submitted[newsletter_sign_up]"> <label class="option" for="edit-submitted-newsletter-sign-up-2">no</label>
+                </div>
+            </div>
+        </div>
+        
+		<!-- CHECK BOXES -->
+        <h1 class="style-header">Checkboxes</h1>
+        <div class="form-item webform-component webform-component-checkboxes webform-component--occupation">
+            <label for="edit-submitted-occupation">Occupation</label>
+
+            <div id="edit-submitted-occupation" class="form-checkboxes">
+                <div class="form-item form-type-checkbox form-item-submitted-occupation-1">
+                    <input id="edit-submitted-occupation-1" class="form-checkbox" type="checkbox" value="1" name="submitted[occupation][1]"> <label class="option" for="edit-submitted-occupation-1">Student</label>
+                </div>
+
+                <div class="form-item form-type-checkbox form-item-submitted-occupation-2">
+                    <input id="edit-submitted-occupation-2" class="form-checkbox" type="checkbox" value="2" name="submitted[occupation][2]"> <label class="option" for="edit-submitted-occupation-2">Teacher</label>
+                </div>
+            </div>
+        </div>
+				
+        <input type="hidden" name="details[sid]"> <input type="hidden" value="1" name="details[page_num]"> <input type="hidden" value="1" name="details[page_count]"> <input type="hidden" value="0" name="details[finished]"> <input type="hidden" value="form-AbGQ3RT4-yGFILw5MmDA5PUjVv47X4YRQmKG524ebEc" name="form_build_id"> <input type="hidden" value="5gq3d6aJPJdV2VZF6sOm7hZDpmcaNrQAlnhkLCV2XMA" name="form_token"> <input type="hidden" value="webform_client_form_25" name="form_id">
+
+        <div class="form-actions">
+            <input class="webform-submit button-primary form-submit" type="submit" value="Submit" name="op">
+        </div>
+    </div>
+</form>
+
+<!--ALUMNI FORMS-->
+<form id="webform-client-form-25" class="webform-client-form webform-client-form-25 webform-grey-form" accept-charset="UTF-8" method="post" action="/test-webform" enctype="multipart/form-data">
+
+    <h1 class="style-header">Alumni Forms</h1>
+    <div>
+    	<!-- FIRST NAME -->
+        <div class="form-item webform-component webform-component-textfield webform-component--name">
+            <label for="edit-submitted-name">Name</label><input id="edit-submitted-name" class="form-text jquery_placeholder-processed" type="text" maxlength="128" size="60" value="" name="submitted[name]" placeholder="Name">
+        </div>
+        
+		<!-- LAST NAME -->
+        <div class="form-item webform-component webform-component-textfield webform-component--last-name">
+            <label for="edit-submitted-last-name">Last Name</label> <input id="edit-submitted-last-name" class="form-text" type="text" maxlength="128" size="60" value="" name="submitted[last_name]">
+        </div>
+        
+		<!-- TEXT AREA -->
+        <div class="form-item webform-component webform-component-textarea webform-component--message">
+        	<label for="edit-submitted-message">Message</label>
+
+          <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+          	<textarea id="edit-submitted-message" class="form-textarea" rows="5" cols="60" name="submitted[message]"></textarea>
+          <div class="grippie"></div>
+        </div>
+       </div>
+        
+		<!-- SELECT LIST -->
+			<div class="row">
+        <div class="form-item webform-component webform-component-select col-md-3">
+					<label for="edit-submitted-text-fields-how-did-you-hear-about-us">Select List</label>
+					<select required="required" id="edit-submitted-text-fields" name="submitted[text_fields][how_did_you_hear_about_us]" class="form-select required">
+						<option value="" selected="selected">- Select -</option>
+						<option value="1">option 1</option>
+						<option value="2">option 2</option>	  
+					</select>
+				</div>
+			</div>
+
+        <input type="hidden" name="details[sid]"> <input type="hidden" value="1" name="details[page_num]"> <input type="hidden" value="1" name="details[page_count]"> <input type="hidden" value="0" name="details[finished]"> <input type="hidden" value="form-AbGQ3RT4-yGFILw5MmDA5PUjVv47X4YRQmKG524ebEc" name="form_build_id"> <input type="hidden" value="5gq3d6aJPJdV2VZF6sOm7hZDpmcaNrQAlnhkLCV2XMA" name="form_token"> <input type="hidden" value="webform_client_form_25" name="form_id">
+
+        <div class="form-actions">
+            <input class="webform-submit button-primary form-submit" type="submit" value="Submit" name="op">
+        </div>
+    </div>
+</form>
+
+<!-- BUTTONS -->
+<div id="buttons">
+<h1 class="style-header">Buttons</h1>
+	<!-- DEFAULT -->
+	<div class="column col-md-4">
+		<label>Default</label><br>
+		<a class="btn" href="http://google.com">Submit</a><br/>
+		<a class="btn btn-blue" href="http://google.com">Blue</a><br/>
+		<a class="btn btn-gold" href="http://google.com">Gold</a>
+		<br>
+		<br>
+		<!-- CODE -->
+<pre><code class="hljs html"><<span>a class="button"</span>>...<<span>/a</span>>
+
+<<span>button class="cancel"</span>>...<<span>/button</span>>
+
+<<span>button disabled</span>>...<<span>/button</span>>
+
+<<span>a class="button cancel"</span>>...<<span>/a</span>>
+
+<<span>a class="button disabled"</span>>...<<span>/button</span>></code></pre>
+	</div>
+	<!-- Large -->
+	<div class="column col-md-4">
+		<label>Large</label><br>
+		<a class="btn btn-lg" href="http://google.com">Large Button</a><br/>
+		<a class="btn btn-lg btn-blue" href="http://google.com">Large Blue Button</a>
+		<br>
+		<br>
+		<!-- CODE -->
+<pre><code class="hljs html">
+  <<span>a class="btn btn-lg"</span>>...<<span>/a</span>>
+
+  <<span>button class="alternate" disabled</span>>...<<span>/button</span>>
+  </code></pre>
+	</div>
+</div>
+
+</div>
+<footer>
+	<p>Designed by <a href="http://kwallcompany.com">KWALL</a></p>
+</footer>
+</body>
+</html>

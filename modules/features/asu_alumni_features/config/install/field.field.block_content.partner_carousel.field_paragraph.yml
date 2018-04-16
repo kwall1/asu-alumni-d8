@@ -1,0 +1,123 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.partner_carousel
+    - field.storage.block_content.field_paragraph
+    - paragraphs.paragraphs_type.partners_carousel
+  module:
+    - entity_reference_revisions
+id: block_content.partner_carousel.field_paragraph
+field_name: field_paragraph
+entity_type: block_content
+bundle: partner_carousel
+label: 'Partner Items'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      partners_carousel: partners_carousel
+    target_bundles_drag_drop:
+      ad_item:
+        weight: 33
+        enabled: false
+      bp_accordion:
+        weight: 34
+        enabled: false
+      bp_accordion_section:
+        weight: 35
+        enabled: false
+      bp_blank:
+        weight: 36
+        enabled: false
+      bp_block:
+        weight: 37
+        enabled: false
+      bp_carousel:
+        weight: 38
+        enabled: false
+      bp_column_wrapper:
+        weight: 39
+        enabled: false
+      bp_columns:
+        weight: 40
+        enabled: false
+      bp_columns_three_uneven:
+        weight: 41
+        enabled: false
+      bp_columns_two_uneven:
+        weight: 42
+        enabled: false
+      bp_contact:
+        weight: 43
+        enabled: false
+      bp_image:
+        weight: 44
+        enabled: false
+      bp_modal:
+        weight: 45
+        enabled: false
+      bp_simple:
+        weight: 46
+        enabled: false
+      bp_tab_section:
+        weight: 47
+        enabled: false
+      bp_tabs:
+        weight: 48
+        enabled: false
+      bp_view:
+        weight: 49
+        enabled: false
+      chapters_cta:
+        weight: 50
+        enabled: false
+      cta_card:
+        weight: 51
+        enabled: false
+      cta_cards:
+        weight: 52
+        enabled: false
+      featured_travel:
+        weight: 53
+        enabled: false
+      grid_cta:
+        weight: 54
+        enabled: false
+      grid_cta_item:
+        weight: 55
+        enabled: false
+      hero_slides:
+        weight: 56
+        enabled: false
+      interior_slideshow:
+        weight: 57
+        enabled: false
+      leadership_and_contact:
+        weight: 58
+        enabled: false
+      partners_carousel:
+        enabled: true
+        weight: 59
+      quicklink_item:
+        weight: 60
+        enabled: false
+      quicklinks:
+        weight: 61
+        enabled: false
+      section:
+        weight: 62
+        enabled: false
+      simple:
+        weight: 63
+        enabled: false
+      slideshow:
+        weight: 64
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: grid_cta
+label: 'Grid CTA'
+icon_uuid: null
+description: 'Grid of call to actions'
+behavior_plugins: {  }
